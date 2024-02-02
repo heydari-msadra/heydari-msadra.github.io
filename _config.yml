@@ -6,7 +6,7 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-locale                   : "en-US"
+locale                   : "en-UK"
 title                    : "Heydari, M.S ~ Personal Webpage"
 title_separator          : "-"
 name                     : &name "Heydari, M.S."
@@ -56,7 +56,7 @@ alexa_site_verification  :
 yandex_site_verification :
 
 # Social Sharing
-twitter:
+twitter: heydari_msadra
   username               : &twitter
 facebook:
   username               :
@@ -79,16 +79,16 @@ analytics:
 
 
 # Site Author
-author:
-  name             : "Your Sidebar Name"
+author: "Heydari, M.S."
+  name             : "Mohammad Sadra Heydari"
   avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
-  location         : "Location"
+  bio              : "MRes Student @ Adam Smith Business School - University of Glasgow"
+  location         : "Glasgow, UK"
   employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "http://yourfullgooglescholarurl.com"
-  email            :
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  # pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  googlescholar    : "https://scholar.google.com/citations?user=xLHD4dUAAAAJ"
+  email            : "heydari_msadra at gmail dot com"
+  researchgate     :  "https://www.researchgate.net/profile/Mohammad-Sadra-Heydari"
   uri              :
   bitbucket        :
   codepen          :
@@ -102,14 +102,14 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
+  LinkedIn         : "https://www.linkedin.com/in/heydari-msadra/"
+  orcid            : # "http://orcid.org/yourorcidurl"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "replacethistwitterhandle"
+  twitter          : "heydari_msadra"
   vine             :
   weibo            :
   xing             :

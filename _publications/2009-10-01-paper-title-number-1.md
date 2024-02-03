@@ -1,15 +1,12 @@
 ---
-title: "Paper Title Number 1"
+title: "Absolute intragenerational income mobility in Iran"
 collection: publications
-permalink: /publication/2009-10-01-paper-title-number-1
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
-date: 2009-10-01
-venue: 'Journal 1'
-paperurl: 'http://academicpages.github.io/files/paper1.pdf'
-citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
+permalink: /publication/01_Abs_Intragenerational_Mobility_2023
+excerpt: 'Absolute intragenerational income mobility (AIIM), defined as the percentage of households with higher income compared to their previous year, is a complementary index to aggregate measures such as income per capita and the Gini index to show a more detailed picture of an economy. Panel data on household income is necessary to estimate AIIM, but it is not usually available in developing countries and, in the long run, for most developed countries. In this paper, we employ copula modeling and cross-sectional income data in a developing country, Iran, and well approximate the mobility estimated by panel data for the years 2011–2019 and then utilize the copula method to extend our estimation backward until 1991. Our findings reveal that absolute intragenerational income mobility in Iran for urban households fluctuates between 40 % and 62 %. AIIM is higher for low-income households.'
+date: 2023-08-01
+venue: 'The Quarterly Review of Economics and Finance'
+paperurl: 'https://doi.org/10.1016/j.qref.2023.04.004'
+citation: 'Amanzadeh, N. and Heydari, M.S. (2023). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
 ---
-This paper is about the number 1. The number 2 is left for future work.
+Absolute intragenerational income mobility (AIIM), defined as the percentage of households with higher income compared to their previous year, is a complementary index to aggregate measures such as income per capita and the Gini index to show a more detailed picture of an economy. Panel data on household income is necessary to estimate AIIM, but it is not usually available in developing countries and, in the long run, for most developed countries. In this paper, we employ copula modeling and cross-sectional income data in a developing country, Iran, and well approximate the mobility estimated by panel data for the years 2011–2019 and then utilize the copula method to extend our estimation backward until 1991. Our findings reveal that absolute intragenerational income mobility in Iran for urban households fluctuates between 40 % and 62 %. AIIM is higher for low-income households.
 
-[Download paper here](http://academicpages.github.io/files/paper1.pdf)
-
-Recommended citation: Your Name, You. (2009). "Paper Title Number 1." <i>Journal 1</i>. 1(1).

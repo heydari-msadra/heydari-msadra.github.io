@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Heydari, M.S ~ Personal Webpage"
+title                    : "HomePage"
 title_separator          : "-"
 name                     : &name "Heydari, M.S."
 description              : &description "MRes Student at Adam Smith Business School"

@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Heydari, M.S. ~ Personal Webpage"
+title: "Mohammad Sadra **Heydari**"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -9,6 +9,7 @@ redirect_from:
 ---
 
 # Biography
-I am a post-graduate (PGT) student in Economics at Adam Smith Business School at the University of Glasgow. I have graduated from Sharif University of Technology majoring in Computer Engineering and with a minor degree in Economics.
 
+I am a first-year MRes student in economics at the [Adam Smith Business School](https://www.gla.ac.uk/schools/business/), [University of Glasgow](https://www.gla.ac.uk/). Originally from Yazd, Iran, my academic journey took me through [Sharif University of Technology](https://en.sharif.edu/), where I earned my bachelor's degree in **Computer Engineering** with a minor in **Economics** in 2023.
 
+My academic interests lie at the intersection of computer and data science with social sciences. The amalgamation of these disciplines fuels my curiosity about the potential of quantitative tools in data science to address complex economic and social problems. As I embark on my MRes program, my goal is to delve deeper into this interdisciplinary space, exploring innovative ways to apply computational methods to real-world challenges.

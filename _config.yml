@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Heydari, M.S ~ Personal Webpage"
 title_separator          : "-"
 name                     : &name "Heydari, M.S."
-description              : &description "personal description"
+description              : &description "MRes Student at Adam Smith Business School"
 url                      : https://heydari-msadra.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "heydari-msadra.github.io"
@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Heydari, M. Sadra"
   avatar           : "profile.jpg"
-  bio              : "MRes Student @ Adam Smith Business School - University of Glasgow"
-  location         : "Location"
+  bio              : "MRes Student in Economics \nAdam Smith Business School\n University of Glasgow"
+  location         : "Glasgow, Scotland, UK"
   employer         :
   pubmed           : # "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "https://scholar.google.com/citations?user=xLHD4dUAAAAJ"
-  email            : "heydari_msadra at gmail dot com"
+  email            : "heydari_msadra+WP@gmail.com"
   researchgate     : "https://www.researchgate.net/profile/Mohammad-Sadra-Heydari"
   uri              :
   bitbucket        :
@@ -102,14 +102,14 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         :
+  LinkedIn         : "https://www.linkedin.com/in/heydari-msadra/"
   orcid            : # "http://orcid.org/yourorcidurl"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "replacethistwitterhandle"
+  twitter          : "heydari_msadra"
   vine             :
   weibo            :
   xing             :
@@ -176,16 +176,16 @@ kramdown:
 # Collections
 collections:
   teaching:
-    output: true
+    output: false
     permalink: /:collection/:path/
   publications:
     output: true
     permalink: /:collection/:path/
   portfolio:
-    output: true
+    output: false
     permalink: /:collection/:path/
   talks:
-    output: true
+    output: false
     permalink: /:collection/:path/
 
 

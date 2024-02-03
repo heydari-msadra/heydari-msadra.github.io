@@ -14,3 +14,7 @@ redirect_from:
 You can download my CV using this link: [(CV Feb 2nd. 2024)](/files//Heydari_MS_CV [Feb 2nd, 2024].pdf)
 
 ---
+
+<object data="/files//Heydari_MS_CV [Feb 2nd, 2024].pdf" type="application/pdf" width="100%">
+      <p>Unable to display PDF file. <a href="/files//Heydari_MS_CV [Feb 2nd, 2024].pdf">Download</a> instead.</p>
+ </object>

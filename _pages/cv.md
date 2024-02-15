@@ -11,12 +11,12 @@ redirect_from:
 
 ---
 
-You can download my CV using this link: [(CV Feb 2nd. 2024)](/files//Heydari_MS_CV [Feb 2nd, 2024].pdf)
+You can download my CV using this link: [(CV Feb 15th. 2024)](/files//Heydari_MS_CV [Feb 15th, 2024].pdf)
 
 ---
 
 <div>
-    <object data="https://heydari-msadra.github.io/files//Heydari_MS_CV%20[Feb%202nd,%202024].pdf" type="application/pdf" width="80%" height="50px">
-        <embed src="https://heydari-msadra.github.io/files//Heydari_MS_CV%20[Feb%202nd,%202024].pdf"></embed>
+    <object data="https://heydari-msadra.github.io/files//Heydari_MS_CV%20[Feb%20215th,%202024].pdf" type="application/pdf" width="80%" height="50px">
+        <embed src="https://heydari-msadra.github.io/files//Heydari_MS_CV%20[Feb%2015th,%202024].pdf"></embed>
     </object>
 </div>

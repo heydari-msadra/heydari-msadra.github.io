@@ -1,3 +1,4 @@
+---
 date: 2023-08-01
 venue: 'The Quarterly Review of Economics and Finance'
 paperurl: 'https://doi.org/10.1016/j.qref.2023.04.004'

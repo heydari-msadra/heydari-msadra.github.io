@@ -1,5 +1,6 @@
 ---
 title: Endogenous R&D Network Formation with Heterogeneous Firms
+Supervisors: Dr Zafer Kanik, and Dr. Santiago Montaya-Blandon
 ---
 
 <object type="image/svg+xml" data="https://heydari-msadra.github.io/files/HHHLLL-SocialWelfare-LGND.svg" width="50%" height="10">

@@ -8,7 +8,6 @@ redirect_from:
   - /about.html
 ---
 
-# Biography
 
 I am a first-year MRes student in economics at the [Adam Smith Business School](https://www.gla.ac.uk/schools/business/), [University of Glasgow](https://www.gla.ac.uk/).  My academic journey took me through [Sharif University of Technology](https://en.sharif.edu/), where I earned my bachelor's degree in **Computer Engineering** with a minor in **Economics** in 2023.
 

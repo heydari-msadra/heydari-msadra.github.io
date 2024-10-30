@@ -3,10 +3,6 @@ title: Endogenous R&D Network Formation with Heterogeneous Firms
 Supervisors: Dr Zafer Kanik, and Dr. Santiago Montaya-Blandon
 ---
 
-<object type="image/svg+xml" data="https://heydari-msadra.github.io/files/HHHLLL-SocialWelfare-LGND.svg" width="50%" height="10">
-        Your browser does not support SVG.
-</object>
-
 <img src="https://heydari-msadra.github.io/files/HHHLLL-SocialWelfare-LGND.svg" alt="Stable Networks" width="50%">
 
 This project investigates the motivations behind private firms' decisions to publish their research findings, despite the competitive risks involved. Through a comprehensive literature review, four primary incentives are identified: attracting top-tier researchers, engaging in defensive publication to preempt competitors, leveraging publications as a strategic marketing tool in science-driven industries, and signaling research capabilities to potential partners. 

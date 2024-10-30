@@ -2,9 +2,9 @@
 title: Endogenous R&D Network Formation with Heterogeneous Firms
 ---
 
-<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
-</svg>
+<object type="image/svg+xml" data="https://heydari-msadra.github.io/files/HHHLLL-SocialWelfare-LGND.svg" width="100" height="100">
+        Your browser does not support SVG.
+</object>
 
 This project investigates the motivations behind private firms' decisions to publish their research findings, despite the competitive risks involved. Through a comprehensive literature review, four primary incentives are identified: attracting top-tier researchers, engaging in defensive publication to preempt competitors, leveraging publications as a strategic marketing tool in science-driven industries, and signaling research capabilities to potential partners. 
 

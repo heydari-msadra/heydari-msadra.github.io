@@ -2,7 +2,7 @@
 title: Endogenous R&D Network Formation with Heterogeneous Firms
 ---
 
-<object type="image/svg+xml" data="https://heydari-msadra.github.io/files/HHHLLL-SocialWelfare-LGND.svg" width="80%" height="100" style="border:none;">
+<object type="image/svg+xml" data="https://heydari-msadra.github.io/files/HHHLLL-SocialWelfare-LGND.svg" width="80%" height="30" style="border:none;">
         Your browser does not support SVG.
 </object>
 

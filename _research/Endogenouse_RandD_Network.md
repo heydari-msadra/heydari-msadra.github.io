@@ -4,7 +4,7 @@ Supervisors: Dr Zafer Kanik, and Dr. Santiago Montaya-Blandon
 ---
 
 <html>
-   <iframe src="https://heydari-msadra.github.io/files//HHHLLL-SocialWelfare.html" title="Pairwise Stable Structures" width="90%" style="border:none;" ></iframe> 
+   <iframe src="https://heydari-msadra.github.io/files//HHHLLL-SocialWelfare.html" title="Pairwise Stable Structures" width="60%" height="400" style="border:none;" ></iframe> 
 </html>
 
 This project investigates the motivations behind private firms' decisions to publish their research findings, despite the competitive risks involved. Through a comprehensive literature review, four primary incentives are identified: attracting top-tier researchers, engaging in defensive publication to preempt competitors, leveraging publications as a strategic marketing tool in science-driven industries, and signaling research capabilities to potential partners.

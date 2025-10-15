@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Sadra Heydari - Personal Webpage"
+title                    : "About Me"
 title_separator          : "-"
 name                     : &name "Heydari, M.S."
 description              : &description "Ph.D. Student @ Adam Smith Business School"

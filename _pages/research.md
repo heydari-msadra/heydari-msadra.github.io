@@ -11,6 +11,7 @@ author_profile: true
   {% include archive-single.html %}
 {% endfor %}
 
+---
 # Published Papers
 
 {% if author.googlescholar %}

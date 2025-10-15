@@ -15,7 +15,7 @@ Supervisors: Dr Zafer Kanik, and Dr. Santiago Montaya-Blandon
     src="https://heydari-msadra.github.io/files//RandDNetwork.html" 
     title="Link Creation Profit" 
     width="100%" 
-    height="600" 
+    height="500" 
     style="border:none; overflow:hidden;"
 ></iframe>
 

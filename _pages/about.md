@@ -9,6 +9,7 @@ redirect_from:
 ---
 
 
-I am a first-year MRes student in economics at the [Adam Smith Business School](https://www.gla.ac.uk/schools/business/), [University of Glasgow](https://www.gla.ac.uk/).  My academic journey took me through [Sharif University of Technology](https://en.sharif.edu/), where I earned my bachelor's degree in **Computer Engineering** with a minor in **Economics** in 2023.
+I am a PhD student in Economics at the [Adam Smith Business School](https://www.gla.ac.uk/schools/business/), [University of Glasgow](https://www.gla.ac.uk/), working under the supervision of **Professor Richard Dennis**. My research focuses on **industry dynamics** and the strategic interactions that shape market structure and innovation.  
 
-My academic interests lie at the intersection of computer and data science with social sciences. The combination of these disciplines fuels my curiosity about the potential of quantitative tools in data science to address complex economic and social problems. As I embark on my MRes program, my goal is to delve deeper into this interdisciplinary space, exploring innovative ways to apply computational methods to real-world challenges.
+Before starting my PhD, I completed an **MRes in Economics** (2023–2025) at the University of Glasgow. I hold a **B.Sc. in Computer Engineering** with a **Minor in Economics** from [Sharif University of Technology](https://en.sharif.edu/) (2018–2023). My academic background bridges computational methods and economic theory, which I apply to studying firm behaviour and dynamic markets.
+

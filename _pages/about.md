@@ -1,12 +1,15 @@
 ---
 permalink: /
-title: "Mohammad Sadra **Heydari**"
+title: "Sadra **Heydari**"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
+
+
+
 
 
 I am a PhD student in Economics at the [Adam Smith Business School](https://www.gla.ac.uk/schools/business/), [University of Glasgow](https://www.gla.ac.uk/), working under the supervision of **Professor Richard Dennis**. My research focuses on **Industry Dynamics** and the strategic interactions that shape market structure and innovation.  

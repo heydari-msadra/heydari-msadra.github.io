@@ -9,9 +9,6 @@ location: "Tehran, Iran"
 ---
 
 
-Sharif University of Technology
-=====================
-
 **Probability & Statistics**  
 *Role:* Teaching Assistant  
 *Semester:* Fall 2020, Spring 2021  

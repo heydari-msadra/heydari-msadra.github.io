@@ -2,7 +2,7 @@
 title: "University of Glasgow"
 collection: teaching
 type: "Teaching Assistant"
-permalink: /teaching/2025-fall-glasgow
+permalink: /teaching/ASBS
 venue: "University of Glasgow, Adam Smith Business School"
 date: 2025-10-01
 location: "Glasgow, United Kingdom"

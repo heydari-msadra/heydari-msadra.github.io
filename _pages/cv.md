@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+title: ""
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -8,10 +8,6 @@ redirect_from:
 ---
 
 {% include base_path %}
-
----
-
-You can download my CV using this link: [(CV Oct 30th. 2024)](/files//Heydari_MS_CV [Oct 30th, 2024].pdf)
 
 ---
 

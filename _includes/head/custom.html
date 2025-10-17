@@ -33,6 +33,25 @@
     }
   });
 </script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script> -->
+<script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        // Using a slightly more academic-looking serif font for the body text
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Georgia', 'Times New Roman', 'serif'],
+                    },
+                    colors: {
+                        'gla-blue': '#1e3a8a', /* University of Glasgow Primary Blue */
+                        'primary-text': '#1f2937', /* Dark Gray for main text */
+                        'accent-link': '#3b82f6', /* Blue for links */
+                    }
+                }
+            }
+        }
+    </script>
 
 <!-- end custom head snippets -->

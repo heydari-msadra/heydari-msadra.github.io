@@ -7,33 +7,26 @@ redirect_from:
   - /about/
   - /about.html
 ---
-<!-- <!DOCTYPE html> -->
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Sadra Heydari</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        // Using a slightly more academic-looking serif font for the body text
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Georgia', 'Times New Roman', 'serif'],
-                    },
-                    colors: {
-                        'gla-blue': '#1e3a8a', /* University of Glasgow Primary Blue */
-                        'primary-text': '#1f2937', /* Dark Gray for main text */
-                        'accent-link': '#3b82f6', /* Blue for links */
-                    }
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    // Using a slightly more academic-looking serif font for the body text
+                    sans: ['Inter', 'sans-serif'],
+                    serif: ['Georgia', 'Times New Roman', 'serif'],
+                },
+                colors: {
+                    'gla-blue': '#1e3a8a', /* University of Glasgow Primary Blue */
+                    'primary-text': '#1f2937', /* Dark Gray for main text */
+                    'accent-link': '#3b82f6', /* Blue for links */
                 }
             }
         }
-    </script>
-</head>
+    }
+</script>
 <body class="white min-h-screen p-4 sm:p-8 pb-16 font-serif text-primary-text">
 
     <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-xl p-6 md:p-10 border-t-4 border-gla-blue">
@@ -66,6 +59,5 @@ redirect_from:
     </div>
 
 </body>
-</html>
 
 ---

@@ -1,16 +1,15 @@
 ---
 layout: archive
-title: "Publications"
+title: "Research - Sadra Heydari"
 permalink: /publications/
 author_profile: true
 ---
-
 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research - Mohammad Sadra Heydari</title>
+    <title>Research - Sadra Heydari</title>
     <!-- Load Tailwind CSS (Using configuration from About Me page) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -36,26 +35,26 @@ author_profile: true
     <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-xl p-6 md:p-10 border-t-4 border-gla-blue">
         
         <!-- Header Section -->
-        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-1 font-sans">Research</h1>
-        <p class="text-lg text-gray-500 mb-6 border-b pb-3 font-sans">Publications, Working Papers, and Work in Progress</p>
+        <h1 class="text-2xl md:text-4xl font-extrabold text-gray-900 mb-1 font-sans">Research</h1>
         
         <!-- Content Sections -->
 
         <!-- Working Papers (Moved to Top) -->
         <div class="mt-8 pt-4 border-t border-gray-100">
-            <h2 class="text-2xl font-extrabold text-gla-blue mb-4 font-sans">Working Papers</h2>
+            <h2 class="text-xl font-extrabold text-gla-blue mb-4 font-sans">Working Papers</h2>
             
             <div class="space-y-3 p-5 border border-gray-200 rounded-lg bg-white shadow-sm">
                 <p class="text-lg font-semibold text-gray-900">
-                    Knowledge Disclosure and Endogenous R&D Network Formation
+                    Endogenous R&D Network Formation with Heterogeneous Firms
                 </p>
                 <p class="text-sm italic text-gray-600">
-                    (Job Market Paper) with Dr. Zafer Kanik and Dr. Santiago Montoya-Blandón.
+                    with Dr. Zafer Kanik and Dr. Santiago Montoya-Blandón.
                 </p>
                 <div class="text-xs font-semibold space-x-3">
                     <a href="#" class="text-accent-link hover:underline">[Draft PDF]</a>
                     <a href="#" class="text-accent-link hover:underline">[Slides]</a>
                 </div>
+                <!-- Main text reduced to text-sm -->
                 <p class="text-sm leading-relaxed pt-2 text-gray-800 border-l-2 border-gray-200 pl-3">
                     **Abstract:** Developed a novel endogenous R&D network formation model, incorporating firms with varying productivity levels. The model demonstrates that large productivity gaps lead to the stability of Positive Assortative networks, contrasting classical results, while smaller gaps favor the stability of Complete network structures.
                 </p>
@@ -64,7 +63,7 @@ author_profile: true
         
         <!-- Publications (Moved to Second) -->
         <div class="mt-10 pt-4 border-t border-gray-100">
-            <h2 class="text-2xl font-extrabold text-gla-blue mb-4 font-sans">Publications</h2>
+            <h2 class="text-xl font-extrabold text-gla-blue mb-4 font-sans">Publications</h2>
             
             <div class="space-y-3 p-5 border border-gray-200 rounded-lg bg-white shadow-sm">
                 
@@ -84,6 +83,7 @@ author_profile: true
                 </div>
                 
                 <!-- Explanation / Abstract -->
+                <!-- Main text reduced to text-sm -->
                 <p class="text-sm leading-relaxed pt-2 text-gray-800 border-l-2 border-gray-200 pl-3">
                     **Explanation:** This study utilized Absolute Intra-generational Income Mobility (AIIM) as an additional measure to traditional income distribution indices, providing a clearer view of economic conditions by highlighting household income dynamics. We estimated AIIM for urban households in Iran from 2011 to 2019 using cross-sectional data, and extended these estimates backward to 1991 by leveraging copula distributions and models.
                 </p>
@@ -111,7 +111,7 @@ author_profile: true
 
         <!-- Work in Progress (Moved to Last) -->
         <div class="mt-10 pt-4 border-t border-gray-100">
-            <h2 class="text-2xl font-extrabold text-gla-blue mb-4 font-sans">Work in Progress</h2>
+            <h2 class="text-xl font-extrabold text-gla-blue mb-4 font-sans">Work in Progress</h2>
             
             <div class="space-y-3 p-5 border border-gray-200 rounded-lg bg-white shadow-sm">
                 <p class="text-lg font-semibold text-gray-900">
@@ -120,6 +120,7 @@ author_profile: true
                 <p class="text-sm italic text-gray-600">
                     with Dr. Santiago Montoya-Blandón.
                 </p>
+                <!-- Main text reduced to text-sm -->
                 <p class="text-sm leading-relaxed pt-2 text-gray-800 border-l-2 border-gray-200 pl-3">
                     **Description:** This project involves utilizing existing ML models to score urbanization using satellite imagery for analysis in Medellin, Colombia. The goal is to assess the quality of geographical stratification used by local policy-makers and evaluate the extent to which it accurately represents socio-economic ranking and clustering.
                 </p>

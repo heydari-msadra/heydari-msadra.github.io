@@ -5,58 +5,77 @@ permalink: /teaching/
 author_profile: true
 ---
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teaching Experience</title>
-    <style>
-        /* Simple styling for better presentation on a webpage */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .teaching-section {
-            border: 1px solid #ccc;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-        }
-        h2 {
-            color: #333;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 5px;
-        }
-        h3 {
-            color: #555;
-            margin-top: 10px;
-        }
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-        .institution {
-            font-style: italic;
-            margin-bottom: 10px;
-        }
-    </style>
-</head>
-<body>
+<!-- Load Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    /* Custom styling for better presentation and alignment */
+    .header-duration {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+    }
+    .duration-text {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #4b5563; /* Gray-600 */
+    }
+    /* Style for the type of course header (h4/h5) */
+    .course-type {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #1f2937; /* Gray-800 */
+        border-bottom: 1px dashed #e5e7eb;
+        padding-bottom: 0.25rem;
+    }
+</style>
 
-    <div class="teaching-section">
-        <h2>Teaching Experience</h2>
+<div class="max-w-4xl mx-auto p-4 md:p-8 bg-white rounded-xl shadow-xl">
+    <h2 class="text-3xl font-extrabold text-gray-900 mb-6 border-b-4 border-indigo-500 pb-2">Teaching Experience</h2>
 
-        <h3>Teaching Assistant</h3>
-        <p class="institution">Sharif University of Technology </p>
-        <ul>
-            <li><strong>Probability & Statistics</strong>: Fall 2020, Spring 2021 [cite: 17]</li>
-            <li><strong>Data Structure & Algorithm</strong>: Spring 2021 [cite: 17]</li>
-            <li><strong>Introduction to Macroeconomics</strong>: Spring 2021 [cite: 20]</li>
-            <li><strong>Game Theory</strong>: Fall 2021, Spring 2021 [cite: 20]</li>
+    <!-- University of Glasgow Section -->
+    <div class="mb-8 p-5 bg-indigo-50 rounded-lg border border-indigo-200">
+        <div class="header-duration">
+            <h3 class="text-xl font-bold text-indigo-700">University of Glasgow</h3>
+            <p class="duration-text">Sep 2023 – Present</p>
+        </div>
+        
+        <h5 class="course-type text-lg">Undergraduate Courses (GTA)</h5>
+        <ul class="list-disc ml-6 space-y-2 text-gray-700">
+            <li>(GTA) [ECON4003] <span class="font-bold">Econometrics 1</span>, [Coordinator], Academic Year 2024/2025</li>
         </ul>
-        <p>*Note: Game Theory was a Graduate-level Course[cite: 18, 20].</p>
     </div>
 
-</body>
+    <!-- Sharif University of Technology Section -->
+    <div class="mb-8 p-5 bg-gray-50 rounded-lg border border-gray-200">
+        <div class="header-duration">
+            <h3 class="text-xl font-bold text-gray-700">Sharif University of Technology</h3>
+            <!-- Assuming TA role spans the duration of studies indicated in CV for this section -->
+            <p class="duration-text">Sep 2018 – Jun 2023</p>
+        </div>
+
+        <!-- Undergraduate Courses -->
+        <h5 class="course-type text-lg">Undergraduate Courses (TA)</h5>
+        <ul class="list-disc ml-6 space-y-2 text-gray-700">
+            <li>(TA) [Code] <span class="font-bold">Probability & Statistics</span>, [Coordinator], Fall 2020</li>
+            <li>(TA) [Code] <span class="font-bold">Probability & Statistics</span>, [Coordinator], Spring 2021</li>
+            <li>(TA) [Code] <span class="font-bold">Data Structure & Algorithm</span>, [Coordinator], Spring 2021</li>
+            <li>(TA) [Code] <span class="font-bold">Introduction to Macroeconomics</span>, [Coordinator], Spring 2021</li>
+        </ul>
+
+        <!-- Graduate Courses -->
+        <h5 class="course-type text-lg">Graduate (Master's) Courses (TA)</h5>
+        <ul class="list-disc ml-6 space-y-2 text-gray-700">
+            <!-- The CV indicates Game Theory was a graduate-level course (*) -->
+            <li>(TA) [Code] <span class="font-bold">Game Theory</span>, [Coordinator], Fall 2021</li>
+            <li>(TA) [Code] <span class="font-bold">Game Theory</span>, [Coordinator], Spring 2021</li>
+        </ul>
+    </div>
+
+    <p class="text-sm text-gray-500 mt-4">Note: Coordinator and Code details should be filled in if available, based on your records.</p>
+</div>
+
 
 <!-- 
 {% include base_path %}

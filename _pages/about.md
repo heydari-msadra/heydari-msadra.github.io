@@ -7,8 +7,8 @@ redirect_from:
   - /about/
   - /about.html
 ---
-<!-- <!DOCTYPE html>
-<html lang="en"> -->
+<!-- <!DOCTYPE html> -->
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +34,7 @@ redirect_from:
         }
     </script>
 </head>
-<body class="bg-gray-50 min-h-screen p-4 sm:p-8 pb-16 font-serif text-primary-text">
+<body class="white min-h-screen p-4 sm:p-8 pb-16 font-serif text-primary-text">
 
     <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-xl p-6 md:p-10 border-t-4 border-gla-blue">
         
@@ -66,4 +66,6 @@ redirect_from:
     </div>
 
 </body>
-<!-- </html> -->
+</html>
+
+---

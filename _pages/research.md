@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "Research - Sadra Heydari"
-permalink: /publications/
+permalink: /research/
 author_profile: true
 ---
 

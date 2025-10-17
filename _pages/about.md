@@ -7,36 +7,43 @@ redirect_from:
   - /about/
   - /about.html
 ---
-
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                fontFamily: {
-                    // Using a slightly more academic-looking serif font for the body text
-                    sans: ['Inter', 'sans-serif'],
-                    serif: ['Georgia', 'Times New Roman', 'serif'],
-                },
-                colors: {
-                    'gla-blue': '#1e3a8a', /* University of Glasgow Primary Blue */
-                    'primary-text': '#1f2937', /* Dark Gray for main text */
-                    'accent-link': '#3b82f6', /* Blue for links */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Mohammad Sadra Heydari</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        // Using a slightly more academic-looking serif font for the body text
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Georgia', 'Times New Roman', 'serif'],
+                    },
+                    colors: {
+                        'gla-blue': '#1e3a8a', /* University of Glasgow Primary Blue */
+                        'primary-text': '#1f2937', /* Dark Gray for main text */
+                        'accent-link': '#3b82f6', /* Blue for links */
+                    }
                 }
             }
         }
-    }
-</script>
+    </script>
+</head>
 <body class="white min-h-screen p-4 sm:p-8 pb-16 font-serif text-primary-text">
 
     <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-xl p-6 md:p-10 border-t-4 border-gla-blue">
         
         <!-- Header Section -->
-        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-1 font-sans">About Me</h1>
-        <p class="text-lg text-gray-500 mb-6 border-b pb-3 font-sans">PhD Student in Economics</p>
+        <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-1 font-sans">About Me</h1>
+        <p class="text-base text-gray-500 mb-6 border-b pb-3 font-sans">PhD Student in Economics</p>
         
-        <!-- Main Content - Single Column, Professional Look -->
-        <div class="space-y-5 text-base leading-relaxed">
+        <!-- Main Content - Single Column, Professional Look (text-sm now used for body) -->
+        <div class="space-y-4 text-sm leading-relaxed">
 
             <!-- Introduction and Research Focus -->
             <p>
@@ -46,7 +53,7 @@ redirect_from:
                 where I work under the supervision of <strong class="font-extrabold text-gray-800">Professor Richard Dennis</strong>.
             </p>
 
-            <p class="border-l-4 border-gla-blue pl-4 py-1 text-gray-800 italic bg-gray-50 rounded-r-md text-sm">
+            <p class="border-l-4 border-gla-blue pl-4 py-1 text-gray-800 italic bg-gray-50 rounded-r-md text-xs">
                 My research is primarily focused on <strong class="font-extrabold text-gray-800">Industry Dynamics</strong> and the strategic interactions that shape market structure and innovation.
             </p>
 
@@ -59,5 +66,8 @@ redirect_from:
     </div>
 
 </body>
+</html>
+
+something here...
 
 ---

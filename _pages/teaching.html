@@ -1,4 +1,3 @@
----
 layout: archive
 title: ""
 permalink: /teaching/
@@ -45,7 +44,8 @@ author_profile: true
     }
 </style>
 
-<div class="max-w-xl mx-auto p-4 md:p-8 bg-white rounded-xl shadow-xl">
+<!-- FIX: Removed 'max-w-xl' and 'mx-auto' to allow the container to fill the main content column width. -->
+<div class="w-full p-4 md:p-8 bg-white rounded-xl shadow-xl">
     <h2 class="text-3xl font-extrabold text-gray-900 mb-6 border-b-4 border-indigo-500 pb-2">Teaching Experience</h2>
 
     <!-- University of Glasgow Section -->
@@ -121,5 +121,5 @@ author_profile: true
 {% include base_path %}
 
 {% for post in site.teaching reversed %}
-  {% include archive-single.html %}
+    {% include archive-single.html %}
 {% endfor %} -->

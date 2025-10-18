@@ -66,3 +66,16 @@ html, body, p, li, a, span, div {
   color: #222;
 }
 
+a {
+  font-size: inherit !important;
+  line-height: inherit !important;
+  font-weight: inherit !important;
+  color: #0066cc;          /* professional academic blue */
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #004c99;          /* darker on hover */
+  text-decoration: none;
+}
+

@@ -43,6 +43,26 @@
 /* === Custom Font Override === */
 
 /* Times New Roman (no import needed — it's a system font) */
-html, body, p, h1, h2, h3, h4, h5, h6, li, a, span, div {
-  font-family: "Times New Roman", Times, serif !important;
+// html, body, p, h1, h2, h3, h4, h5, h6, li, a, span, div {
+//   font-family: "Times New Roman", Times, serif !important;
+// }
+
+
+/* === Custom Fonts: Lora (Body) + Open Sans (Headings) === */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@600&display=swap');
+
+/* Headings — clear and modern */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif !important;
+  font-weight: 600;
+  color: #111;
 }
+
+/* Body text — elegant serif */
+html, body, p, li, a, span, div {
+  font-family: 'Lora', serif !important;
+  font-size: 17px;
+  line-height: 1.65;
+  color: #222;
+}
+

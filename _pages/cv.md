@@ -48,7 +48,7 @@ redirect_from:
 <div class="max-w-4xl mx-auto p-4 md:p-8 bg-white rounded-xl shadow-xl">
     
   <!-- Header Section -->
-  <h1 class="text-lg md:text-4xl font-extrabold text-gray-900 mb-1 font-sans">Curriculum Vitae (CV)</h1>
+  <h1 class="text-xl md:text-xl font-extrabold text-gray-900 mb-1 font-sans">Curriculum Vitae (CV)</h1>
   <p class="text-sm text-gray-500 mb-6 border-b pb-3 font-sans">Latest Version: October 2024</p>
     
   <!-- Download Link (Visible at all times) -->

@@ -49,7 +49,7 @@ redirect_from:
     
   <!-- Header Section -->
   <h1 class="text-xl md:text-xl font-extrabold text-gray-900 mb-1 font-sans">Curriculum Vitae (CV)</h1>
-  <p class="text-sm text-gray-500 mb-6 border-b pb-3 font-sans">Latest Version: October 2024</p>
+  <p class="text-sm text-gray-500 mb-6 border-b pb-3 font-sans">Latest Version: October 2025</p>
     
   <!-- Download Link (Visible at all times) -->
   <div class="text-sm mb-6 p-4 bg-indigo-50 border border-indigo-200 rounded-lg flex items-center justify-between">
@@ -57,7 +57,7 @@ redirect_from:
           Having trouble viewing the PDF below?
       </p>
       <a 
-          href="https://heydari-msadra.github.io/files//Heydari_MS_CV%20[Oct%2030th,%202024].pdf" 
+          href="https://heydari-msadra.github.io/files//Heydari_MS_CV%20[Oct%2018th,%202025].pdf" 
           target="_blank" 
           class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-accent-link hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150"
           download
@@ -74,7 +74,7 @@ redirect_from:
   <div class="pdf-container">
       <!-- Using the <iframe> tag is the most reliable way to embed PDFs across modern browsers -->
       <iframe 
-          src="https://heydari-msadra.github.io/files//Heydari_MS_CV%20[Oct%2030th,%202024].pdf" 
+          src="https://heydari-msadra.github.io/files//Heydari_MS_CV%20[Oct%2018th,%202025].pdf" 
           class="pdf-viewer" 
           title="Sadra Heydari Curriculum Vitae"
           loading="lazy"

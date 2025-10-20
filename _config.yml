@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Heydari, M. Sadra"
   avatar           : "profile.jpg"
-  bio              : "Ph.D. Student in Economics \nAdam Smith Business School\n University of Glasgow"
+  bio              : "Ph.D. Student in Economics at Adam Smith Business School, University of Glasgow"
   location         : "Glasgow, Scotland, UK"
   employer         :
   pubmed           : # "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
@@ -267,7 +267,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Europe/London # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins

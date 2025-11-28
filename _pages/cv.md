@@ -57,7 +57,7 @@ redirect_from:
           Having trouble viewing the PDF below?
       </p>
       <a 
-          href="https://heydari-msadra.github.io/files//Heydari_MS_CV%20[Oct%2018th,%202025].pdf" 
+          href="https://heydari-msadra.github.io/files/cvs//Heydari_MS_CV%20[Oct%2018th,%202025].pdf" 
           target="_blank" 
           class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-accent-link hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150"
           download
@@ -74,7 +74,7 @@ redirect_from:
   <div class="pdf-container">
       <!-- Using the <iframe> tag is the most reliable way to embed PDFs across modern browsers -->
       <iframe 
-          src="https://heydari-msadra.github.io/files//Heydari_MS_CV%20[Oct%2018th,%202025].pdf" 
+          src="https://heydari-msadra.github.io/files/cvs//Heydari_MS_CV%20[Oct%2018th,%202025].pdf" 
           class="pdf-viewer" 
           title="Sadra Heydari Curriculum Vitae"
           loading="lazy"

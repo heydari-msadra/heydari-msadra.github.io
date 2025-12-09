@@ -1,30 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Sadra Heydari - About Me</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sadra Heydari</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header>
-        <h1>Sadra Heydari</h1>
-        <nav>
-            <a href="index.html">About Me</a>
-            <a href="pages/research.html">Research</a>
-            <a href="pages/teaching.html">Teaching</a>
-            <a href="pages/cv.html">CV</a>
-        </nav>
+    <header class="site-header">
+        <div class="inner-width">
+            <h1></h1>
+            <p class="subtitle">PhD Student in Economics, University of Glasgow</p>
+        </div>
     </header>
 
-    <div class="container">
-        <img src="your-photo.jpg" alt="Sadra Heydari" class="profile-pic">
+    <nav class="site-nav">
+        <div class="inner-width">
+            <a href="index.html" class="active">Home</a>
+            <a href="pages/cv.html">CV</a>
+            <a href="pages/research.html">Research</a>
+            <a href="pages/teaching.html">Teaching</a>
+        </div>
+    </nav>
+
+    <div class="container inner-width">
         
-        <h2>About Me</h2>
-        <p>
-            Welcome to my website. I am a [Your Title] at [Your University]. 
-            My research focuses on [Your Topic].
-        </p>
+        <main class="content">
+            <h2>Welcome</h2>
+            <p>
+                I am a PhD student in Economics at the Adam Smith Business School, University of Glasgow. 
+                My research focuses on Industry Dynamics and strategic interactions.
+            </p>
+            <p>
+                Before my PhD, I completed an MRes in Economics.
+            </p>
+            
+            <h3>Contact</h3>
+            <p>
+                <strong>Email:</strong> your.email@glasgow.ac.uk<br>
+                <strong>Office:</strong> Room 123, Gilbert Scott Building
+            </p>
+        </main>
+
+        <aside class="sidebar">
+            <img src="your-photo.jpg" alt="Sadra Heydari" class="profile-pic">
+            <div class="sidebar-links">
+                 <a href="files/my-cv.pdf">Download CV (PDF)</a>
+            </div>
+        </aside>
+
     </div>
+
+    <footer>
+        <p>&copy; 2025 Sadra Heydari</p>
+    </footer>
 
 </body>
 </html>

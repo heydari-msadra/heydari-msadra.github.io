@@ -393,3 +393,47 @@ footer {
 .research-item {
     margin-bottom: 45px;
 }
+
+
+/* === Minimal Professional Dark Mode Toggle === */
+#theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+
+    border-radius: 50%;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+/* Icon color = UofG blue in light mode */
+#theme-toggle i {
+    font-size: 1.2em;
+    color: var(--uofg-blue);
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+/* Hover effect — subtle circle */
+#theme-toggle:hover {
+    background: rgba(0, 56, 101, 0.10); /* soft UofG blue tint */
+}
+
+/* Hover: slight rotate */
+#theme-toggle:hover i {
+    transform: rotate(20deg);
+}
+
+/* Dark mode icon color */
+body.dark-mode #theme-toggle i {
+    color: #ffb84d; /* your dark-mode orange link color */
+}
+
+/* Dark mode: hover effect adjusted */
+body.dark-mode #theme-toggle:hover {
+    background: rgba(255, 184, 77, 0.15);
+}
+

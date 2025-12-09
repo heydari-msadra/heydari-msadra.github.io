@@ -20,10 +20,11 @@ body.dark-mode {
     --bg-body: #121212;
     --text-main: #e0e0e0;
     --text-muted: #aaaaaa;
-    
+
+    --uofg-blue: #ffb84d;
     /* High contrast for dark mode (Orange/Gold complements Blue) */
     --link-color: #ffb84d;      
-    --header-title: #ffffff;
+    --header-title: var(--uofg-blue);
     
     --nav-border: #333333;
     --card-bg: #1e1e1e;
@@ -311,7 +312,7 @@ footer {
 
 /* Inner page header style */
 .inner-header .small-name {
-    font-family: "Arial", sans-serif;
+    font-family: "Georgia", sans-serif;
     font-size: 0.85em;
     letter-spacing: 0.5px;
     color: var(--text-muted);

@@ -1,148 +1,87 @@
-/* 1. DEFINE COLOR VARIABLES */
+/* styles.css */
+
+/* 1. COLOR PALETTE (The Variables) */
 :root {
     /* LIGHT MODE (Default) */
-    --bg-color: #ffffff;
-    --text-color: #333333;
-    --header-color: #000000;
-    --link-color: #1a0dab;
-    --border-color: #dddddd;
-    --nav-text: #333333;
-    --card-bg: #ffffff;
+    --bg-body: #ffffff;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --nav-border: #e0e0e0;
+    --link-color: #003366; /* Academic Blue */
+    --button-bg: #f0f0f0;
 }
 
-/* DARK MODE (Overrides) */
+/* DARK MODE (The Override) */
 body.dark-mode {
-    --bg-color: #121212;       /* Soft dark gray */
-    --text-color: #e0e0e0;     /* Off-white text */
-    --header-color: #ffffff;
-    --link-color: #8ab4f8;     /* Lighter blue for dark backgrounds */
-    --border-color: #333333;
-    --nav-text: #cccccc;
-    --card-bg: #1e1e1e;
+    --bg-body: #121212;
+    --text-main: #e0e0e0;
+    --text-muted: #aaaaaa;
+    --nav-border: #333333;
+    --link-color: #ffa500; /* Orange (High contrast for dark mode) */
+    --button-bg: #333333;
 }
 
-/* 2. APPLY VARIABLES TO ELEMENTS */
+/* 2. GLOBAL STYLES USING VARIABLES */
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: "Georgia", "Times New Roman", Times, serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    font-family: "Georgia", serif;
     line-height: 1.6;
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
-}
-
-/* Layout Utility */
-.inner-width {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin: 0;
+    transition: background 0.3s, color 0.3s; /* Smooth transition when toggling */
 }
 
 a {
-    color: var(--link-color);
+    color: var(--link-color); /* This will automatically switch Blue <-> Orange */
     text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
+    font-weight: bold;
 }
 
-/* Header */
-.site-header {
-    padding: 40px 0 20px 0;
-    display: flex;             /* Allows placing button next to name */
-    justify-content: space-between;
-    align-items: center;
+/* ... Previous CSS ... */
+
+/* 3. DESKTOP DEFAULT (Standard View) */
+.abstract-content {
+    display: block; /* Always show abstract on desktop */
+    margin-top: 10px;
+    font-size: 0.95em;
+    color: var(--text-muted);
 }
 
-.site-header h1 {
-    font-size: 36px;
-    margin: 0;
-    font-weight: normal;
-    color: var(--header-color);
+.mobile-toggle-btn {
+    display: none; /* Hide the "Show Abstract" button on desktop */
 }
 
-.site-header .subtitle {
-    color: var(--text-color);
-    opacity: 0.7; /* Make it slightly lighter than main text */
-    font-style: italic;
-    margin-top: 5px;
-}
-
-/* Navigation */
-.site-nav {
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-    padding: 15px 0;
-    margin-bottom: 40px;
-}
-
-.site-nav a {
-    margin-right: 25px;
-    font-size: 14px;
-    color: var(--nav-text);
-    text-transform: uppercase;
-    font-family: "Arial", sans-serif;
-    letter-spacing: 1px;
-}
-
-.site-nav a:hover {
-    text-decoration: none;
-    opacity: 0.7;
-}
-
-/* Main Content */
-.container {
-    display: flex;
-    gap: 40px;
-    min-height: 500px;
-}
-
-.content { flex: 3; }
-.sidebar { flex: 1; text-align: center; }
-
-img.profile-pic {
-    width: 100%;
-    max-width: 200px;
-    border: 1px solid var(--border-color);
-    padding: 4px;
-    background: var(--card-bg);
-}
-
-h2 {
-    font-size: 24px;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 10px;
-    margin-top: 0;
-}
-
-h3 {
-    font-size: 18px;
-    margin-top: 30px;
-    color: var(--header-color);
-}
-
-footer {
-    border-top: 1px solid var(--border-color);
-    margin-top: 60px;
-    padding: 20px 0;
-    text-align: center;
-    font-size: 12px;
-    color: var(--text-color);
-    opacity: 0.6;
-    font-family: "Arial", sans-serif;
-}
-
-/* THE TOGGLE BUTTON STYLE */
-#theme-toggle {
-    background: none;
-    border: 1px solid var(--border-color);
-    color: var(--text-color);
-    padding: 5px 10px;
-    cursor: pointer;
-    font-family: "Arial", sans-serif;
-    font-size: 12px;
-    border-radius: 4px;
-}
-
+/* 4. MOBILE VIEW (Screens smaller than 768px) */
 @media (max-width: 768px) {
-    .container { flex-direction: column-reverse; }
+    
+    /* Layout: Stack columns vertically */
+    .container {
+        flex-direction: column; 
+    }
+
+    /* Abstract: Hide by default */
+    .abstract-content {
+        display: none; 
+    }
+    
+    /* Abstract: Show ONLY if it has the 'open' class (added by JS) */
+    .abstract-content.open {
+        display: block;
+        padding-left: 10px;
+        border-left: 3px solid var(--link-color);
+    }
+
+    /* Button: Show the "Show Abstract" button */
+    .mobile-toggle-btn {
+        display: inline-block;
+        background: none;
+        border: none;
+        color: var(--link-color);
+        cursor: pointer;
+        padding: 0;
+        font-family: sans-serif;
+        font-size: 0.9em;
+        text-decoration: underline;
+        margin-top: 5px;
+    }
 }

@@ -362,3 +362,34 @@ footer {
     background: var(--bg-body);
 }
 
+/* === RESEARCH PAGE TYPOGRAPHY === */
+
+/* Title line (strong + PDF/Code links) */
+.research-title {
+    font-size: 1rem; /* matches Tailwind text-base */
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+/* Author line */
+.research-authors {
+    font-size: 0.75rem; /* matches Tailwind text-xs */
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* Abstract block */
+.abstract-content {
+    margin-top: 10px;
+    padding-left: 12px;
+    border-left: 2px solid var(--nav-border); /* matches old gray line */
+    font-size: 0.75rem; /* matches text-xs */
+    line-height: 1.6; /* matches leading-relaxed */
+    color: var(--text-main);
+}
+
+/* Research item spacing */
+.research-item {
+    margin-bottom: 45px;
+}

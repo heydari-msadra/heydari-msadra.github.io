@@ -366,8 +366,8 @@ footer {
 
 /* Title line (strong + PDF/Code links) */
 .research-title {
-    font-size: 0.9rem; /* matches Tailwind text-base */
-    margin-bottom: 3px;
+    font-size: 1rem; /* matches Tailwind text-base */
+    margin-bottom: 4px;
     line-height: 1.4;
 }
 
@@ -378,6 +378,14 @@ footer {
     margin-bottom: 10px;
     line-height: 1.4;
 }
+
+.research-meta {
+    font-size: 0.85rem; /* between title and authors */
+    line-height: 1.4;
+    color: var(--text-main);
+    margin-bottom: 4px;
+}
+
 
 /* Abstract block */
 .abstract-content {

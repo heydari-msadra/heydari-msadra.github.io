@@ -8,7 +8,7 @@
     /* THEME COLORS */
     --uofg-blue: #003865;       /* University of Glasgow Blue */
     
-    --link-color: var(--uofg-blue);      
+    --link-color: #0056b3;      /* Standard Professional Blue for Links */
     --header-title: var(--uofg-blue);    /* Headers now match the UofG theme */
     
     --nav-border: #e0e6ed;      /* A very subtle blue-gray for borders */
@@ -57,12 +57,15 @@ a:hover {
     padding: 0 20px;
 }
 
-/* 4. HEADER (Name & Title) */
+/* 4. HEADER (Name & Title) - CENTER ALIGNED */
 .site-header {
     padding: 40px 0 20px 0;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center;
+    align-items: center;    /* Center content horizontally */
+    text-align: center;
+    gap: 15px;              /* Space between name and button */
 }
 
 .site-header h1 {
@@ -70,10 +73,12 @@ a:hover {
     font-weight: normal;
     font-size: 2.2em;
     margin: 0;
-    color: var(--header-title); /* Now uses UofG Blue */
+    color: var(--header-title); 
 }
 
 .site-header .subtitle {
+    /* Subtitle style removed as content is removed, 
+       keeping rule just in case needed later */
     font-family: "Arial", sans-serif;
     color: var(--text-muted);
     font-size: 0.95em;
@@ -99,22 +104,24 @@ a:hover {
     color: var(--link-color);
 }
 
-/* 5. NAVIGATION BAR */
+/* 5. NAVIGATION BAR - CENTER ALIGNED */
 .site-nav {
     border-top: 1px solid var(--nav-border);
     border-bottom: 1px solid var(--nav-border);
     padding: 12px 0;
     margin-bottom: 40px;
+    text-align: center; /* Centers the links container */
 }
 
 .site-nav a {
-    margin-right: 25px;
+    display: inline-block; /* Required for text-align center to work on links */
+    margin: 0 15px;        /* Changed to even spacing on both sides */
     font-family: "Arial", sans-serif;
     font-size: 0.9em;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: var(--text-main);
-    font-weight: normal; /* Reset bold from global 'a' tag */
+    font-weight: normal; 
 }
 
 .site-nav a.active {
@@ -148,21 +155,39 @@ a:hover {
 
 .profile-section h2 {
     font-size: 1.5em;
-    border-bottom: 2px solid var(--nav-border); /* Slightly thicker line */
+    border-bottom: 2px solid var(--nav-border); 
     padding-bottom: 10px;
     margin-bottom: 20px;
     font-weight: normal;
-    color: var(--header-title); /* Uses UofG Blue */
+    color: var(--header-title);
 }
 
-/* Current Role Block */
+/* Current Role Block - Simplified Styles */
+.role-text {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+
+.role-details {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 0;
+    color: var(--text-muted);
+}
+
+.role-details li {
+    margin-bottom: 8px;
+}
+
+/* Current Role Block (Legacy - Kept for reference but unused in new HTML) */
 .role-block {
     margin-bottom: 20px;
 }
 .role-title {
     font-weight: bold;
     font-size: 1.1em;
-    color: var(--header-title); /* Uses UofG Blue */
+    color: var(--header-title); 
 }
 .institution {
     font-style: italic;
@@ -184,7 +209,7 @@ a:hover {
     flex-shrink: 0;
     font-family: "Arial", sans-serif;
     font-weight: bold;
-    color: var(--header-title); /* Uses UofG Blue for dates */
+    color: var(--header-title);
     font-size: 0.9em;
     padding-top: 2px;
 }
@@ -205,10 +230,8 @@ a:hover {
 }
 .clean-list li {
     padding: 6px 0;
-    /* Removed border-bottom here */
     font-size: 1.05em;
 }
-/* Optional: Add a subtle bullet or dash if no lines */
 .clean-list li::before {
     content: "•"; 
     color: var(--link-color);
@@ -243,7 +266,7 @@ img.profile-pic {
     width: 20px;
     text-align: center;
     margin-right: 5px;
-    color: var(--link-color); /* Icons match theme */
+    color: var(--link-color);
 }
 
 /* 9. FOOTER */
@@ -264,18 +287,9 @@ footer {
         gap: 30px;
     }
     
-    .site-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-
-    .site-nav {
-        text-align: center;
-    }
     .site-nav a {
-        display: inline-block;
-        margin: 5px 10px;
+        display: block; /* Stack links vertically on small screens */
+        margin: 10px 0;
     }
 
     .edu-item {

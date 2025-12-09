@@ -1,104 +1,115 @@
-/* 1. RESET & GLOBAL FONTS */
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff; /* Pure white background */
-    color: #333333; /* Dark gray text */
-    font-family: "Georgia", "Times New Roman", Times, serif; /* The "Academic" Serif look */
-    line-height: 1.6;
+/* 1. DEFINE COLOR VARIABLES */
+:root {
+    /* LIGHT MODE (Default) */
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --header-color: #000000;
+    --link-color: #1a0dab;
+    --border-color: #dddddd;
+    --nav-text: #333333;
+    --card-bg: #ffffff;
 }
 
-/* 2. LAYOUT UTILITY (Keeps everything aligned in the center) */
+/* DARK MODE (Overrides) */
+body.dark-mode {
+    --bg-color: #121212;       /* Soft dark gray */
+    --text-color: #e0e0e0;     /* Off-white text */
+    --header-color: #ffffff;
+    --link-color: #8ab4f8;     /* Lighter blue for dark backgrounds */
+    --border-color: #333333;
+    --nav-text: #cccccc;
+    --card-bg: #1e1e1e;
+}
+
+/* 2. APPLY VARIABLES TO ELEMENTS */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* Layout Utility */
 .inner-width {
-    max-width: 960px; /* Standard academic site width */
+    max-width: 960px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 a {
-    color: #1a0dab; /* Standard academic blue link */
+    color: var(--link-color);
     text-decoration: none;
 }
 a:hover {
     text-decoration: underline;
 }
 
-/* 3. HEADER (NAME) */
+/* Header */
 .site-header {
     padding: 40px 0 20px 0;
+    display: flex;             /* Allows placing button next to name */
+    justify-content: space-between;
+    align-items: center;
 }
 
 .site-header h1 {
     font-size: 36px;
     margin: 0;
-    font-weight: normal; /* Academic sites rarely use bold headers */
-    color: #000;
+    font-weight: normal;
+    color: var(--header-color);
 }
 
 .site-header .subtitle {
-    color: #666;
+    color: var(--text-color);
+    opacity: 0.7; /* Make it slightly lighter than main text */
     font-style: italic;
     margin-top: 5px;
 }
 
-/* 4. NAVIGATION BAR */
+/* Navigation */
 .site-nav {
-    border-top: 1px solid #ddd;   /* The line above the menu */
-    border-bottom: 1px solid #ddd; /* The line below the menu */
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     padding: 15px 0;
     margin-bottom: 40px;
 }
 
 .site-nav a {
     margin-right: 25px;
-    font-size: 16px;
-    color: #333;
-    text-transform: uppercase; /* Makes links look like "HOME  CV  RESEARCH" */
-    font-family: "Arial", sans-serif; /* Menu is often sans-serif for readability */
     font-size: 14px;
+    color: var(--nav-text);
+    text-transform: uppercase;
+    font-family: "Arial", sans-serif;
     letter-spacing: 1px;
 }
 
 .site-nav a:hover {
-    color: #000;
     text-decoration: none;
+    opacity: 0.7;
 }
 
-/* 5. MAIN CONTENT AREA (2 Columns) */
+/* Main Content */
 .container {
-    display: flex; /* Creates the side-by-side layout */
-    gap: 40px;     /* Space between text and photo */
+    display: flex;
+    gap: 40px;
     min-height: 500px;
 }
 
-/* Left Column (Text) */
-.content {
-    flex: 3; /* Takes up 75% of the space */
-}
-
-/* Right Column (Photo) */
-.sidebar {
-    flex: 1; /* Takes up 25% of the space */
-    text-align: center;
-}
+.content { flex: 3; }
+.sidebar { flex: 1; text-align: center; }
 
 img.profile-pic {
     width: 100%;
     max-width: 200px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     padding: 4px;
-    background: #fff;
+    background: var(--card-bg);
 }
 
-.sidebar-links {
-    margin-top: 20px;
-    font-size: 14px;
-}
-
-/* HEADINGS INSIDE TEXT */
 h2 {
     font-size: 24px;
-    border-bottom: 1px solid #eee; /* Subtle underline */
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 10px;
     margin-top: 0;
 }
@@ -106,31 +117,32 @@ h2 {
 h3 {
     font-size: 18px;
     margin-top: 30px;
-    color: #444;
+    color: var(--header-color);
 }
 
-/* 6. FOOTER */
 footer {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--border-color);
     margin-top: 60px;
     padding: 20px 0;
     text-align: center;
     font-size: 12px;
-    color: #999;
+    color: var(--text-color);
+    opacity: 0.6;
     font-family: "Arial", sans-serif;
 }
 
-/* 7. MOBILE RESPONSIVENESS */
-/* If screen is small, stack the columns */
+/* THE TOGGLE BUTTON STYLE */
+#theme-toggle {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: "Arial", sans-serif;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column-reverse; /* Put photo on top on mobile */
-    }
-    .sidebar {
-        margin-bottom: 20px;
-    }
-    .site-nav a {
-        display: block; /* Stack links vertically on mobile */
-        margin: 10px 0;
-    }
+    .container { flex-direction: column-reverse; }
 }

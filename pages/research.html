@@ -2,55 +2,161 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Research - Sadra Heydari</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research – Sadra Heydari</title>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
 
-    <header class="site-header inner-width">
-        <h1>Sadra Heydari</h1>
-        <button id="theme-toggle">🌙 Dark Mode</button>
+<body>
+    <!-- Header -->
+    <header class="site-header inner-width inner-header">
+        <div class="header-content">
+            <div class="small-name">Sadra Heydari</div>
+            <h1 class="page-title">Research</h1>
+        </div>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙 Dark Mode</button>
     </header>
 
+
+    <!-- Navigation -->
     <nav class="site-nav inner-width">
         <a href="../index.html">Home</a>
         <a href="research.html" class="active">Research</a>
-        </nav>
+        <a href="teaching.html">Teaching</a>
+        <a href="cv.html">CV</a>
+    </nav>
 
     <div class="container inner-width">
+
+        <!-- MAIN CONTENT -->
         <main class="content">
-            <h2>Research</h2>
 
-            <div class="paper-item">
-                <h3>1. Title of Your Amazing Paper</h3>
-                <p>
-                    Published in <em>Journal of Economics</em>, 2024.<br>
-                    <a href="../files/paper1.pdf">[Download PDF]</a>
-                </p>
+            <!-- WORKING PAPERS -->
+            <section class="profile-section">
+                <h2>Working Papers</h2>
 
-                <button class="mobile-toggle-btn" onclick="toggleAbstract(this)">Show Abstract</button>
+                <div class="research-item">
+                    <p class="research-title">
+                        <strong>R&amp;D Networks under Heterogeneous Firm Productivities</strong>
+                        <a href="https://heydari-msadra.github.io/files/draft//R_and_D_Network.pdf" target="_blank" rel="noopener">[Draft PDF]</a>
+                        <a href="https://github.com/sadraheydari/R_and_D_Network" target="_blank" rel="noopener">[Code]</a>
+                    </p>
 
-                <div class="abstract-content">
-                    This is the abstract of the paper. On a desktop computer, you can see this 
-                    text immediately. However, if you view this on a phone, this text is hidden 
-                    to save screen space, and you must click the button above to see it.
+                    <p class="research-authors">
+                        <em>
+                        with 
+                        <a href="https://sites.google.com/view/zaferkanik/" target="_blank" rel="noopener">Zafer Kanik</a>
+                        and 
+                        <a href="https://www.smontoyablandon.com/" target="_blank" rel="noopener">Santiago Montoya-Blandón</a>.
+                        </em>
+                    </p>
+
+                    <!-- ABSTRACT TOGGLE (mobile only) -->
+                    <button class="mobile-toggle-btn" onclick="toggleAbstract(this)">Show Abstract</button>
+
+                    <div class="abstract-content">
+                        <p>
+                            We study R&D network formation with heterogeneous productivities, generalizing the homogeneous 
+                            framework in <em>Goyal & Moraga-Gonzalez (2001)</em>. Heterogeneity creates asymmetric gains 
+                            for connecting firms: the less productive firm benefits disproportionately, while the more 
+                            productive firm exerts greater R&D effort and costs. When productivity gaps become large, 
+                            classical results on pairwise stable networks break down: the complete network becomes 
+                            unstable, while the Positive Assortative (PA) network—where firms cluster by productivity—
+                            emerges as stable. Simulation evidence shows that PA networks deliver higher welfare compared 
+                            to complete networks. A counterintuitive implication follows: raising average R&D productivity 
+                            may reduce welfare through changes in stable network structures and a crowding-out effect 
+                            among highly productive firms.
+                        </p>
+                    </div>
+
+                    <!-- FIGURE -->
+                    <div class="research-figure">
+                        <img src="https://heydari-msadra.github.io/files/RDN_n6.svg"
+                             alt="R&D Network – Heydari, Kanik, Montoya-Blandón (2025)">
+                    </div>
                 </div>
-            </div>
 
-            <hr>
+            </section>
 
-            <div class="paper-item">
-                <h3>2. Another Working Paper</h3>
-                <p>Working Paper.<br><a href="#">[Download PDF]</a></p>
+            <!-- PUBLICATIONS -->
+            <section class="profile-section">
+                <h2>Publications</h2>
 
-                <button class="mobile-toggle-btn" onclick="toggleAbstract(this)">Show Abstract</button>
-                <div class="abstract-content">
-                    Abstract text for the second paper goes here...
+                <div class="research-item">
+                    <p class="research-title">
+                        <strong>Absolute Intragenerational Income Mobility in Iran (2023)</strong>
+                        <a href="https://doi.org/10.1016/j.qref.2023.04.004" target="_blank" rel="noopener">[Journal Link]</a>
+                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3988746" target="_blank" rel="noopener">[PDF]</a>
+                        <a href="#" target="_blank" rel="noopener">[Code]</a>
+                        <a href="https://youtu.be/N9sVzKR5ZcM" target="_blank" rel="noopener">[Video-Fa]</a>
+                    </p>
+
+                    <p class="research-authors">
+                        <em>with <a href="https://naseramanzadeh.ir/" target="_blank" rel="noopener">Naser Amanzadeh</a>.  
+                        Published in <em>The Quarterly Review of Economics and Finance</em>, 90: 38–50.</em>
+                    </p>
+
+                    <!-- ABSTRACT TOGGLE -->
+                    <button class="mobile-toggle-btn" onclick="toggleAbstract(this)">Show Abstract</button>
+
+                    <div class="abstract-content">
+                        <p>
+                            This study uses Absolute Intragenerational Income Mobility (AIIM) as a complementary measure to 
+                            inequality indices, emphasizing income dynamics over static distributional shapes. We estimate 
+                            AIIM for urban households in Iran (2011–2019) from cross-sectional surveys, and extend these 
+                            estimates backward to 1991 using copula-based models. The approach highlights long-term income 
+                            mobility patterns that are not directly observable from standard measures of inequality.
+                        </p>
+                    </div>
+
+                    <!-- FIGURE (IFRAME) -->
+                    <div class="research-figure">
+                        <iframe src="https://heydari-msadra.github.io/files//AIIM.html"
+                                title="Absolute Intragenerational Income Mobility"
+                                class="resp-iframe"></iframe>
+                    </div>
                 </div>
-            </div>
+
+            </section>
+
+            <!-- WORK IN PROGRESS -->
+            <section class="profile-section">
+                <h2>Work in Progress</h2>
+
+                <div class="research-item">
+                    <p class="research-title">
+                        <strong>Satellite Imagery in Socio-economic Stratification</strong>
+                        <em>
+                            with 
+                            <a href="https://www.smontoyablandon.com/" target="_blank" rel="noopener">S. Montoya-Blandón</a>
+                            and
+                            <a href="https://scholar.google.com/citations?user=VjZpuzYAAAAJ" target="_blank" rel="noopener">V. Galeano-Duque</a>.
+                        </em>
+                    </p>
+                </div>
+
+            </section>
 
         </main>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <img src="../images/profile.jpg" alt="M. Sadra Heydari" class="profile-pic">
+            <div class="contact-info">
+                <h3>Contact</h3>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:your.email@glasgow.ac.uk">Email Me</a></p>
+                <p><i class="fab fa-twitter"></i> <a href="https://twitter.com/heydari_msadra">Twitter</a></p>
+                <p><i class="fab fa-github"></i> <a href="https://github.com/heydari-msadra">GitHub</a></p>
+                <p><i class="fas fa-file-pdf"></i> <a href="../files/cv.pdf">Download CV</a></p>
+            </div>
+        </aside>
+
     </div>
+
+    <footer>
+        <p>&copy; 2025 M. Sadra Heydari</p>
+    </footer>
 
     <script src="../script.js"></script>
 </body>

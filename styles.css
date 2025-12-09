@@ -1,13 +1,18 @@
 /* 1. CSS VARIABLES (Theme Engine) */
 :root {
-    /* LIGHT MODE (Northwestern Style) */
+    /* LIGHT MODE (UofG Themed) */
     --bg-body: #ffffff;
     --text-main: #222222;       /* Almost black, softer on eyes */
-    --text-muted: #666666;      /* Dark Gray for dates/subtitles */
-    --link-color: #4e2a84;      /* Northwestern Purple/Blue shade, or use #1a0dab for standard blue */
-    --nav-border: #dddddd;      /* Light gray lines */
+    --text-muted: #555555;      /* Slightly darker gray for better readability */
+    
+    /* THEME COLORS */
+    --uofg-blue: #003865;       /* University of Glasgow Blue */
+    
+    --link-color: var(--uofg-blue);      
+    --header-title: var(--uofg-blue);    /* Headers now match the UofG theme */
+    
+    --nav-border: #e0e6ed;      /* A very subtle blue-gray for borders */
     --card-bg: #ffffff;
-    --header-title: #000000;
 }
 
 /* DARK MODE OVERRIDES */
@@ -15,17 +20,20 @@ body.dark-mode {
     --bg-body: #121212;
     --text-main: #e0e0e0;
     --text-muted: #aaaaaa;
-    --link-color: #ffa500;      /* Orange for high contrast in dark mode */
+    
+    /* High contrast for dark mode (Orange/Gold complements Blue) */
+    --link-color: #ffb84d;      
+    --header-title: #ffffff;
+    
     --nav-border: #333333;
     --card-bg: #1e1e1e;
-    --header-title: #ffffff;
 }
 
 /* 2. GLOBAL RESET & TYPOGRAPHY */
 body {
     background-color: var(--bg-body);
     color: var(--text-main);
-    font-family: "Georgia", "Times New Roman", serif; /* The Classic Academic Look */
+    font-family: "Georgia", "Times New Roman", serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -35,6 +43,7 @@ body {
 a {
     color: var(--link-color);
     text-decoration: none;
+    font-weight: 500; /* Slightly bolder links */
 }
 
 a:hover {
@@ -42,7 +51,6 @@ a:hover {
 }
 
 /* 3. LAYOUT UTILITY */
-/* Keeps everything centered and limited to 960px width */
 .inner-width {
     max-width: 960px;
     margin: 0 auto;
@@ -59,10 +67,10 @@ a:hover {
 
 .site-header h1 {
     font-family: "Georgia", serif;
-    font-weight: normal; /* Academic headers are usually not bold */
+    font-weight: normal;
     font-size: 2.2em;
     margin: 0;
-    color: var(--header-title);
+    color: var(--header-title); /* Now uses UofG Blue */
 }
 
 .site-header .subtitle {
@@ -101,11 +109,12 @@ a:hover {
 
 .site-nav a {
     margin-right: 25px;
-    font-family: "Arial", sans-serif; /* Sans-serif for UI elements */
+    font-family: "Arial", sans-serif;
     font-size: 0.9em;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: var(--text-main);
+    font-weight: normal; /* Reset bold from global 'a' tag */
 }
 
 .site-nav a.active {
@@ -121,18 +130,13 @@ a:hover {
 /* 6. MAIN CONTENT GRID (2 Columns) */
 .container {
     display: flex;
-    gap: 50px; /* Space between Text and Sidebar */
+    gap: 50px;
     min-height: 60vh;
 }
 
-/* Left Column: Main Text */
-.content {
-    flex: 3; /* Takes up 75% space */
-}
-
-/* Right Column: Photo & Contact */
-.sidebar {
-    flex: 1; /* Takes up 25% space */
+.content { flex: 3; }
+.sidebar { 
+    flex: 1; 
     font-family: "Arial", sans-serif;
     font-size: 0.9em;
 }
@@ -144,11 +148,11 @@ a:hover {
 
 .profile-section h2 {
     font-size: 1.5em;
-    border-bottom: 1px solid var(--nav-border);
+    border-bottom: 2px solid var(--nav-border); /* Slightly thicker line */
     padding-bottom: 10px;
     margin-bottom: 20px;
     font-weight: normal;
-    color: var(--header-title);
+    color: var(--header-title); /* Uses UofG Blue */
 }
 
 /* Current Role Block */
@@ -158,6 +162,7 @@ a:hover {
 .role-title {
     font-weight: bold;
     font-size: 1.1em;
+    color: var(--header-title); /* Uses UofG Blue */
 }
 .institution {
     font-style: italic;
@@ -175,13 +180,13 @@ a:hover {
 }
 
 .edu-date {
-    width: 110px;    /* Fixed width for years */
-    flex-shrink: 0;  /* Don't shrink */
+    width: 110px;
+    flex-shrink: 0;
     font-family: "Arial", sans-serif;
     font-weight: bold;
-    color: var(--text-muted);
+    color: var(--header-title); /* Uses UofG Blue for dates */
     font-size: 0.9em;
-    padding-top: 2px; /* Visual alignment with degree text */
+    padding-top: 2px;
 }
 
 .edu-details strong {
@@ -199,11 +204,15 @@ a:hover {
     padding: 0;
 }
 .clean-list li {
-    padding: 8px 0;
-    border-bottom: 1px solid var(--nav-border);
+    padding: 6px 0;
+    /* Removed border-bottom here */
+    font-size: 1.05em;
 }
-.clean-list li:last-child {
-    border-bottom: none;
+/* Optional: Add a subtle bullet or dash if no lines */
+.clean-list li::before {
+    content: "•"; 
+    color: var(--link-color);
+    margin-right: 10px;
 }
 
 /* 8. SIDEBAR STYLES */
@@ -222,6 +231,7 @@ img.profile-pic {
     border-bottom: 1px solid var(--nav-border);
     padding-bottom: 5px;
     margin-bottom: 15px;
+    color: var(--header-title);
 }
 
 .contact-info p {
@@ -233,6 +243,7 @@ img.profile-pic {
     width: 20px;
     text-align: center;
     margin-right: 5px;
+    color: var(--link-color); /* Icons match theme */
 }
 
 /* 9. FOOTER */
@@ -248,25 +259,17 @@ footer {
 
 /* 10. MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
-    /* Stack Layout */
     .container {
-        flex-direction: column-reverse; /* Put sidebar (photo) on top? Or just column for text on top. Let's do column so text is first, or column-reverse if you want photo first. */
+        flex-direction: column-reverse;
         gap: 30px;
     }
     
-    /* If you want photo on top of mobile: */
-    .container {
-        flex-direction: column-reverse; 
-    }
-
-    /* Stack Header */
     .site-header {
         flex-direction: column;
         text-align: center;
         gap: 15px;
     }
 
-    /* Stack Menu */
     .site-nav {
         text-align: center;
     }
@@ -275,19 +278,18 @@ footer {
         margin: 5px 10px;
     }
 
-    /* Stack Education Dates */
     .edu-item {
         flex-direction: column;
     }
     .edu-date {
         margin-bottom: 4px;
-        color: var(--link-color); /* Highlight year */
+        color: var(--link-color);
     }
     
     .sidebar {
         text-align: center;
     }
     img.profile-pic {
-        max-width: 250px; /* Limit image size on phone */
+        max-width: 250px;
     }
 }

@@ -307,3 +307,22 @@ footer {
         max-width: 250px;
     }
 }
+
+
+/* Inner page header style */
+.inner-header .small-name {
+    font-family: "Arial", sans-serif;
+    font-size: 0.85em;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.inner-header .page-title {
+    font-family: "Georgia", serif;
+    font-size: 1.9em;
+    font-weight: normal;
+    color: var(--header-title);
+    margin: 0;
+}
+

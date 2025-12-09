@@ -242,7 +242,7 @@ a:hover {
 img.profile-pic {
     width: 100%;
     height: auto;
-    border: 1px solid var(--nav-border);
+    /* border: 1px solid var(--nav-border); */
     padding: 4px;
     background: var(--bg-body);
     margin-bottom: 20px;
@@ -366,8 +366,8 @@ footer {
 
 /* Title line (strong + PDF/Code links) */
 .research-title {
-    font-size: 1rem; /* matches Tailwind text-base */
-    margin-bottom: 6px;
+    font-size: 0.9rem; /* matches Tailwind text-base */
+    margin-bottom: 3px;
     line-height: 1.4;
 }
 
@@ -391,7 +391,7 @@ footer {
 
 /* Research item spacing */
 .research-item {
-    margin-bottom: 45px;
+    margin-bottom: 35px;
 }
 
 

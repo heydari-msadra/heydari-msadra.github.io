@@ -373,10 +373,10 @@ footer {
 
 /* Author line */
 .research-authors {
-    font-size: 0.75rem; /* matches Tailwind text-xs */
+    font-size: 0.85rem; /* matches Tailwind text-xs */
     color: var(--text-muted);
     margin-bottom: 10px;
-    line-height: 1.4;
+    line-height: 1;
 }
 
 .research-meta {

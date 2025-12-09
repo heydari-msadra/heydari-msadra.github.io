@@ -9,7 +9,8 @@
 </head>
 
 <body>
-    <!-- Header -->
+
+    <!-- HEADER (INNER PAGE STYLE) -->
     <header class="site-header inner-width inner-header">
         <div class="header-content">
             <div class="small-name">Sadra Heydari</div>
@@ -18,8 +19,7 @@
         <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙 Dark Mode</button>
     </header>
 
-
-    <!-- Navigation -->
+    <!-- NAV -->
     <nav class="site-nav inner-width">
         <a href="../index.html">Home</a>
         <a href="research.html" class="active">Research</a>
@@ -27,133 +27,117 @@
         <a href="cv.html">CV</a>
     </nav>
 
-    <div class="container inner-width">
+    <!-- MAIN CONTENT: SINGLE COLUMN -->
+    <main class="inner-width" style="max-width: 780px;">
 
-        <!-- MAIN CONTENT -->
-        <main class="content">
+        <!-- WORKING PAPERS -->
+        <section class="profile-section">
+            <h2>Working Papers</h2>
 
-            <!-- WORKING PAPERS -->
-            <section class="profile-section">
-                <h2>Working Papers</h2>
+            <div class="research-item">
+                <p class="research-title">
+                    <strong>R&amp;D Networks under Heterogeneous Firm Productivities</strong>
+                    <a href="https://heydari-msadra.github.io/files/draft//R_and_D_Network.pdf" target="_blank">[Draft PDF]</a>
+                    <a href="https://github.com/sadraheydari/R_and_D_Network" target="_blank">[Code]</a>
+                </p>
 
-                <div class="research-item">
-                    <p class="research-title">
-                        <strong>R&amp;D Networks under Heterogeneous Firm Productivities</strong>
-                        <a href="https://heydari-msadra.github.io/files/draft//R_and_D_Network.pdf" target="_blank" rel="noopener">[Draft PDF]</a>
-                        <a href="https://github.com/sadraheydari/R_and_D_Network" target="_blank" rel="noopener">[Code]</a>
-                    </p>
-
-                    <p class="research-authors">
-                        <em>
-                        with 
-                        <a href="https://sites.google.com/view/zaferkanik/" target="_blank" rel="noopener">Zafer Kanik</a>
+                <p class="research-authors">
+                    <em>
+                        with  
+                        <a href="https://sites.google.com/view/zaferkanik/" target="_blank">Zafer Kanik</a>  
                         and 
-                        <a href="https://www.smontoyablandon.com/" target="_blank" rel="noopener">Santiago Montoya-Blandón</a>.
-                        </em>
-                    </p>
+                        <a href="https://www.smontoyablandon.com/" target="_blank">Santiago Montoya-Blandón</a>.
+                    </em>
+                </p>
 
-                    <!-- ABSTRACT TOGGLE (mobile only) -->
-                    <button class="mobile-toggle-btn" onclick="toggleAbstract(this)">Show Abstract</button>
+                <!-- MOBILE ABSTRACT TOGGLE -->
+                <button class="mobile-toggle-btn" onclick="toggleAbstract(this)">Show Abstract</button>
 
-                    <div class="abstract-content">
-                        <p>
-                            We study R&D network formation with heterogeneous productivities, generalizing the homogeneous 
-                            framework in <em>Goyal & Moraga-Gonzalez (2001)</em>. Heterogeneity creates asymmetric gains 
-                            for connecting firms: the less productive firm benefits disproportionately, while the more 
-                            productive firm exerts greater R&D effort and costs. When productivity gaps become large, 
-                            classical results on pairwise stable networks break down: the complete network becomes 
-                            unstable, while the Positive Assortative (PA) network—where firms cluster by productivity—
-                            emerges as stable. Simulation evidence shows that PA networks deliver higher welfare compared 
-                            to complete networks. A counterintuitive implication follows: raising average R&D productivity 
-                            may reduce welfare through changes in stable network structures and a crowding-out effect 
-                            among highly productive firms.
-                        </p>
-                    </div>
-
-                    <!-- FIGURE -->
-                    <div class="research-figure">
-                        <img src="https://heydari-msadra.github.io/files/RDN_n6.svg"
-                             alt="R&D Network – Heydari, Kanik, Montoya-Blandón (2025)">
-                    </div>
-                </div>
-
-            </section>
-
-            <!-- PUBLICATIONS -->
-            <section class="profile-section">
-                <h2>Publications</h2>
-
-                <div class="research-item">
-                    <p class="research-title">
-                        <strong>Absolute Intragenerational Income Mobility in Iran (2023)</strong>
-                        <a href="https://doi.org/10.1016/j.qref.2023.04.004" target="_blank" rel="noopener">[Journal Link]</a>
-                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3988746" target="_blank" rel="noopener">[PDF]</a>
-                        <a href="#" target="_blank" rel="noopener">[Code]</a>
-                        <a href="https://youtu.be/N9sVzKR5ZcM" target="_blank" rel="noopener">[Video-Fa]</a>
-                    </p>
-
-                    <p class="research-authors">
-                        <em>with <a href="https://naseramanzadeh.ir/" target="_blank" rel="noopener">Naser Amanzadeh</a>.  
-                        Published in <em>The Quarterly Review of Economics and Finance</em>, 90: 38–50.</em>
-                    </p>
-
-                    <!-- ABSTRACT TOGGLE -->
-                    <button class="mobile-toggle-btn" onclick="toggleAbstract(this)">Show Abstract</button>
-
-                    <div class="abstract-content">
-                        <p>
-                            This study uses Absolute Intragenerational Income Mobility (AIIM) as a complementary measure to 
-                            inequality indices, emphasizing income dynamics over static distributional shapes. We estimate 
-                            AIIM for urban households in Iran (2011–2019) from cross-sectional surveys, and extend these 
-                            estimates backward to 1991 using copula-based models. The approach highlights long-term income 
-                            mobility patterns that are not directly observable from standard measures of inequality.
-                        </p>
-                    </div>
-
-                    <!-- FIGURE (IFRAME) -->
-                    <div class="research-figure">
-                        <iframe src="https://heydari-msadra.github.io/files//AIIM.html"
-                                title="Absolute Intragenerational Income Mobility"
-                                class="resp-iframe"></iframe>
-                    </div>
-                </div>
-
-            </section>
-
-            <!-- WORK IN PROGRESS -->
-            <section class="profile-section">
-                <h2>Work in Progress</h2>
-
-                <div class="research-item">
-                    <p class="research-title">
-                        <strong>Satellite Imagery in Socio-economic Stratification</strong>
-                        <em>
-                            with 
-                            <a href="https://www.smontoyablandon.com/" target="_blank" rel="noopener">S. Montoya-Blandón</a>
-                            and
-                            <a href="https://scholar.google.com/citations?user=VjZpuzYAAAAJ" target="_blank" rel="noopener">V. Galeano-Duque</a>.
-                        </em>
+                <div class="abstract-content">
+                    <p>
+                        We study R&D network formation with heterogeneous productivities, generalizing the homogeneous 
+                        framework in <em>Goyal & Moraga-Gonzalez (2001)</em>. Heterogeneity creates asymmetric gains 
+                        for connecting firms: the less productive firm benefits disproportionately, while the more 
+                        productive firm exerts greater R&D effort and costs. When productivity gaps grow, the complete 
+                        network becomes unstable and the Positive Assortative (PA) network—where firms cluster by 
+                        productivity—emerges as stable. Simulations further show that PA structures deliver higher welfare 
+                        than complete networks. A counterintuitive implication arises: increasing average R&D productivity 
+                        may reduce welfare by altering stable network structures and crowding out high-productivity firms.
                     </p>
                 </div>
 
-            </section>
-
-        </main>
-
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
-            <img src="../images/profile.jpg" alt="M. Sadra Heydari" class="profile-pic">
-            <div class="contact-info">
-                <h3>Contact</h3>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:your.email@glasgow.ac.uk">Email Me</a></p>
-                <p><i class="fab fa-twitter"></i> <a href="https://twitter.com/heydari_msadra">Twitter</a></p>
-                <p><i class="fab fa-github"></i> <a href="https://github.com/heydari-msadra">GitHub</a></p>
-                <p><i class="fas fa-file-pdf"></i> <a href="../files/cv.pdf">Download CV</a></p>
+                <!-- FIGURE -->
+                <div class="research-figure" style="margin-top: 25px;">
+                    <img src="https://heydari-msadra.github.io/files/RDN_n6.svg"
+                         alt="R&D Network – Heydari, Kanik, Montoya-Blandón (2025)" 
+                         style="width: 100%; border: 1px solid var(--nav-border); padding: 4px; background: var(--bg-body);">
+                </div>
             </div>
-        </aside>
+        </section>
 
-    </div>
+        <!-- PUBLICATIONS -->
+        <section class="profile-section">
+            <h2>Publications</h2>
 
+            <div class="research-item">
+                <p class="research-title">
+                    <strong>Absolute Intragenerational Income Mobility in Iran (2023)</strong>
+                    <a href="https://doi.org/10.1016/j.qref.2023.04.004" target="_blank">[Journal Link]</a>
+                    <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3988746" target="_blank">[PDF]</a>
+                    <a href="#">[Code]</a>
+                    <a href="https://youtu.be/N9sVzKR5ZcM" target="_blank">[Video-Fa]</a>
+                </p>
+
+                <p class="research-authors">
+                    <em>
+                        with <a href="https://naseramanzadeh.ir/" target="_blank">Naser Amanzadeh</a>.  
+                        Published in <em>The Quarterly Review of Economics and Finance</em> (2023), 90: 38–50.
+                    </em>
+                </p>
+
+                <!-- MOBILE ABSTRACT TOGGLE -->
+                <button class="mobile-toggle-btn" onclick="toggleAbstract(this)">Show Abstract</button>
+
+                <div class="abstract-content">
+                    <p>
+                        This study uses Absolute Intragenerational Income Mobility (AIIM) to complement traditional 
+                        inequality measures, emphasizing income dynamics rather than static distributions. Using 
+                        cross-sectional data on Iranian households (2011–2019), we estimate AIIM and extend these 
+                        estimates back to 1991 using copula-based modeling. The results highlight previously obscured 
+                        long-term patterns in mobility and economic well-being.
+                    </p>
+                </div>
+
+                <!-- IFRAME FIGURE -->
+                <div class="research-figure" style="margin-top: 25px;">
+                    <iframe src="https://heydari-msadra.github.io/files//AIIM.html"
+                            title="Absolute Intragenerational Income Mobility"
+                            style="width: 100%; height: 320px; border: 1px solid var(--nav-border); background: var(--bg-body);">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORK IN PROGRESS -->
+        <section class="profile-section">
+            <h2>Work in Progress</h2>
+
+            <div class="research-item">
+                <p class="research-title">
+                    <strong>Satellite Imagery in Socio-economic Stratification</strong>  
+                    <em>
+                        with  
+                        <a href="https://www.smontoyablandon.com/" target="_blank">S. Montoya-Blandón</a>,  
+                        and  
+                        <a href="https://scholar.google.com/citations?user=VjZpuzYAAAAJ" target="_blank">V. Galeano-Duque</a>.
+                    </em>
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
     <footer>
         <p>&copy; 2025 M. Sadra Heydari</p>
     </footer>

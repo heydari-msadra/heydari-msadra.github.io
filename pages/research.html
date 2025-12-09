@@ -2,16 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Research - Sadra Heydari</title>
-    <link rel="stylesheet" href="../styles.css"> </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Research - Sadra Heydari</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
 <body>
 
     <header class="site-header inner-width">
-        <div>
-            <h1>Sadra Heydari</h1>
-        </div>
+        <h1>Sadra Heydari</h1>
         <button id="theme-toggle">🌙 Dark Mode</button>
     </header>
+
+    <nav class="site-nav inner-width">
+        <a href="../index.html">Home</a>
+        <a href="research.html" class="active">Research</a>
+        </nav>
+
+    <div class="container inner-width">
+        <main class="content">
+            <h2>Research</h2>
+
+            <div class="paper-item">
+                <h3>1. Title of Your Amazing Paper</h3>
+                <p>
+                    Published in <em>Journal of Economics</em>, 2024.<br>
+                    <a href="../files/paper1.pdf">[Download PDF]</a>
+                </p>
+
+                <button class="mobile-toggle-btn" onclick="toggleAbstract(this)">Show Abstract</button>
+
+                <div class="abstract-content">
+                    This is the abstract of the paper. On a desktop computer, you can see this 
+                    text immediately. However, if you view this on a phone, this text is hidden 
+                    to save screen space, and you must click the button above to see it.
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="paper-item">
+                <h3>2. Another Working Paper</h3>
+                <p>Working Paper.<br><a href="#">[Download PDF]</a></p>
+
+                <button class="mobile-toggle-btn" onclick="toggleAbstract(this)">Show Abstract</button>
+                <div class="abstract-content">
+                    Abstract text for the second paper goes here...
+                </div>
+            </div>
+
+        </main>
+    </div>
 
     <script src="../script.js"></script>
 </body>

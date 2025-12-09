@@ -1,172 +1,293 @@
-/* styles.css */
-
-/* 1. COLOR PALETTE (The Variables) */
+/* 1. CSS VARIABLES (Theme Engine) */
 :root {
-    /* LIGHT MODE (Default) */
+    /* LIGHT MODE (Northwestern Style) */
     --bg-body: #ffffff;
-    --text-main: #333333;
-    --text-muted: #666666;
-    --nav-border: #e0e0e0;
-    --link-color: #003366; /* Academic Blue */
-    --button-bg: #f0f0f0;
+    --text-main: #222222;       /* Almost black, softer on eyes */
+    --text-muted: #666666;      /* Dark Gray for dates/subtitles */
+    --link-color: #4e2a84;      /* Northwestern Purple/Blue shade, or use #1a0dab for standard blue */
+    --nav-border: #dddddd;      /* Light gray lines */
+    --card-bg: #ffffff;
+    --header-title: #000000;
 }
 
-/* DARK MODE (The Override) */
+/* DARK MODE OVERRIDES */
 body.dark-mode {
     --bg-body: #121212;
     --text-main: #e0e0e0;
     --text-muted: #aaaaaa;
+    --link-color: #ffa500;      /* Orange for high contrast in dark mode */
     --nav-border: #333333;
-    --link-color: #ffa500; /* Orange (High contrast for dark mode) */
-    --button-bg: #333333;
+    --card-bg: #1e1e1e;
+    --header-title: #ffffff;
 }
 
-/* 2. GLOBAL STYLES USING VARIABLES */
+/* 2. GLOBAL RESET & TYPOGRAPHY */
 body {
     background-color: var(--bg-body);
     color: var(--text-main);
-    font-family: "Georgia", serif;
+    font-family: "Georgia", "Times New Roman", serif; /* The Classic Academic Look */
     line-height: 1.6;
     margin: 0;
-    transition: background 0.3s, color 0.3s; /* Smooth transition when toggling */
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
 }
 
 a {
-    color: var(--link-color); /* This will automatically switch Blue <-> Orange */
+    color: var(--link-color);
     text-decoration: none;
-    font-weight: bold;
 }
 
-/* ... Previous CSS ... */
+a:hover {
+    text-decoration: underline;
+}
 
-/* 3. DESKTOP DEFAULT (Standard View) */
-.abstract-content {
-    display: block; /* Always show abstract on desktop */
-    margin-top: 10px;
-    font-size: 0.95em;
+/* 3. LAYOUT UTILITY */
+/* Keeps everything centered and limited to 960px width */
+.inner-width {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 4. HEADER (Name & Title) */
+.site-header {
+    padding: 40px 0 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-header h1 {
+    font-family: "Georgia", serif;
+    font-weight: normal; /* Academic headers are usually not bold */
+    font-size: 2.2em;
+    margin: 0;
+    color: var(--header-title);
+}
+
+.site-header .subtitle {
+    font-family: "Arial", sans-serif;
     color: var(--text-muted);
+    font-size: 0.95em;
+    margin-top: 5px;
+    font-style: italic;
 }
 
-.mobile-toggle-btn {
-    display: none; /* Hide the "Show Abstract" button on desktop */
+/* Theme Toggle Button */
+#theme-toggle {
+    background: none;
+    border: 1px solid var(--nav-border);
+    color: var(--text-muted);
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Arial", sans-serif;
+    font-size: 0.85em;
+    transition: all 0.2s;
 }
 
-/* 4. MOBILE VIEW (Screens smaller than 768px) */
-@media (max-width: 768px) {
-    
-    /* Layout: Stack columns vertically */
-    .container {
-        flex-direction: column; 
-    }
-
-    /* Abstract: Hide by default */
-    .abstract-content {
-        display: none; 
-    }
-    
-    /* Abstract: Show ONLY if it has the 'open' class (added by JS) */
-    .abstract-content.open {
-        display: block;
-        padding-left: 10px;
-        border-left: 3px solid var(--link-color);
-    }
-
-    /* Button: Show the "Show Abstract" button */
-    .mobile-toggle-btn {
-        display: inline-block;
-        background: none;
-        border: none;
-        color: var(--link-color);
-        cursor: pointer;
-        padding: 0;
-        font-family: sans-serif;
-        font-size: 0.9em;
-        text-decoration: underline;
-        margin-top: 5px;
-    }
+#theme-toggle:hover {
+    border-color: var(--link-color);
+    color: var(--link-color);
 }
 
-* --- PROFILE & HOME PAGE STYLING --- */
-
-/* Add spacing between sections */
-.profile-section {
+/* 5. NAVIGATION BAR */
+.site-nav {
+    border-top: 1px solid var(--nav-border);
+    border-bottom: 1px solid var(--nav-border);
+    padding: 12px 0;
     margin-bottom: 40px;
 }
 
-/* Make titles (Current Position, Education) stand out */
-.role-title {
-    font-size: 1.2em;
-    font-weight: bold;
+.site-nav a {
+    margin-right: 25px;
+    font-family: "Arial", sans-serif; /* Sans-serif for UI elements */
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     color: var(--text-main);
-    margin-bottom: 5px;
 }
 
+.site-nav a.active {
+    font-weight: bold;
+    color: var(--link-color);
+}
+
+.site-nav a:hover {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+/* 6. MAIN CONTENT GRID (2 Columns) */
+.container {
+    display: flex;
+    gap: 50px; /* Space between Text and Sidebar */
+    min-height: 60vh;
+}
+
+/* Left Column: Main Text */
+.content {
+    flex: 3; /* Takes up 75% space */
+}
+
+/* Right Column: Photo & Contact */
+.sidebar {
+    flex: 1; /* Takes up 25% space */
+    font-family: "Arial", sans-serif;
+    font-size: 0.9em;
+}
+
+/* 7. PROFILE SECTIONS (Education, Interests) */
+.profile-section {
+    margin-bottom: 50px;
+}
+
+.profile-section h2 {
+    font-size: 1.5em;
+    border-bottom: 1px solid var(--nav-border);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: normal;
+    color: var(--header-title);
+}
+
+/* Current Role Block */
+.role-block {
+    margin-bottom: 20px;
+}
+.role-title {
+    font-weight: bold;
+    font-size: 1.1em;
+}
 .institution {
     font-style: italic;
     color: var(--text-muted);
-    margin: 0;
 }
-
 .supervisor {
-    margin-top: 10px;
+    margin-top: 8px;
     font-size: 0.95em;
 }
 
-/* Custom List Styles (No bullet points, clean spacing) */
-.clean-list {
-    list-style: none; /* Removes the dot */
-    padding: 0;
-}
-
-.clean-list li {
-    padding: 8px 0;
-    border-bottom: 1px solid var(--nav-border); /* Subtle separator line */
-    font-size: 1.05em;
-}
-
-.clean-list li:last-child {
-    border-bottom: none;
-}
-
-/* Education Layout: Date on left, Degree on right */
+/* Education Timeline */
 .edu-item {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .edu-date {
-    width: 120px; /* Fixed width for dates keeps them aligned */
+    width: 110px;    /* Fixed width for years */
+    flex-shrink: 0;  /* Don't shrink */
+    font-family: "Arial", sans-serif;
     font-weight: bold;
     color: var(--text-muted);
-    flex-shrink: 0; /* Prevents date from squishing on small screens */
+    font-size: 0.9em;
+    padding-top: 2px; /* Visual alignment with degree text */
 }
 
-.edu-details {
-    flex-grow: 1;
+.edu-details strong {
+    display: block;
+    color: var(--text-main);
 }
-
-.minor {
+.edu-details .minor {
     font-size: 0.9em;
     color: var(--text-muted);
 }
 
-/* Sidebar Contact Links */
-.contact-info p {
-    margin: 10px 0;
+/* Lists (Research Fields) */
+.clean-list {
+    list-style: none;
+    padding: 0;
+}
+.clean-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--nav-border);
+}
+.clean-list li:last-child {
+    border-bottom: none;
 }
 
-.contact-info i {
-    width: 25px; /* Aligns icons nicely */
+/* 8. SIDEBAR STYLES */
+img.profile-pic {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--nav-border);
+    padding: 4px;
+    background: var(--bg-body);
+    margin-bottom: 20px;
+}
+
+.contact-info h3 {
+    margin-top: 0;
+    font-size: 1.1em;
+    border-bottom: 1px solid var(--nav-border);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    margin: 8px 0;
     color: var(--text-muted);
 }
 
-/* Mobile Adjustments for Education */
-@media (max-width: 600px) {
+.contact-info i {
+    width: 20px;
+    text-align: center;
+    margin-right: 5px;
+}
+
+/* 9. FOOTER */
+footer {
+    margin-top: 60px;
+    padding: 30px 0;
+    border-top: 1px solid var(--nav-border);
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    font-size: 0.8em;
+    color: var(--text-muted);
+}
+
+/* 10. MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    /* Stack Layout */
+    .container {
+        flex-direction: column-reverse; /* Put sidebar (photo) on top? Or just column for text on top. Let's do column so text is first, or column-reverse if you want photo first. */
+        gap: 30px;
+    }
+    
+    /* If you want photo on top of mobile: */
+    .container {
+        flex-direction: column-reverse; 
+    }
+
+    /* Stack Header */
+    .site-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    /* Stack Menu */
+    .site-nav {
+        text-align: center;
+    }
+    .site-nav a {
+        display: inline-block;
+        margin: 5px 10px;
+    }
+
+    /* Stack Education Dates */
     .edu-item {
-        flex-direction: column; /* Stack date on top of degree on phones */
+        flex-direction: column;
     }
     .edu-date {
-        margin-bottom: 5px;
-        color: var(--link-color); /* Highlight year on mobile */
+        margin-bottom: 4px;
+        color: var(--link-color); /* Highlight year */
+    }
+    
+    .sidebar {
+        text-align: center;
+    }
+    img.profile-pic {
+        max-width: 250px; /* Limit image size on phone */
     }
 }

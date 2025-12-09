@@ -386,6 +386,19 @@ footer {
     margin-bottom: 4px;
 }
 
+/* Inline metadata (links after title) */
+.research-title .research-meta {
+    font-size: 0.85rem;      /* between 1.0rem title and 0.75rem authors */
+    font-weight: normal;
+    margin-left: 10px;       /* spacing after title */
+    opacity: 0.85;           /* subtle, professional */
+}
+
+.research-title .research-meta a {
+    font-size: inherit;
+    color: var(--link-color);
+    margin-right: 6px;
+}
 
 /* Abstract block */
 .abstract-content {

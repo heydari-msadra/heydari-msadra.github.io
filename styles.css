@@ -85,3 +85,88 @@ a {
         margin-top: 5px;
     }
 }
+
+* --- PROFILE & HOME PAGE STYLING --- */
+
+/* Add spacing between sections */
+.profile-section {
+    margin-bottom: 40px;
+}
+
+/* Make titles (Current Position, Education) stand out */
+.role-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--text-main);
+    margin-bottom: 5px;
+}
+
+.institution {
+    font-style: italic;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.supervisor {
+    margin-top: 10px;
+    font-size: 0.95em;
+}
+
+/* Custom List Styles (No bullet points, clean spacing) */
+.clean-list {
+    list-style: none; /* Removes the dot */
+    padding: 0;
+}
+
+.clean-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--nav-border); /* Subtle separator line */
+    font-size: 1.05em;
+}
+
+.clean-list li:last-child {
+    border-bottom: none;
+}
+
+/* Education Layout: Date on left, Degree on right */
+.edu-item {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.edu-date {
+    width: 120px; /* Fixed width for dates keeps them aligned */
+    font-weight: bold;
+    color: var(--text-muted);
+    flex-shrink: 0; /* Prevents date from squishing on small screens */
+}
+
+.edu-details {
+    flex-grow: 1;
+}
+
+.minor {
+    font-size: 0.9em;
+    color: var(--text-muted);
+}
+
+/* Sidebar Contact Links */
+.contact-info p {
+    margin: 10px 0;
+}
+
+.contact-info i {
+    width: 25px; /* Aligns icons nicely */
+    color: var(--text-muted);
+}
+
+/* Mobile Adjustments for Education */
+@media (max-width: 600px) {
+    .edu-item {
+        flex-direction: column; /* Stack date on top of degree on phones */
+    }
+    .edu-date {
+        margin-bottom: 5px;
+        color: var(--link-color); /* Highlight year on mobile */
+    }
+}

@@ -334,13 +334,14 @@ img.profile-pic {
 /* EXCEPTION: Research Metadata uses Arial */
 .research-authors {
     font-size: 0.85rem;
-    font-family: "Arial", sans-serif; /* Explicit Arial */
+    font-family: "Georgia", sans-serif; /* Explicit Arial */
     color: var(--text-muted);
     margin-bottom: 10px;
     line-height: 1.3;
 }
 
 .research-meta {
+    font-family: "Arial", sans-serif; /* Explicit Arial */
     font-size: 0.85rem;
     color: var(--text-main);
     margin-bottom: 4px;

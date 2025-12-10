@@ -658,8 +658,27 @@ footer {
    ========================================= */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column-reverse;
-        gap: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    main.content {
+        order: 1;   /* FIRST */
+    }
+
+    aside.sidebar {
+        order: 2;   /* SECOND */
+        margin-top: 20px;
+    }
+
+    /* reorder inside the sidebar */
+    .sidebar .profile-pic {
+        order: 1;
+    }
+
+    .sidebar .contact-info {
+        order: 2;
+        margin-top: 15px;
     }
     
     .sidebar { text-align: center; }

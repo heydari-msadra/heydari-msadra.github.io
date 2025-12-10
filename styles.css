@@ -429,7 +429,7 @@ img.profile-pic {
 /* Education Timeline */
 .edu-item {
     display: flex;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     margin-top: 10px;
 }
 
@@ -444,7 +444,7 @@ img.profile-pic {
 }
 
 .edu-details strong {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     /* display: block; */
     color: var(--text-main);
     line-height: 1.25;

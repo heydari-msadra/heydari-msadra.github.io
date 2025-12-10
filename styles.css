@@ -412,9 +412,9 @@ img.profile-pic {
 
 /* Job Title Styling */
 .role-title {
-    font-size: 1.35rem;
+    font-size: 1rem;
     font-weight: bold;
-    color: var(--header-title); /* UofG Blue/Gold */
+    color: var(--text-muted); /* UofG Blue/Gold */
     margin: 0 0 5px 0;
     font-family: "Georgia", serif;
     line-height: 1.2;
@@ -422,7 +422,7 @@ img.profile-pic {
 
 /* University/Institution Styling */
 .institution-sub {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
     margin: 0 0 20px 0;
     font-family: "Georgia", serif;
@@ -442,7 +442,7 @@ img.profile-pic {
     padding-left: 20px;
     margin-top: 0;
     color: var(--text-muted);
-    font-size: 0.80rem;
+    font-size: 0.85rem;
     /* Removed Arial */
 }
 
@@ -492,7 +492,7 @@ img.profile-pic {
 
 .clean-list li {
     padding: 6px 0;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
 }
 .clean-list li::before {
     color: var(--link-color);

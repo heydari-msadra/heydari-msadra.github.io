@@ -531,8 +531,7 @@ img.profile-pic {
 .research-title {
     font-size: 1.0rem; /* Reduced: Matches body size but bold */
     font-family: "Georgia", serif;
-    font-weight: bold;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
     line-height: 1.4;
 }
 

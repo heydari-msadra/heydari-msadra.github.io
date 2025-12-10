@@ -429,7 +429,8 @@ img.profile-pic {
 /* Education Timeline */
 .edu-item {
     display: flex;
-    /* margin-bottom: 25px; */
+    font-size: 0.95rem;
+    margin-top: 10px;
 }
 
 .edu-date {
@@ -443,7 +444,7 @@ img.profile-pic {
 }
 
 .edu-details strong {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     /* display: block; */
     color: var(--text-main);
     line-height: 1.25;

@@ -429,28 +429,28 @@ img.profile-pic {
     flex-shrink: 0;
     font-weight: bold;
     color: var(--header-title);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     padding-top: 2px;
     /* Inherits Georgia (removed Arial) */
 }
 
 .edu-details strong {
+    font-size: 0.9rem;
     display: block;
     color: var(--text-main);
 }
 
 .edu-details .minor {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--text-muted);
     font-style: italic; /* Added italic for better distinction in serif */
 }
 
 .clean-list li {
     padding: 6px 0;
-    font-size: 1.0rem;
+    font-size: 0.8rem;
 }
 .clean-list li::before {
-    content: "•"; 
     color: var(--link-color);
     margin-right: 10px;
 }
@@ -588,7 +588,7 @@ img.profile-pic {
 }
 
 .teaching-list {
-    margin-left: 20px;
+    margin-left: 10px;
     list-style: disc;
 }
 

@@ -1,4 +1,6 @@
-/* 1. CSS VARIABLES (Theme Engine) */
+/* =========================================
+   1. CSS VARIABLES (THEME ENGINE)
+   ========================================= */
 :root {
     /* LIGHT MODE (UofG Themed) */
     --bg-body: #ffffff;
@@ -9,7 +11,7 @@
     --uofg-blue: #003865;       /* University of Glasgow Blue */
     
     --link-color: #0056b3;      /* Standard Professional Blue for Links */
-    --header-title: var(--uofg-blue);    /* Headers now match the UofG theme */
+    --header-title: var(--uofg-blue);
     
     --nav-border: #e0e6ed;      /* A very subtle blue-gray for borders */
     --card-bg: #ffffff;
@@ -21,8 +23,7 @@ body.dark-mode {
     --text-main: #e0e0e0;
     --text-muted: #aaaaaa;
 
-    --uofg-blue: #ffb84d;
-    /* High contrast for dark mode (Orange/Gold complements Blue) */
+    --uofg-blue: #ffb84d;       /* High contrast (Orange/Gold) */
     --link-color: #ffb84d;      
     --header-title: var(--uofg-blue);
     
@@ -30,11 +31,14 @@ body.dark-mode {
     --card-bg: #1e1e1e;
 }
 
-/* 2. GLOBAL RESET & TYPOGRAPHY */
+
+/* =========================================
+   2. GLOBAL RESET & TYPOGRAPHY
+   ========================================= */
 body {
     background-color: var(--bg-body);
     color: var(--text-main);
-    font-family: "Georgia", "Times New Roman", serif;
+    font-family: "Georgia", "Times New Roman", serif; /* Academic Standard */
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -44,81 +48,114 @@ body {
 a {
     color: var(--link-color);
     text-decoration: none;
-    font-weight: 500; /* Slightly bolder links */
+    font-weight: 500;
+    transition: color 0.2s;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-/* 3. LAYOUT UTILITY */
+/* Global Heading Styles for Consistency */
+h1, h2, h3 {
+    color: var(--header-title);
+    font-family: "Georgia", serif;
+    font-weight: normal;
+}
+
+
+/* =========================================
+   3. LAYOUT UTILITIES
+   ========================================= */
 .inner-width {
     max-width: 960px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* 4. HEADER (Name & Title) - CENTER ALIGNED */
+/* Main Grid Layout */
+.container {
+    display: flex;
+    gap: 50px;
+    min-height: 60vh;
+}
+
+.content {
+    flex: 3;
+}
+
+.sidebar { 
+    flex: 1; 
+    font-family: "Arial", sans-serif;
+    font-size: 0.9rem; /* Standardized to rem */
+}
+
+
+/* =========================================
+   4. SITE HEADER & NAVIGATION
+   ========================================= */
+
+/* Header Area */
 .site-header {
     padding: 40px 0 20px 0;
     display: flex;
-    flex-direction: column; /* Stack content vertically */
+    flex-direction: column;
     justify-content: center;
-    align-items: center;    /* Center content horizontally */
+    align-items: center;
     text-align: center;
-    gap: 15px;              /* Space between name and button */
+    gap: 15px;
 }
 
 .site-header h1 {
-    font-family: "Georgia", serif;
-    font-weight: normal;
-    font-size: 2.2em;
+    font-size: 2.2rem;
     margin: 0;
-    color: var(--header-title); 
 }
 
-.site-header .subtitle {
-    /* Subtitle style removed as content is removed, 
-       keeping rule just in case needed later */
-    font-family: "Arial", sans-serif;
+/* Inner Page Header (e.g., Teaching/Research pages) */
+.inner-header {
+    margin-bottom: 30px;
+}
+
+.inner-header .small-name {
+    font-family: "Georgia", serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
     color: var(--text-muted);
-    font-size: 0.95em;
-    margin-top: 5px;
-    font-style: italic;
+    margin-bottom: 4px;
+    display: block;
 }
 
-/* Theme Toggle Button */
-#theme-toggle {
-    background: none;
-    border: 1px solid var(--nav-border);
-    color: var(--text-muted);
-    padding: 5px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: "Arial", sans-serif;
-    font-size: 0.85em;
-    transition: all 0.2s;
+.inner-header .page-title {
+    font-size: 1.9rem;
+    font-weight: normal;
+    color: var(--header-title);
+    margin: 0;
 }
 
-#theme-toggle:hover {
-    border-color: var(--link-color);
-    color: var(--link-color);
-}
-
-/* 5. NAVIGATION BAR - CENTER ALIGNED */
+/* Navigation Bar */
 .site-nav {
     border-top: 1px solid var(--nav-border);
     border-bottom: 1px solid var(--nav-border);
     padding: 12px 0;
     margin-bottom: 40px;
-    text-align: center; /* Centers the links container */
+    
+    /* Flex Layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: center;
 }
 
 .site-nav a {
-    display: inline-block; /* Required for text-align center to work on links */
-    margin: 0 15px;        /* Changed to even spacing on both sides */
+    display: inline-block;
+    margin: 0 15px;
     font-family: "Arial", sans-serif;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: var(--text-main);
@@ -135,127 +172,60 @@ a:hover {
     text-decoration: none;
 }
 
-/* 6. MAIN CONTENT GRID (2 Columns) */
-.container {
-    display: flex;
-    gap: 50px;
-    min-height: 60vh;
-}
-
-.content { flex: 3; }
-.sidebar { 
-    flex: 1; 
-    font-family: "Arial", sans-serif;
-    font-size: 0.9em;
-}
-
-/* 7. PROFILE SECTIONS (Education, Interests) */
-.profile-section {
-    margin-bottom: 50px;
-}
-
-.profile-section h2 {
-    font-size: 1.5em;
-    border-bottom: 2px solid var(--nav-border); 
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    font-weight: normal;
-    color: var(--header-title);
-}
-
-/* Current Role Block - Simplified Styles */
-.role-text {
-    font-size: 1.1em;
-    margin-bottom: 15px;
-    color: var(--text-main);
-}
-
-.role-details {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin-top: 0;
-    color: var(--text-muted);
-}
-
-.role-details li {
-    margin-bottom: 8px;
-}
-
-/* Current Role Block (Legacy - Kept for reference but unused in new HTML) */
-.role-block {
-    margin-bottom: 20px;
-}
-.role-title {
-    font-weight: bold;
-    font-size: 1.1em;
-    color: var(--header-title); 
-}
-.institution {
-    font-style: italic;
-    color: var(--text-muted);
-}
-.supervisor {
-    margin-top: 8px;
-    font-size: 0.95em;
-}
-
-/* Education Timeline */
-.edu-item {
-    display: flex;
-    margin-bottom: 25px;
-}
-
-.edu-date {
-    width: 110px;
-    flex-shrink: 0;
-    font-family: "Arial", sans-serif;
-    font-weight: bold;
-    color: var(--header-title);
-    font-size: 0.9em;
-    padding-top: 2px;
-}
-
-.edu-details strong {
-    display: block;
-    color: var(--text-main);
-}
-.edu-details .minor {
-    font-size: 0.9em;
-    color: var(--text-muted);
-}
-
-/* Lists (Research Fields) */
-.clean-list {
-    list-style: none;
-    padding: 0;
-}
-.clean-list li {
-    padding: 6px 0;
-    font-size: 1.05em;
-}
-.clean-list li::before {
-    content: "•"; 
-    color: var(--link-color);
+/* Theme Toggle Button */
+#theme-toggle {
+    margin-left: auto; /* Pushes toggle to right */
     margin-right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    transition: background 0.25s ease, transform 0.25s ease;
 }
 
-/* 8. SIDEBAR STYLES */
+#theme-toggle i {
+    font-size: 1.2rem;
+    color: var(--uofg-blue);
+    transition: color 0.25s ease;
+}
+
+#theme-toggle:hover {
+    background: rgba(0, 56, 101, 0.10);
+}
+
+#theme-toggle:hover i {
+    transform: rotate(20deg);
+}
+
+body.dark-mode #theme-toggle i {
+    color: #ffb84d;
+}
+
+body.dark-mode #theme-toggle:hover {
+    background: rgba(255, 184, 77, 0.15);
+}
+
+
+/* =========================================
+   5. COMPONENT: SIDEBAR & CONTACT
+   ========================================= */
 img.profile-pic {
     width: 100%;
     height: auto;
-    /* border: 1px solid var(--nav-border); */
     padding: 4px;
     background: var(--bg-body);
     margin-bottom: 20px;
+    border-radius: 4px; /* Slight rounding for consistency */
 }
 
 .contact-info h3 {
     margin-top: 0;
-    font-size: 1.1em;
+    font-size: 1.1rem;
+    font-family: "Arial", sans-serif; /* Consistent with Sidebar font */
     border-bottom: 1px solid var(--nav-border);
     padding-bottom: 5px;
     margin-bottom: 15px;
-    color: var(--header-title);
 }
 
 .contact-info p {
@@ -270,67 +240,94 @@ img.profile-pic {
     color: var(--link-color);
 }
 
-/* 9. FOOTER */
-footer {
-    margin-top: 60px;
-    padding: 30px 0;
-    border-top: 1px solid var(--nav-border);
-    text-align: center;
+
+/* =========================================
+   6. PAGE: HOME / PROFILE
+   ========================================= */
+.profile-section {
+    margin-bottom: 50px;
+}
+
+.profile-section h2 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--nav-border); 
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Role / Bio Text */
+.role-text {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+
+.role-details {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 0;
+    color: var(--text-muted);
+    font-family: "Arial", sans-serif; /* Metadata font */
+    font-size: 0.95rem;
+}
+
+.role-details li {
+    margin-bottom: 8px;
+}
+
+/* Education Timeline */
+.edu-item {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.edu-date {
+    width: 110px;
+    flex-shrink: 0;
     font-family: "Arial", sans-serif;
-    font-size: 0.8em;
-    color: var(--text-muted);
-}
-
-/* 10. MOBILE RESPONSIVENESS */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column-reverse;
-        gap: 30px;
-    }
-    
-    .site-nav a {
-        display: block; /* Stack links vertically on small screens */
-        margin: 10px 0;
-    }
-
-    .edu-item {
-        flex-direction: column;
-    }
-    .edu-date {
-        margin-bottom: 4px;
-        color: var(--link-color);
-    }
-    
-    .sidebar {
-        text-align: center;
-    }
-    img.profile-pic {
-        max-width: 250px;
-    }
-}
-
-
-/* Inner page header style */
-.inner-header .small-name {
-    font-family: "Georgia", sans-serif;
-    font-size: 0.85em;
-    letter-spacing: 0.5px;
-    color: var(--text-muted);
-    margin-bottom: 4px;
-}
-
-.inner-header .page-title {
-    font-family: "Georgia", serif;
-    font-size: 1.9em;
-    font-weight: normal;
+    font-weight: bold;
     color: var(--header-title);
-    margin: 0;
+    font-size: 0.9rem;
+    padding-top: 2px;
 }
 
-/* === RESEARCH FIGURE (TAILWIND-LIKE RESPONSIVE BOX) === */
+.edu-details strong {
+    display: block;
+    color: var(--text-main);
+}
 
-/* Container behaves like Tailwind's: 
-   relative w-full pt-[ASPECT] border rounded-lg overflow-hidden */
+.edu-details .minor {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-family: "Arial", sans-serif;
+}
+
+/* Generic Lists */
+.clean-list {
+    list-style: none;
+    padding: 0;
+}
+
+.clean-list li {
+    padding: 6px 0;
+    font-size: 1.05rem;
+}
+
+.clean-list li::before {
+    content: "•"; 
+    color: var(--link-color);
+    margin-right: 10px;
+}
+
+
+/* =========================================
+   7. PAGE: RESEARCH
+   ========================================= */
+.research-item {
+    margin-bottom: 35px;
+}
+
+/* Responsive Figure Box */
 .research-figure {
     position: relative;
     width: 100%;
@@ -341,83 +338,69 @@ footer {
     margin-top: 25px;
 }
 
-/* Default aspect ratio (40% height of width) */
-.research-figure.ratio-40 {
-    padding-top: 40%;
-}
-
-/* Optional ratios if needed in future */
+.research-figure.ratio-40 { padding-top: 40%; }
 .research-figure.ratio-30 { padding-top: 30%; }
 .research-figure.ratio-50 { padding-top: 50%; }
-.research-figure.ratio-60 { padding-top: 60%; }
 
-/* The image/iframe inside behaves like Tailwind's absolute + object-contain */
 .research-figure img,
 .research-figure iframe {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     object-fit: contain;
     background: var(--bg-body);
 }
 
-/* === RESEARCH PAGE TYPOGRAPHY === */
-
-/* Title line (strong + PDF/Code links) */
+/* Research Typography */
 .research-title {
-    font-size: 1rem; /* matches Tailwind text-base */
+    font-size: 1.1rem; /* Matched closer to role-text */
+    font-family: "Georgia", serif;
+    font-weight: bold;
     margin-bottom: 4px;
     line-height: 1.4;
 }
 
-/* Author line */
 .research-authors {
-    font-size: 0.85rem; /* matches Tailwind text-xs */
+    font-size: 0.9rem;
+    font-family: "Arial", sans-serif;
     color: var(--text-muted);
     margin-bottom: 10px;
-    line-height: 1;
+    line-height: 1.2;
 }
 
 .research-meta {
-    font-size: 0.85rem; /* between title and authors */
-    line-height: 1.4;
+    font-size: 0.9rem;
     color: var(--text-main);
     margin-bottom: 4px;
 }
 
-/* Inline metadata (links after title) */
+/* Inline Links (PDF/Code) */
 .research-title .research-meta {
-    font-size: 0.85rem;      /* between 1.0rem title and 0.75rem authors */
+    font-size: 0.85rem;
+    font-family: "Arial", sans-serif;
     font-weight: normal;
-    margin-left: 10px;       /* spacing after title */
-    opacity: 0.85;           /* subtle, professional */
+    margin-left: 10px;
+    opacity: 0.85;
 }
 
 .research-title .research-meta a {
-    font-size: inherit;
-    color: var(--link-color);
     margin-right: 6px;
+    color: var(--link-color);
 }
 
-/* Abstract block */
 .abstract-content {
     margin-top: 10px;
     padding-left: 12px;
-    border-left: 2px solid var(--nav-border); /* matches old gray line */
-    font-size: 0.75rem; /* matches text-xs */
-    line-height: 1.6; /* matches leading-relaxed */
+    border-left: 2px solid var(--nav-border);
+    font-size: 0.9rem; /* Standardized size */
+    line-height: 1.6;
     color: var(--text-main);
 }
 
-/* Research item spacing */
-.research-item {
-    margin-bottom: 35px;
-}
 
-
-/* Teaching container */
+/* =========================================
+   8. PAGE: TEACHING
+   ========================================= */
 .teaching-box {
     background: var(--card-bg);
     border: 1px solid var(--nav-border);
@@ -426,7 +409,6 @@ footer {
     margin-bottom: 40px;
 }
 
-/* Institution header */
 .teaching-header {
     display: flex;
     justify-content: space-between;
@@ -448,36 +430,36 @@ footer {
 }
 
 .institution-name {
-    font-family: Arial, sans-serif;
+    font-family: "Arial", sans-serif;
     font-weight: bold;
     color: var(--header-title);
+    font-size: 1rem;
 }
 
 .teaching-year {
-    font-family: Arial, sans-serif;
+    font-family: "Arial", sans-serif;
     font-size: 0.85rem;
     color: var(--text-muted);
 }
 
-/* Course type header */
 .teaching-type {
     margin-top: 20px;
     margin-bottom: 8px;
-    font-family: Arial, sans-serif;
+    font-family: "Arial", sans-serif;
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: bold; /* Increased weight for hierarchy */
     border-bottom: 1px dashed var(--nav-border);
     color: var(--header-title);
+    padding-bottom: 4px;
 }
 
-/* Course list */
 .teaching-list {
     margin-left: 20px;
     list-style: disc;
 }
 
 .teaching-list li {
-    font-family: Arial, sans-serif;
+    font-family: "Arial", sans-serif; /* Consistent UI font */
     font-size: 0.9rem;
     line-height: 1.5;
     color: var(--text-main);
@@ -485,8 +467,9 @@ footer {
 }
 
 
-/* === CV PAGE ELEMENTS === */
-
+/* =========================================
+   9. PAGE: CV
+   ========================================= */
 .cv-box {
     background: var(--card-bg);
     border: 1px solid var(--nav-border);
@@ -494,6 +477,7 @@ footer {
     border-radius: 10px;
     font-size: 0.9rem;
     margin-bottom: 30px;
+    font-family: "Arial", sans-serif;
 }
 
 .cv-download-link {
@@ -508,7 +492,6 @@ footer {
     margin-right: 6px;
 }
 
-/* PDF viewer container */
 .pdf-container {
     width: 100%;
     min-height: 100vh;
@@ -524,56 +507,66 @@ footer {
 }
 
 
-
-
-/* --- NAVIGATION AS FLEX CONTAINER --- */
-.site-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-/* Center links, but allow toggle to sit right */
-.nav-links {
-    flex: 1;
+/* =========================================
+   10. GLOBAL FOOTER
+   ========================================= */
+footer {
+    margin-top: 60px;
+    padding: 30px 0;
+    border-top: 1px solid var(--nav-border);
     text-align: center;
+    font-family: "Arial", sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-muted);
 }
 
-/* --- Toggle now sits at the far right of the nav --- */
-#theme-toggle {
-    margin-left: auto; /* pushes toggle to right */
-    margin-right: 10px;
 
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 6px;
-    border-radius: 50%;
-    transition: background 0.25s ease, transform 0.25s ease;
-}
+/* =========================================
+   11. MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 768px) {
+    /* Layout Stack */
+    .container {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+    
+    .sidebar {
+        text-align: center;
+    }
 
-/* Icon inside toggle */
-#theme-toggle i {
-    font-size: 1.2em;
-    color: var(--uofg-blue);
-    transition: color 0.25s ease, transform 0.25s ease;
-}
+    img.profile-pic {
+        max-width: 250px;
+    }
 
-/* Hover — subtle circle */
-#theme-toggle:hover {
-    background: rgba(0, 56, 101, 0.10);
-}
+    /* Navigation */
+    .site-nav {
+        flex-direction: row; /* Keep toggle on right */
+        flex-wrap: wrap;
+    }
+    
+    .nav-links {
+        width: 100%; /* Force links to new line if crowded */
+        order: 2;    /* Push links below toggle if wrapped */
+    }
 
-#theme-toggle:hover i {
-    transform: rotate(20deg);
-}
+    .site-nav a {
+        display: block; 
+        margin: 10px 0;
+    }
+    
+    #theme-toggle {
+        position: absolute;
+        right: 0;
+        top: 10px;
+    }
 
-/* Dark mode styles */
-body.dark-mode #theme-toggle i {
-    color: #ffb84d;
-}
-
-body.dark-mode #theme-toggle:hover {
-    background: rgba(255, 184, 77, 0.15);
+    /* Education Timeline Mobile */
+    .edu-item {
+        flex-direction: column;
+    }
+    .edu-date {
+        margin-bottom: 4px;
+        color: var(--link-color);
+    }
 }

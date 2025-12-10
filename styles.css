@@ -143,14 +143,18 @@ h1, h2, h3 {
     align-items: center;
     justify-content: center;
     position: relative;
+
+    /* Fix: ensure mobile Menu text never touches borders */
+    min-height: 48px;
 }
 
-/* DESKTOP NAV LINKS */
+/* Desktop navigation center aligned */
 .nav-links {
     flex: 1;
     text-align: center;
 }
 
+/* Desktop navigation links */
 .site-nav a {
     display: inline-block;
     margin: 0 15px;
@@ -162,35 +166,33 @@ h1, h2, h3 {
     font-weight: normal;
 }
 
-.site-nav a.active {
+/* Highlight active link */
+.site-nav a.active-link {
     font-weight: bold;
     color: var(--link-color);
 }
 
 .site-nav a:hover {
     color: var(--link-color);
-    text-decoration: none;
 }
 
-/* DESKTOP DARK MODE TOGGLE */
+/* Desktop dark mode toggle (always visible on desktop) */
 .desktop-toggle {
     position: absolute;
     right: 15px;
-    top: 8px;
+    top: 10px;
     background: none;
     border: none;
-    padding: 6px;
     cursor: pointer;
 }
 
 .desktop-toggle i {
     font-size: 1.2rem;
     color: var(--link-color);
-    transition: transform 0.3s ease;
 }
 
 /* ==========================================================
-   MOBILE MENU (Blurred dropdown)
+   MOBILE MENU
    ========================================================== */
 
 .mobile-menu {
@@ -202,9 +204,8 @@ h1, h2, h3 {
     left: 10px;
     width: 220px;
 
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 
     border: 1px solid var(--nav-border);
     border-radius: 10px;
@@ -213,14 +214,14 @@ h1, h2, h3 {
     z-index: 999;
 
     opacity: 0;
-    transform: translateY(-8px);
+    transform: translateY(-5px);
     pointer-events: none;
 
     transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 body.dark-mode .mobile-menu {
-    background: rgba(18, 18, 18, 0.7);
+    background: rgba(18, 18, 18, 0.75);
     border-color: #333;
 }
 
@@ -231,32 +232,29 @@ body.dark-mode .mobile-menu {
     pointer-events: auto;
 }
 
-/* Mobile menu item styling */
 .mobile-menu a,
 .mobile-toggle {
-    font-family: Arial, sans-serif;
-    font-size: 0.95rem;
-    padding: 10px 0;
     display: flex;
     align-items: center;
     gap: 8px;
+
+    padding: 10px 0;
+    font-size: 0.95rem;
+    font-family: Arial, sans-serif;
     color: var(--text-main);
-    border: none;
-    background: none;
-    cursor: pointer;
 }
 
 /* ==========================================================
-   MOBILE BUTTON ("☰ Menu")
+   MOBILE MENU BUTTON ("☰ Menu")
    ========================================================== */
 
 .mobile-menu-button {
-    display: none; /* hidden on desktop */
+    display: none; /* Hidden on desktop */
     background: none;
     border: none;
     cursor: pointer;
-
     padding: 6px;
+
     font-size: 1.2rem;
     color: var(--text-main);
 
@@ -266,7 +264,7 @@ body.dark-mode .mobile-menu {
 
     position: absolute;
     left: 15px;
-    top: 12px;
+    top: 10px;
 }
 
 .mobile-menu-label {
@@ -275,42 +273,38 @@ body.dark-mode .mobile-menu {
 }
 
 /* ==========================================================
-   RESPONSIVE RULES — MOBILE vs DESKTOP
+   RESPONSIVE RULES — MOBILE
    ========================================================== */
 
 @media (max-width: 768px) {
 
-    /* Hide desktop navigation */
-    .desktop-nav {
-        display: none;
-    }
-
-    /* Hide desktop dark toggle in mobile */
+    /* Hide desktop nav + desktop dark mode */
+    .desktop-nav,
     .desktop-toggle {
-        display: none;
+        display: none !important;
     }
 
-    /* Show mobile hamburger+text button */
+    /* Show the mobile menu button */
     .mobile-menu-button {
-        display: flex;
+        display: flex !important;
     }
 
-    /* Show icons in mobile */
+    /* Show icons on mobile */
     .site-nav i {
-        display: inline-block;
+        display: inline-block !important;
     }
 }
 
 /* ==========================================================
-   ICON CONTROL
+   ICON VISIBILITY CONTROL
    ========================================================== */
 
-/* Hide ALL icons by default (desktop) */
+/* Desktop: hide ALL icons except the dark-mode icon */
 .site-nav i {
     display: none;
 }
 
-/* EXCEPT: Always show the desktop dark mode icon */
+/* Always show desktop dark-mode icon */
 .desktop-toggle i {
     display: inline-block !important;
 }
@@ -322,18 +316,17 @@ body.dark-mode .mobile-menu {
     }
 }
 
-/* Icons in mobile dropdown must always show */
+/* Mobile dropdown: always show icons */
 .mobile-menu a i,
 .mobile-toggle i {
     display: inline-block !important;
 }
 
-/* No rotation/tilt EVER */
+/* Disable tilt/rotation */
 .mobile-menu-button:hover i,
 .desktop-toggle:hover i {
     transform: none !important;
 }
-
 
 
 

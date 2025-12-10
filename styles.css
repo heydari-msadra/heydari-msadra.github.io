@@ -410,7 +410,7 @@ img.profile-pic {
 }
 
 .teaching-year {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     color: var(--text-muted);
     font-style: italic;
     /* Inherits Georgia */
@@ -419,8 +419,7 @@ img.profile-pic {
 .teaching-type {
     margin-top: 20px;
     margin-bottom: 8px;
-    font-size: 0.95rem;
-    font-weight: bold;
+    font-size: 0.85rem;
     border-bottom: 1px dashed var(--nav-border);
     color: var(--header-title);
     padding-bottom: 4px;
@@ -433,7 +432,7 @@ img.profile-pic {
 }
 
 .teaching-list li {
-    font-size: 0.95rem;
+    font-size: 0.75rem;
     line-height: 1.5;
     color: var(--text-main);
     margin-bottom: 6px;

@@ -142,21 +142,22 @@ h1, h2, h3 {
     position: relative;
 }
 
+/* Desktop center-aligned links */
 .nav-links {
     flex: 1;
     text-align: center;
 }
 
+/* Desktop nav links */
 .site-nav a {
     display: inline-block;
     margin: 0 15px;
-    /* EXCEPTION: Navigation stays Arial */
     font-family: "Arial", sans-serif; 
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: var(--text-main);
-    font-weight: normal; 
+    font-weight: normal;
 }
 
 .site-nav a.active {
@@ -169,22 +170,25 @@ h1, h2, h3 {
     text-decoration: none;
 }
 
-/* MOBILE MENU — ANIMATED DROPDOWN WITH BLUR */
+/* =============== MOBILE MENU (GLASS PANEL + ANIMATION) =============== */
+
 .mobile-menu {
     display: none;
     flex-direction: column;
+
     position: absolute;
     top: 52px;
-    right: 10px;
+    left: 10px;         /* ⬅ moved from right to left */
     width: 220px;
 
-    background: rgba(255, 255, 255, 0.75); /* light mode glass */
+    background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 
     border: 1px solid var(--nav-border);
     border-radius: 10px;
     padding: 15px 20px;
+
     z-index: 999;
 
     opacity: 0;
@@ -196,19 +200,18 @@ h1, h2, h3 {
 
 body.dark-mode .mobile-menu {
     background: rgba(18, 18, 18, 0.7);
-    backdrop-filter: blur(10px);
     border-color: #333;
 }
 
-/* When OPEN */
+/* When opened */
 .mobile-menu.open {
     display: flex;
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateY(0);
     pointer-events: auto;
 }
 
-/* Mobile links */
+/* Mobile menu items */
 .mobile-menu a {
     font-family: Arial, sans-serif;
     font-size: 0.95rem;
@@ -219,34 +222,7 @@ body.dark-mode .mobile-menu {
     color: var(--text-main);
 }
 
-/* Desktop nav icons only appear on mobile — hide on desktop */
-.desktop-nav i {
-    margin-right: 6px;
-}
-
-/* Mobile mode */
-@media (max-width: 768px) {
-
-    /* Hide desktop nav */
-    .desktop-nav,
-    .desktop-toggle {
-        display: none;
-    }
-
-    /* Show hamburger */
-    .mobile-menu-button {
-        display: block;
-        margin-left: auto;
-        margin-right: 10px;
-        font-size: 1.4em;
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: var(--text-main);
-    }
-}
-
-/* Mobile toggle inside dropdown */
+/* Mobile dark-mode toggle inside dropdown */
 .mobile-toggle {
     margin-top: 10px;
     padding: 10px 0;
@@ -259,10 +235,60 @@ body.dark-mode .mobile-menu {
     gap: 8px;
 }
 
-/* Light/Dark blur enhancement */
-.mobile-menu-button:hover i {
-    transform: rotate(10deg);
+/* =============== MOBILE BUTTON (LEFT-ALIGNED WITH LABEL) =============== */
+
+.mobile-menu-button {
+    display: none;      /* hidden on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    padding: 6px;
+    font-size: 1.2rem;
+    color: var(--text-main);
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    position: absolute;
+    left: 15px;         /* ⬅ moved to left */
+    top: 12px;
 }
+
+/* Text next to mobile menu icon */
+.mobile-menu-label {
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+}
+
+/* =============== RESPONSIVE RULES =============== */
+
+@media (max-width: 768px) {
+
+    /* Hide desktop nav + desktop dark toggle */
+    .desktop-nav,
+    .desktop-toggle {
+        display: none;
+    }
+
+    /* Show mobile menu button */
+    .mobile-menu-button {
+        display: flex;
+    }
+
+    /* Keep nav centered overall */
+    .site-nav {
+        justify-content: center;
+    }
+}
+
+/* =============== OVERRIDE: REMOVE THE ROTATION EFFECT =============== */
+
+.mobile-menu-button:hover i {
+    transform: none !important;
+}
+
 
 
 /* Theme Toggle */

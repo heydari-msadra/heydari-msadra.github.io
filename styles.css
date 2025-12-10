@@ -538,8 +538,9 @@ img.profile-pic {
 .research-title {
     font-size: var(--font-base); /* Reduced: Matches body size but bold */
     font-family: "Georgia", serif;
+    font-weight: normal;
     /* margin-bottom: 3px; */
-    line-height: 1.0;
+    line-height: 0.9;
 }
 
 /* EXCEPTION: Research Metadata uses Arial */

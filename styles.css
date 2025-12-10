@@ -290,6 +290,30 @@ body.dark-mode .mobile-menu {
 }
 
 
+/* Global: hide icons */
+.site-nav i {
+    display: none;
+}
+
+/* Mobile: show icons */
+@media (max-width: 768px) {
+    .site-nav i {
+        display: inline-block;
+    }
+}
+
+/* Ensure desktop nav remains text-only */
+.desktop-nav i {
+    display: none !important;
+}
+
+/* Ensure icons show inside mobile dropdown */
+.mobile-menu a i {
+    display: inline-block !important;
+}
+
+
+
 
 /* Theme Toggle */
 #theme-toggle {

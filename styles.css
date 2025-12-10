@@ -555,7 +555,7 @@ img.profile-pic {
     font-family: "Arial", sans-serif; /* Explicit Arial */
     font-size: var(--font-xs);
     color: var(--text-main);
-    margin-bottom: 4px;
+    /* margin-bottom: 4px; */
 }
 
 /* Inline Links (PDF/Code) - Considered Metadata */

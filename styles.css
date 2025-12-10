@@ -4,16 +4,15 @@
 :root {
     /* LIGHT MODE (UofG Themed) */
     --bg-body: #ffffff;
-    --text-main: #222222;       /* Almost black, softer on eyes */
-    --text-muted: #555555;      /* Slightly darker gray for better readability */
+    --text-main: #222222;       
+    --text-muted: #555555;      
     
     /* THEME COLORS */
-    --uofg-blue: #003865;       /* University of Glasgow Blue */
-    
-    --link-color: #0056b3;      /* Standard Professional Blue for Links */
+    --uofg-blue: #003865;       
+    --link-color: #0056b3;      
     --header-title: var(--uofg-blue);
     
-    --nav-border: #e0e6ed;      /* A very subtle blue-gray for borders */
+    --nav-border: #e0e6ed;      
     --card-bg: #ffffff;
 }
 
@@ -23,7 +22,7 @@ body.dark-mode {
     --text-main: #e0e0e0;
     --text-muted: #aaaaaa;
 
-    --uofg-blue: #ffb84d;       /* High contrast (Orange/Gold) */
+    --uofg-blue: #ffb84d;       
     --link-color: #ffb84d;      
     --header-title: var(--uofg-blue);
     
@@ -38,7 +37,8 @@ body.dark-mode {
 body {
     background-color: var(--bg-body);
     color: var(--text-main);
-    font-family: "Georgia", "Times New Roman", serif; /* Academic Standard */
+    /* PRIMARY FONT: Used everywhere by default */
+    font-family: "Georgia", "Times New Roman", serif; 
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -56,10 +56,10 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Global Heading Styles for Consistency */
+/* Global Heading Styles */
 h1, h2, h3 {
     color: var(--header-title);
-    font-family: "Georgia", serif;
+    font-family: "Georgia", serif; /* Enforce Serif on headers */
     font-weight: normal;
 }
 
@@ -73,7 +73,6 @@ h1, h2, h3 {
     padding: 0 20px;
 }
 
-/* Main Grid Layout */
 .container {
     display: flex;
     gap: 50px;
@@ -86,13 +85,13 @@ h1, h2, h3 {
 
 .sidebar { 
     flex: 1; 
-    font-family: "Arial", sans-serif;
-    font-size: 0.9rem; /* Standardized to rem */
+    /* Removed Arial: Now inherits Georgia */
+    font-size: 0.95rem; 
 }
 
 
 /* =========================================
-   4. SITE HEADER & NAVIGATION
+   4. HEADER & NAVIGATION
    ========================================= */
 
 /* Header Area */
@@ -107,17 +106,16 @@ h1, h2, h3 {
 }
 
 .site-header h1 {
-    font-size: 2.2rem;
+    font-size: 2.0rem; /* Reduced from 2.2rem */
     margin: 0;
 }
 
-/* Inner Page Header (e.g., Teaching/Research pages) */
+/* Inner Page Headers */
 .inner-header {
     margin-bottom: 30px;
 }
 
 .inner-header .small-name {
-    font-family: "Georgia", serif;
     font-size: 0.85rem;
     letter-spacing: 0.5px;
     color: var(--text-muted);
@@ -126,20 +124,18 @@ h1, h2, h3 {
 }
 
 .inner-header .page-title {
-    font-size: 1.9rem;
+    font-size: 1.75rem; /* Reduced from 1.9rem */
     font-weight: normal;
     color: var(--header-title);
     margin: 0;
 }
 
-/* Navigation Bar */
+/* Navigation Bar - EXCEPTION: Uses Arial */
 .site-nav {
     border-top: 1px solid var(--nav-border);
     border-bottom: 1px solid var(--nav-border);
     padding: 12px 0;
     margin-bottom: 40px;
-    
-    /* Flex Layout */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -154,7 +150,8 @@ h1, h2, h3 {
 .site-nav a {
     display: inline-block;
     margin: 0 15px;
-    font-family: "Arial", sans-serif;
+    /* EXCEPTION: Navigation stays Arial */
+    font-family: "Arial", sans-serif; 
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -172,39 +169,24 @@ h1, h2, h3 {
     text-decoration: none;
 }
 
-/* Theme Toggle Button */
+/* Theme Toggle */
 #theme-toggle {
-    margin-left: auto; /* Pushes toggle to right */
+    margin-left: auto;
     margin-right: 10px;
     background: none;
     border: none;
     cursor: pointer;
     padding: 6px;
     border-radius: 50%;
-    transition: background 0.25s ease, transform 0.25s ease;
+    transition: background 0.25s ease;
 }
 
 #theme-toggle i {
     font-size: 1.2rem;
     color: var(--uofg-blue);
-    transition: color 0.25s ease;
 }
 
-#theme-toggle:hover {
-    background: rgba(0, 56, 101, 0.10);
-}
-
-#theme-toggle:hover i {
-    transform: rotate(20deg);
-}
-
-body.dark-mode #theme-toggle i {
-    color: #ffb84d;
-}
-
-body.dark-mode #theme-toggle:hover {
-    background: rgba(255, 184, 77, 0.15);
-}
+body.dark-mode #theme-toggle i { color: #ffb84d; }
 
 
 /* =========================================
@@ -216,13 +198,12 @@ img.profile-pic {
     padding: 4px;
     background: var(--bg-body);
     margin-bottom: 20px;
-    border-radius: 4px; /* Slight rounding for consistency */
+    border-radius: 4px;
 }
 
 .contact-info h3 {
     margin-top: 0;
     font-size: 1.1rem;
-    font-family: "Arial", sans-serif; /* Consistent with Sidebar font */
     border-bottom: 1px solid var(--nav-border);
     padding-bottom: 5px;
     margin-bottom: 15px;
@@ -231,6 +212,7 @@ img.profile-pic {
 .contact-info p {
     margin: 8px 0;
     color: var(--text-muted);
+    /* Inherits Georgia now */
 }
 
 .contact-info i {
@@ -249,7 +231,7 @@ img.profile-pic {
 }
 
 .profile-section h2 {
-    font-size: 1.5rem;
+    font-size: 1.35rem; /* Reduced from 1.5rem */
     border-bottom: 2px solid var(--nav-border); 
     padding-bottom: 10px;
     margin-bottom: 20px;
@@ -257,7 +239,7 @@ img.profile-pic {
 
 /* Role / Bio Text */
 .role-text {
-    font-size: 1.1rem;
+    font-size: 1.0rem; /* Reduced from 1.1rem */
     margin-bottom: 15px;
     color: var(--text-main);
 }
@@ -267,8 +249,8 @@ img.profile-pic {
     padding-left: 20px;
     margin-top: 0;
     color: var(--text-muted);
-    font-family: "Arial", sans-serif; /* Metadata font */
     font-size: 0.95rem;
+    /* Removed Arial */
 }
 
 .role-details li {
@@ -284,11 +266,11 @@ img.profile-pic {
 .edu-date {
     width: 110px;
     flex-shrink: 0;
-    font-family: "Arial", sans-serif;
     font-weight: bold;
     color: var(--header-title);
     font-size: 0.9rem;
     padding-top: 2px;
+    /* Inherits Georgia (removed Arial) */
 }
 
 .edu-details strong {
@@ -299,20 +281,13 @@ img.profile-pic {
 .edu-details .minor {
     font-size: 0.9rem;
     color: var(--text-muted);
-    font-family: "Arial", sans-serif;
-}
-
-/* Generic Lists */
-.clean-list {
-    list-style: none;
-    padding: 0;
+    font-style: italic; /* Added italic for better distinction in serif */
 }
 
 .clean-list li {
     padding: 6px 0;
-    font-size: 1.05rem;
+    font-size: 1.0rem;
 }
-
 .clean-list li::before {
     content: "•"; 
     color: var(--link-color);
@@ -327,7 +302,6 @@ img.profile-pic {
     margin-bottom: 35px;
 }
 
-/* Responsive Figure Box */
 .research-figure {
     position: relative;
     width: 100%;
@@ -340,44 +314,42 @@ img.profile-pic {
 
 .research-figure.ratio-40 { padding-top: 40%; }
 .research-figure.ratio-30 { padding-top: 30%; }
-.research-figure.ratio-50 { padding-top: 50%; }
 
-.research-figure img,
-.research-figure iframe {
+.research-figure img, .research-figure iframe {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
     object-fit: contain;
-    background: var(--bg-body);
 }
 
 /* Research Typography */
 .research-title {
-    font-size: 1.1rem; /* Matched closer to role-text */
+    font-size: 1.0rem; /* Reduced: Matches body size but bold */
     font-family: "Georgia", serif;
     font-weight: bold;
     margin-bottom: 4px;
     line-height: 1.4;
 }
 
+/* EXCEPTION: Research Metadata uses Arial */
 .research-authors {
-    font-size: 0.9rem;
-    font-family: "Arial", sans-serif;
+    font-size: 0.85rem;
+    font-family: "Arial", sans-serif; /* Explicit Arial */
     color: var(--text-muted);
     margin-bottom: 10px;
-    line-height: 1.2;
+    line-height: 1.3;
 }
 
 .research-meta {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-main);
     margin-bottom: 4px;
 }
 
-/* Inline Links (PDF/Code) */
+/* Inline Links (PDF/Code) - Considered Metadata */
 .research-title .research-meta {
     font-size: 0.85rem;
-    font-family: "Arial", sans-serif;
+    font-family: "Arial", sans-serif; /* Explicit Arial */
     font-weight: normal;
     margin-left: 10px;
     opacity: 0.85;
@@ -392,9 +364,10 @@ img.profile-pic {
     margin-top: 10px;
     padding-left: 12px;
     border-left: 2px solid var(--nav-border);
-    font-size: 0.9rem; /* Standardized size */
+    font-size: 0.9rem;
     line-height: 1.6;
     color: var(--text-main);
+    /* Inherits Georgia */
 }
 
 
@@ -423,34 +396,34 @@ img.profile-pic {
 }
 
 .teaching-logo {
-    width: 32px;
-    height: 32px;
+    width: 32px; height: 32px;
     border-radius: 4px;
     object-fit: contain;
 }
 
 .institution-name {
-    font-family: "Arial", sans-serif;
     font-weight: bold;
     color: var(--header-title);
     font-size: 1rem;
+    /* Inherits Georgia */
 }
 
 .teaching-year {
-    font-family: "Arial", sans-serif;
     font-size: 0.85rem;
     color: var(--text-muted);
+    font-style: italic;
+    /* Inherits Georgia */
 }
 
 .teaching-type {
     margin-top: 20px;
     margin-bottom: 8px;
-    font-family: "Arial", sans-serif;
     font-size: 0.95rem;
-    font-weight: bold; /* Increased weight for hierarchy */
+    font-weight: bold;
     border-bottom: 1px dashed var(--nav-border);
     color: var(--header-title);
     padding-bottom: 4px;
+    /* Inherits Georgia */
 }
 
 .teaching-list {
@@ -459,11 +432,11 @@ img.profile-pic {
 }
 
 .teaching-list li {
-    font-family: "Arial", sans-serif; /* Consistent UI font */
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     line-height: 1.5;
     color: var(--text-main);
     margin-bottom: 6px;
+    /* Inherits Georgia */
 }
 
 
@@ -477,7 +450,7 @@ img.profile-pic {
     border-radius: 10px;
     font-size: 0.9rem;
     margin-bottom: 30px;
-    font-family: "Arial", sans-serif;
+    /* Inherits Georgia */
 }
 
 .cv-download-link {
@@ -488,9 +461,7 @@ img.profile-pic {
     margin-top: 5px;
 }
 
-.cv-download-link i {
-    margin-right: 6px;
-}
+.cv-download-link i { margin-right: 6px; }
 
 .pdf-container {
     width: 100%;
@@ -515,9 +486,9 @@ footer {
     padding: 30px 0;
     border-top: 1px solid var(--nav-border);
     text-align: center;
-    font-family: "Arial", sans-serif;
     font-size: 0.8rem;
     color: var(--text-muted);
+    /* Inherits Georgia */
 }
 
 
@@ -525,46 +496,33 @@ footer {
    11. MOBILE RESPONSIVENESS
    ========================================= */
 @media (max-width: 768px) {
-    /* Layout Stack */
     .container {
         flex-direction: column-reverse;
         gap: 30px;
     }
     
-    .sidebar {
-        text-align: center;
-    }
+    .sidebar { text-align: center; }
+    img.profile-pic { max-width: 250px; }
 
-    img.profile-pic {
-        max-width: 250px;
-    }
-
-    /* Navigation */
+    /* Nav Stack */
     .site-nav {
-        flex-direction: row; /* Keep toggle on right */
+        flex-direction: row;
         flex-wrap: wrap;
     }
-    
     .nav-links {
-        width: 100%; /* Force links to new line if crowded */
-        order: 2;    /* Push links below toggle if wrapped */
+        width: 100%;
+        order: 2;
     }
-
     .site-nav a {
         display: block; 
         margin: 10px 0;
     }
-    
     #theme-toggle {
         position: absolute;
-        right: 0;
-        top: 10px;
+        right: 0; top: 10px;
     }
 
-    /* Education Timeline Mobile */
-    .edu-item {
-        flex-direction: column;
-    }
+    .edu-item { flex-direction: column; }
     .edu-date {
         margin-bottom: 4px;
         color: var(--link-color);

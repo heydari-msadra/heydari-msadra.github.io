@@ -657,54 +657,58 @@ footer {
    11. MOBILE RESPONSIVENESS
    ========================================= */
 @media (max-width: 768px) {
+
+    /* Stack main + sidebar vertically */
     .container {
         display: flex;
         flex-direction: column;
     }
 
+    /* Let the sections inside <main> behave as direct flex children */
     main.content {
-        order: 1;   /* FIRST */
+        display: contents;
     }
 
-    aside.sidebar {
-        order: 2;   /* SECOND */
-        margin-top: 20px;
-    }
-
-    /* reorder inside the sidebar */
-    .sidebar .profile-pic {
+    /* 1) Role section (first profile-section in main) */
+    main.content > .profile-section:nth-of-type(1) {
         order: 1;
     }
 
-    .sidebar .contact-info {
+    /* 2) Sidebar: picture + contact block */
+    aside.sidebar {
         order: 2;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    /* Picture style */
+    img.profile-pic {
+        max-width: 250px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .sidebar .contact-info {
         margin-top: 15px;
     }
-    
-    .sidebar { text-align: center; }
-    img.profile-pic { max-width: 250px; }
 
-    /* Nav Stack */
-    .site-nav {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    .nav-links {
-        width: 100%;
-        order: 2;
-    }
-    .site-nav a {
-        display: block; 
-        margin: 10px 0;
-    }
-    #theme-toggle {
-        position: absolute;
-        right: 0; top: 10px;
+    /* 3) Research Interests (second profile-section in main) */
+    main.content > .profile-section:nth-of-type(2) {
+        order: 3;
     }
 
-    .edu-item { flex-direction: column; }
+    /* 4) Education (third profile-section in main) */
+    main.content > .profile-section:nth-of-type(3) {
+        order: 4;
+    }
+
+    /* Education layout tweaks */
+    .edu-item {
+        flex-direction: column;
+    }
     .edu-date {
         margin-bottom: 4px;
         color: var(--link-color);
     }
 }
+

@@ -145,7 +145,7 @@ h1, h2, h3 {
     position: relative;
 
     /* Fix: ensure mobile Menu text never touches borders */
-    min-height: 48px;
+    min-height: 30px;
 }
 
 /* Desktop navigation center aligned */
@@ -248,23 +248,23 @@ body.dark-mode .mobile-menu {
    MOBILE MENU BUTTON ("☰ Menu")
    ========================================================== */
 
+/* Always hide the mobile menu button by default (desktop mode) */
 .mobile-menu-button {
-    display: none; /* Hidden on desktop */
+    display: none !important;   /* <-- FORCE hidden on desktop */
     background: none;
     border: none;
     cursor: pointer;
-    padding: 6px;
 
+    padding: 6px;
     font-size: 1.2rem;
     color: var(--text-main);
-
-    display: flex;
-    align-items: center;
-    gap: 8px;
 
     position: absolute;
     left: 15px;
     top: 10px;
+
+    align-items: center;
+    gap: 8px;
 }
 
 .mobile-menu-label {

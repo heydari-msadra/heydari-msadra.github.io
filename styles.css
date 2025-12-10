@@ -417,6 +417,74 @@ footer {
 }
 
 
+/* Teaching container */
+.teaching-box {
+    background: var(--card-bg);
+    border: 1px solid var(--nav-border);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+/* Institution header */
+.teaching-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.teaching-institution {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.teaching-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    object-fit: contain;
+}
+
+.institution-name {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: var(--header-title);
+}
+
+.teaching-year {
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Course type header */
+.teaching-type {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-bottom: 1px dashed var(--nav-border);
+    color: var(--header-title);
+}
+
+/* Course list */
+.teaching-list {
+    margin-left: 20px;
+    list-style: disc;
+}
+
+.teaching-list li {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-main);
+    margin-bottom: 6px;
+}
+
+
+
 /* --- NAVIGATION AS FLEX CONTAINER --- */
 .site-nav {
     display: flex;

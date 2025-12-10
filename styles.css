@@ -405,6 +405,30 @@ img.profile-pic {
     margin-bottom: 10px;
 }
 
+/* Container Wrapper (Default Block Behavior) */
+.role-header {
+    /* No specific styles defined; acts as a block-level wrapper */
+}
+
+/* Job Title Styling */
+.role-title {
+    font-size: 1.35rem;
+    font-weight: bold;
+    color: var(--header-title); /* UofG Blue/Gold */
+    margin: 0 0 5px 0;
+    font-family: "Georgia", serif;
+    line-height: 1.2;
+}
+
+/* University/Institution Styling */
+.institution-sub {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin: 0 0 20px 0;
+    font-family: "Georgia", serif;
+    font-style: italic;
+    line-height: 1.4;
+}
 
 /* Role / Bio Text */
 .role-text {

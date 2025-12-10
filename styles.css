@@ -12,7 +12,7 @@
     --link-color: #0056b3;      
     --header-title: var(--uofg-blue);
     
-    --nav-border: #003865;      
+    --nav-border: #e0e6ed;      
     --card-bg: #ffffff;
 }
 
@@ -26,8 +26,8 @@ body.dark-mode {
     --link-color: #ffb84d;      
     --header-title: var(--uofg-blue);
     
-    /* --nav-border: #333333; */
-    --nav-border: #ffb84d;
+    --nav-border: #333333;
+    /* --nav-border: #ffb84d; */
     --card-bg: #1e1e1e;
 }
 

@@ -89,6 +89,18 @@ function initializeMobileMenu() {
 }
 
 
+function highlightActiveLink() {
+    const currentPath = window.location.pathname;
+
+    document.querySelectorAll(".site-nav a").forEach(link => {
+        if (link.getAttribute("href") && currentPath.endsWith(link.getAttribute("href"))) {
+            link.classList.add("active-link");
+        }
+    });
+}
+
+
+
 // =========================================
 // INITIAL CALL (for pages that have nav inline)
 // When nav is loaded dynamically, includes.js will call these again

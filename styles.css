@@ -553,7 +553,7 @@ img.profile-pic {
 
 .research-meta {
     font-family: "Arial", sans-serif; /* Explicit Arial */
-    font-size: var(--font-sm);
+    font-size: var(--font-xs);
     color: var(--text-main);
     margin-bottom: 4px;
 }
@@ -576,7 +576,7 @@ img.profile-pic {
     margin-top: 10px;
     padding-left: 12px;
     border-left: 2px solid var(--nav-border);
-    font-size: var(--font-xm);
+    font-size: var(--font-xs);
     line-height: 1.6;
     color: var(--text-main);
     /* Inherits Georgia */
@@ -621,7 +621,7 @@ img.profile-pic {
 }
 
 .teaching-year {
-    font-size: var(--font-xm);
+    font-size: var(--font-xs);
     color: var(--text-muted);
     font-style: italic;
     /* Inherits Georgia */
@@ -644,7 +644,7 @@ img.profile-pic {
 }
 
 .teaching-list li {
-    font-size: var(--font-xm);
+    font-size: var(--font-xs);
     line-height: 1.5;
     color: var(--text-main);
     margin-bottom: 6px;

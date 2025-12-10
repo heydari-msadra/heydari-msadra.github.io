@@ -130,7 +130,10 @@ h1, h2, h3 {
     margin: 0;
 }
 
-/* Navigation Bar - EXCEPTION: Uses Arial */
+/* ==========================================================
+   NAVIGATION BAR (Desktop + Mobile)
+   ========================================================== */
+
 .site-nav {
     border-top: 1px solid var(--nav-border);
     border-bottom: 1px solid var(--nav-border);
@@ -142,17 +145,16 @@ h1, h2, h3 {
     position: relative;
 }
 
-/* Desktop center-aligned links */
+/* DESKTOP NAV LINKS */
 .nav-links {
     flex: 1;
     text-align: center;
 }
 
-/* Desktop nav links */
 .site-nav a {
     display: inline-block;
     margin: 0 15px;
-    font-family: "Arial", sans-serif; 
+    font-family: "Arial", sans-serif;
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -170,7 +172,26 @@ h1, h2, h3 {
     text-decoration: none;
 }
 
-/* =============== MOBILE MENU (GLASS PANEL + ANIMATION) =============== */
+/* DESKTOP DARK MODE TOGGLE */
+.desktop-toggle {
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    background: none;
+    border: none;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.desktop-toggle i {
+    font-size: 1.2rem;
+    color: var(--link-color);
+    transition: transform 0.3s ease;
+}
+
+/* ==========================================================
+   MOBILE MENU (Blurred dropdown)
+   ========================================================== */
 
 .mobile-menu {
     display: none;
@@ -178,7 +199,7 @@ h1, h2, h3 {
 
     position: absolute;
     top: 52px;
-    left: 10px;         /* ⬅ moved from right to left */
+    left: 10px;
     width: 220px;
 
     background: rgba(255, 255, 255, 0.75);
@@ -203,7 +224,6 @@ body.dark-mode .mobile-menu {
     border-color: #333;
 }
 
-/* When opened */
 .mobile-menu.open {
     display: flex;
     opacity: 1;
@@ -211,8 +231,9 @@ body.dark-mode .mobile-menu {
     pointer-events: auto;
 }
 
-/* Mobile menu items */
-.mobile-menu a {
+/* Mobile menu item styling */
+.mobile-menu a,
+.mobile-toggle {
     font-family: Arial, sans-serif;
     font-size: 0.95rem;
     padding: 10px 0;
@@ -220,25 +241,17 @@ body.dark-mode .mobile-menu {
     align-items: center;
     gap: 8px;
     color: var(--text-main);
-}
-
-/* Mobile dark-mode toggle inside dropdown */
-.mobile-toggle {
-    margin-top: 10px;
-    padding: 10px 0;
-    background: none;
     border: none;
+    background: none;
     cursor: pointer;
-    color: var(--text-main);
-    display: flex;
-    align-items: center;
-    gap: 8px;
 }
 
-/* =============== MOBILE BUTTON (LEFT-ALIGNED WITH LABEL) =============== */
+/* ==========================================================
+   MOBILE BUTTON ("☰ Menu")
+   ========================================================== */
 
 .mobile-menu-button {
-    display: none;      /* hidden on desktop */
+    display: none; /* hidden on desktop */
     background: none;
     border: none;
     cursor: pointer;
@@ -252,47 +265,54 @@ body.dark-mode .mobile-menu {
     gap: 8px;
 
     position: absolute;
-    left: 15px;         /* ⬅ moved to left */
+    left: 15px;
     top: 12px;
 }
 
-/* Text next to mobile menu icon */
 .mobile-menu-label {
     font-family: Arial, sans-serif;
     font-size: 0.95rem;
 }
 
-/* =============== RESPONSIVE RULES =============== */
+/* ==========================================================
+   RESPONSIVE RULES — MOBILE vs DESKTOP
+   ========================================================== */
 
 @media (max-width: 768px) {
 
-    /* Hide desktop nav + desktop dark toggle */
-    .desktop-nav,
+    /* Hide desktop navigation */
+    .desktop-nav {
+        display: none;
+    }
+
+    /* Hide desktop dark toggle in mobile */
     .desktop-toggle {
         display: none;
     }
 
-    /* Show mobile menu button */
+    /* Show mobile hamburger+text button */
     .mobile-menu-button {
         display: flex;
     }
 
-    /* Keep nav centered overall */
-    .site-nav {
-        justify-content: center;
+    /* Show icons in mobile */
+    .site-nav i {
+        display: inline-block;
     }
 }
 
-/* =============== OVERRIDE: REMOVE THE ROTATION EFFECT =============== */
+/* ==========================================================
+   ICON CONTROL
+   ========================================================== */
 
-.mobile-menu-button:hover i {
-    transform: none !important;
-}
-
-
-/* Global: hide icons */
+/* Hide ALL icons by default (desktop) */
 .site-nav i {
     display: none;
+}
+
+/* EXCEPT: Always show the desktop dark mode icon */
+.desktop-toggle i {
+    display: inline-block !important;
 }
 
 /* Mobile: show icons */
@@ -302,14 +322,16 @@ body.dark-mode .mobile-menu {
     }
 }
 
-/* Ensure desktop nav remains text-only */
-.desktop-nav i {
-    display: none !important;
+/* Icons in mobile dropdown must always show */
+.mobile-menu a i,
+.mobile-toggle i {
+    display: inline-block !important;
 }
 
-/* Ensure icons show inside mobile dropdown */
-.mobile-menu a i {
-    display: inline-block !important;
+/* No rotation/tilt EVER */
+.mobile-menu-button:hover i,
+.desktop-toggle:hover i {
+    transform: none !important;
 }
 
 

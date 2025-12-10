@@ -1,54 +1,99 @@
-// script.js
+// ==========================================
+// script.js — Global Theme + Mobile Menu Logic
+// ==========================================
 
+// This version is designed to be used with dynamic nav loading
+// The functions below are re-initialized by includes.js AFTER nav loads.
 
-const toggleButton = document.getElementById('theme-toggle');
-const body = document.body;
+// ================================
+// THEME TOGGLE (Desktop + Mobile)
+// ================================
 
-function updateToggleIcon() {
-    const icon = toggleButton.querySelector('i');
-    if (body.classList.contains('dark-mode')) {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-        icon.style.transform = "rotate(180deg)"; // subtle animation
-    } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-        icon.style.transform = "rotate(0deg)"; // reset rotation
+function initializeThemeToggle() {
+    const body = document.body;
+
+    // Select toggles (desktop + mobile)
+    const toggleButton = document.getElementById('theme-toggle');
+    const mobileToggle = document.getElementById('mobile-theme-toggle');
+
+    // If nav hasn’t loaded yet, exit safely
+    if (!toggleButton && !mobileToggle) return;
+
+    // Load saved theme
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-mode');
+    }
+
+    // Update icon appearance
+    function updateToggleIcon() {
+        const icon = toggleButton ? toggleButton.querySelector('i') : null;
+        if (!icon) return;
+
+        if (body.classList.contains('dark-mode')) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+            icon.style.transform = "rotate(180deg)";
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+            icon.style.transform = "rotate(0deg)";
+        }
+    }
+
+    updateToggleIcon();
+
+    // Desktop toggle
+    if (toggleButton) {
+        toggleButton.addEventListener("click", () => {
+            body.classList.toggle("dark-mode");
+            localStorage.setItem(
+                "theme",
+                body.classList.contains("dark-mode") ? "dark" : "light"
+            );
+            updateToggleIcon();
+        });
+    }
+
+    // Mobile toggle simply “clicks” desktop toggle
+    if (mobileToggle) {
+        mobileToggle.addEventListener("click", () => {
+            if (toggleButton) toggleButton.click();
+        });
     }
 }
 
-// Initial load
-if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark-mode');
-}
-updateToggleIcon();
 
-// Toggle handler
-toggleButton.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    localStorage.setItem('theme',
-        body.classList.contains('dark-mode') ? 'dark' : 'light'
-    );
-    updateToggleIcon();
-});
+// ================================
+// MOBILE MENU OPEN/CLOSE
+// ================================
 
+function initializeMobileMenu() {
 
-// MOBILE MENU
-const mobileMenuButton = document.getElementById("mobile-menu-button");
-const mobileMenu = document.getElementById("mobile-menu");
+    const button = document.getElementById("mobile-menu-button");
+    const menu = document.getElementById("mobile-menu");
 
-mobileMenuButton.addEventListener("click", () => {
-    mobileMenu.classList.toggle("open");
-});
+    if (!button || !menu) return;
 
-// MOBILE DARK MODE
-const mobileThemeToggle = document.getElementById("mobile-theme-toggle");
-if (mobileThemeToggle) {
-    mobileThemeToggle.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-        localStorage.setItem(
-            "theme",
-            document.body.classList.contains("dark-mode") ? "dark" : "light"
-        );
+    // Toggle menu (animated)
+    button.addEventListener("click", () => {
+        menu.classList.toggle("open");
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) &&
+            !button.contains(e.target)) {
+            menu.classList.remove("open");
+        }
     });
 }
+
+
+// =========================================
+// INITIAL CALL (for pages that have nav inline)
+// When nav is loaded dynamically, includes.js will call these again
+// =========================================
+document.addEventListener("DOMContentLoaded", () => {
+    initializeThemeToggle();
+    initializeMobileMenu();
+});

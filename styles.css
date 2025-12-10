@@ -398,10 +398,17 @@ img.profile-pic {
     margin-bottom: 20px;
 }
 
+.profile-section h3 {
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--nav-border); 
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+
 /* Role / Bio Text */
 .role-text {
     font-size: 0.95rem; /* Reduced from 1.1rem */
-    border-bottom: 1px solid var(--nav-border);
     margin-bottom: 15px;
     color: var(--text-main);
 }

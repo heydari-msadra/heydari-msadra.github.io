@@ -401,6 +401,7 @@ img.profile-pic {
 /* Role / Bio Text */
 .role-text {
     font-size: 0.95rem; /* Reduced from 1.1rem */
+    border-bottom: 1px solid var(--nav-border);
     margin-bottom: 15px;
     color: var(--text-main);
 }
@@ -440,10 +441,13 @@ img.profile-pic {
     color: var(--text-main);
 }
 
+/* Tighten spacing between degree → minor */
 .edu-details .minor {
     font-size: 0.8rem;
     color: var(--text-muted);
-    font-style: italic; /* Added italic for better distinction in serif */
+    font-style: italic;
+    margin-top: -2px;      /* key fix */
+    display: block;
 }
 
 .clean-list li {

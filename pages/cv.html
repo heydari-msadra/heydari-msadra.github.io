@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV – Sadra Heydari</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header inner-width inner-header">
+        <div class="header-content">
+            <div class="small-name">Sadra Heydari</div>
+            <h1 class="page-title">Curriculum Vitae</h1>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="site-nav inner-width">
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="research.html">Research</a>
+            <a href="teaching.html">Teaching</a>
+            <a href="cv.html" class="active">CV</a>
+        </div>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="inner-width" style="max-width: 820px;">
+
+        <!-- Header Text -->
+        <section class="profile-section" style="margin-top: 60px;">
+            <p style="
+                font-family: Arial, sans-serif;
+                font-size: 0.85rem;
+                color: var(--text-muted);
+                margin-bottom: 15px;
+                border-bottom: 1px solid var(--nav-border);
+                padding-bottom: 8px;">
+                Latest Version: October 2025
+            </p>
+        </section>
+
+        <!-- Download CV -->
+        <section class="profile-section">
+            <div class="cv-box">
+                <p style="margin-bottom: 10px; font-size: 0.9rem;">
+                    Having trouble viewing the PDF below?
+                </p>
+
+                <a href="../files/cv.pdf"
+                   target="_blank"
+                   class="cv-download-link"
+                   download>
+                    <i class="fas fa-file-download"></i> Download CV (PDF)
+                </a>
+            </div>
+        </section>
+
+        <!-- PDF Viewer -->
+        <section class="profile-section">
+            <div class="pdf-container">
+                <iframe 
+                    src="../files/cv.pdf"
+                    class="pdf-viewer"
+                    title="Sadra Heydari CV"
+                    loading="lazy">
+                </iframe>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 M. Sadra Heydari</p>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

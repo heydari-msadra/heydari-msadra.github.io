@@ -31,3 +31,24 @@ toggleButton.addEventListener('click', () => {
     );
     updateToggleIcon();
 });
+
+
+// MOBILE MENU
+const mobileMenuButton = document.getElementById("mobile-menu-button");
+const mobileMenu = document.getElementById("mobile-menu");
+
+mobileMenuButton.addEventListener("click", () => {
+    mobileMenu.classList.toggle("open");
+});
+
+// MOBILE DARK MODE
+const mobileThemeToggle = document.getElementById("mobile-theme-toggle");
+if (mobileThemeToggle) {
+    mobileThemeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        localStorage.setItem(
+            "theme",
+            document.body.classList.contains("dark-mode") ? "dark" : "light"
+        );
+    });
+}

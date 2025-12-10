@@ -6,6 +6,7 @@ fetch("/includes/nav.html")
         // Reinitialize toggles after dynamic load
         initializeThemeToggle();
         initializeMobileMenu();
+        highlightActiveLink();
     });
 
 // Insert Footer

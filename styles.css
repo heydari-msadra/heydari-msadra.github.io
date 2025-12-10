@@ -477,6 +477,7 @@ footer {
 }
 
 .teaching-list li {
+    font-family: Arial, sans-serif;
     font-size: 0.9rem;
     line-height: 1.5;
     color: var(--text-main);

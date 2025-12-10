@@ -166,9 +166,9 @@ h1, h2, h3 {
 .site-nav a {
     display: inline-block;
     margin: 0 15px;
-    font-family: "Arial", sans-serif;
+    /* font-family: "Arial", sans-serif; */
     font-size: var(--font-sm);
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     letter-spacing: 0.5px;
     color: var(--text-main);
     font-weight: normal;
@@ -247,7 +247,7 @@ body.dark-mode .mobile-menu {
     gap: 8px;
 
     padding: 10px 0;
-    font-size: var(--font-base);
+    font-size: var(--font-sm);
     font-family: Arial, sans-serif;
     color: var(--text-main);
 }
@@ -264,7 +264,7 @@ body.dark-mode .mobile-menu {
     cursor: pointer;
 
     padding: 6px;
-    font-size: var(--font-md);
+    font-size: var(--font-base);
     color: var(--text-main);
 
     position: absolute;

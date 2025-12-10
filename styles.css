@@ -2,30 +2,27 @@
    1. CSS VARIABLES (THEME ENGINE)
    ========================================= */
 :root {
-    /* LIGHT MODE (UofG Themed) */
     --bg-body: #ffffff;
-    --text-main: #222222;       
-    --text-muted: #555555;      
-    
-    /* THEME COLORS */
-    --uofg-blue: #003865;       
-    --link-color: #0056b3;      
+    --text-main: #212121;
+    --text-muted: #5a5a5a;
+
+    --uofg-blue: #7a0019;      /* deep burgundy */
+    --link-color: #8c001c;
     --header-title: var(--uofg-blue);
-    
-    --nav-border: #e0e6ed;      
+
+    --nav-border: #e6e6e6;
     --card-bg: #ffffff;
 }
 
-/* DARK MODE OVERRIDES */
 body.dark-mode {
     --bg-body: #121212;
     --text-main: #e0e0e0;
     --text-muted: #aaaaaa;
 
-    --uofg-blue: #ffb84d;       
-    --link-color: #ffb84d;      
+    --uofg-blue: #ff5c77;      /* soft cherry red */
+    --link-color: #ff5c77;
     --header-title: var(--uofg-blue);
-    
+
     --nav-border: #333333;
     --card-bg: #1e1e1e;
 }

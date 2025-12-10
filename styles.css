@@ -14,6 +14,15 @@
     
     --nav-border: #e0e6ed;      
     --card-bg: #ffffff;
+
+    /* Typography scale */
+    --font-xs: 0.75rem; /* metadata, minor notes, abstracts */
+    --font-sm: 0.85rem; /* sidebar, dates, small lists */
+    --font-base: 0.9rem; /* body text, research titles */
+    --font-md: 1.0rem; /* section subtitles (h3 level) */
+    --font-lg: 1.15rem; /* section titles (h2 level) */
+    --font-xl: 1.5rem; /* page titles */
+    --font-xxl: 2.0rem; /* site header main title */
 }
 
 /* DARK MODE OVERRIDES */
@@ -27,10 +36,8 @@ body.dark-mode {
     --header-title: var(--uofg-blue);
     
     --nav-border: #333333;
-    /* --nav-border: #ffb84d; */
     --card-bg: #1e1e1e;
 }
-
 
 /* =========================================
    2. GLOBAL RESET & TYPOGRAPHY
@@ -87,7 +94,7 @@ h1, h2, h3 {
 .sidebar { 
     flex: 1; 
     /* Removed Arial: Now inherits Georgia */
-    font-size: 0.95rem; 
+    font-size: var(--font-base); 
 }
 
 
@@ -107,7 +114,7 @@ h1, h2, h3 {
 }
 
 .site-header h1 {
-    font-size: 2.1rem; /* Reduced from 2.2rem */
+    font-size: var(--font-xxl); /* Reduced from 2.2rem */
     margin: 0;
 }
 
@@ -117,7 +124,7 @@ h1, h2, h3 {
 }
 
 .inner-header .small-name {
-    font-size: 0.85rem;
+    font-size: var(--font-sm);
     letter-spacing: 0.5px;
     color: var(--text-muted);
     margin-bottom: 4px;
@@ -125,7 +132,7 @@ h1, h2, h3 {
 }
 
 .inner-header .page-title {
-    font-size: 1.75rem; /* Reduced from 1.9rem */
+    font-size: var(--font-xl); /* Reduced from 1.9rem */
     font-weight: normal;
     color: var(--header-title);
     margin: 0;
@@ -160,7 +167,7 @@ h1, h2, h3 {
     display: inline-block;
     margin: 0 15px;
     font-family: "Arial", sans-serif;
-    font-size: 0.9rem;
+    font-size: var(--font-sm);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: var(--text-main);
@@ -188,7 +195,7 @@ h1, h2, h3 {
 }
 
 .desktop-toggle i {
-    font-size: 1.2rem;
+    font-size: var(--font-md);
     color: var(--link-color);
 }
 
@@ -240,7 +247,7 @@ body.dark-mode .mobile-menu {
     gap: 8px;
 
     padding: 10px 0;
-    font-size: 0.95rem;
+    font-size: var(--font-base);
     font-family: Arial, sans-serif;
     color: var(--text-main);
 }
@@ -257,7 +264,7 @@ body.dark-mode .mobile-menu {
     cursor: pointer;
 
     padding: 6px;
-    font-size: 1.2rem;
+    font-size: var(--font-md);
     color: var(--text-main);
 
     position: absolute;
@@ -270,7 +277,7 @@ body.dark-mode .mobile-menu {
 
 .mobile-menu-label {
     font-family: Arial, sans-serif;
-    font-size: 0.95rem;
+    font-size: var(--font-base);
 }
 
 /* ==========================================================
@@ -344,7 +351,7 @@ body.dark-mode .mobile-menu {
 }
 
 #theme-toggle i {
-    font-size: 1.2rem;
+    font-size: var(--font-md);
     color: var(--uofg-blue);
 }
 
@@ -365,7 +372,7 @@ img.profile-pic {
 
 .contact-info h3 {
     margin-top: 0;
-    font-size: 1.0rem;
+    font-size: var(--font-base);
     border-bottom: 1px solid var(--nav-border);
     padding-bottom: 5px;
     margin-bottom: 15px;
@@ -393,14 +400,14 @@ img.profile-pic {
 }
 
 .profile-section h2 {
-    font-size: 1.35rem; /* Reduced from 1.5rem */
+    font-size: var(--font-lg); /* Reduced from 1.5rem */
     border-bottom: 2px solid var(--nav-border); 
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
 
 .profile-section h3 {
-    font-size: 1.1rem;
+    font-size: var(--font-md);
     border-bottom: 1px solid var(--nav-border); 
     padding-bottom: 10px;
     margin-bottom: 10px;
@@ -413,7 +420,7 @@ img.profile-pic {
 
 /* Job Title Styling */
 .role-title {
-    font-size: 1rem;
+    font-size: var(--font-base);
     color: var(--text-main); /* UofG Blue/Gold */
     margin: 0 0 5px 0;
     font-family: "Georgia", serif;
@@ -422,7 +429,7 @@ img.profile-pic {
 
 /* University/Institution Styling */
 .institution-sub {
-    font-size: 0.9rem;
+    font-size: var(--font-sm);
     color: var(--text-muted);
     margin: 0 0 5px 0;
     font-family: "Georgia", serif;
@@ -432,7 +439,7 @@ img.profile-pic {
 
 /* Role / Bio Text */
 .role-text {
-    font-size: 0.95rem; /* Reduced from 1.1rem */
+    font-size: var(--font-base); /* Reduced from var(--font-md) */
     margin-bottom: 15px;
     color: var(--text-main);
 }
@@ -442,7 +449,7 @@ img.profile-pic {
     padding-left: 20px;
     margin-top: 0;
     color: var(--text-main);
-    font-size: 0.85rem;
+    font-size: var(--font-sm);
     /* Removed Arial */
 }
 
@@ -453,7 +460,7 @@ img.profile-pic {
 /* Education Timeline */
 .edu-item {
     display: flex;
-    font-size: 0.85rem;
+    font-size: var(--font-sm);
     margin-top: 10px;
 }
 
@@ -462,13 +469,13 @@ img.profile-pic {
     flex-shrink: 0;
     font-weight: bold;
     color: var(--header-title);
-    font-size: 0.8rem;
+    font-size: var(--font-xs);
     padding-top: 2px;
     /* Inherits Georgia (removed Arial) */
 }
 
 .edu-details strong {
-    font-size: 0.9rem;
+    font-size: var(--font-sm);
     /* display: block; */
     color: var(--text-main);
     line-height: 1.25;
@@ -476,7 +483,7 @@ img.profile-pic {
 
 /* Tighten spacing between degree → minor */
 .edu-details .minor {
-    font-size: 0.8rem;
+    font-size: var(--font-xs);
     color: var(--text-muted);
     font-style: italic;
     margin-top: -2px;      /* key fix */
@@ -492,7 +499,7 @@ img.profile-pic {
 
 .clean-list li {
     padding: 3px 0;
-    font-size: 0.85rem;
+    font-size: var(--font-sm);
 }
 .clean-list li::before {
     color: var(--link-color);
@@ -529,7 +536,7 @@ img.profile-pic {
 
 /* Research Typography */
 .research-title {
-    font-size: 1.0rem; /* Reduced: Matches body size but bold */
+    font-size: var(--font-base); /* Reduced: Matches body size but bold */
     font-family: "Georgia", serif;
     margin-bottom: 3px;
     line-height: 1.4;
@@ -537,7 +544,7 @@ img.profile-pic {
 
 /* EXCEPTION: Research Metadata uses Arial */
 .research-authors {
-    font-size: 0.85rem;
+    font-size: var(--font-sm);
     font-family: "Georgia", sans-serif;
     color: var(--text-muted);
     margin-bottom: 10px;
@@ -546,14 +553,14 @@ img.profile-pic {
 
 .research-meta {
     font-family: "Arial", sans-serif; /* Explicit Arial */
-    font-size: 0.85rem;
+    font-size: var(--font-sm);
     color: var(--text-main);
     margin-bottom: 4px;
 }
 
 /* Inline Links (PDF/Code) - Considered Metadata */
 .research-title .research-meta {
-    font-size: 0.85rem;
+    font-size: var(--font-sm);
     font-family: "Arial", sans-serif; /* Explicit Arial */
     font-weight: normal;
     margin-left: 10px;
@@ -569,7 +576,7 @@ img.profile-pic {
     margin-top: 10px;
     padding-left: 12px;
     border-left: 2px solid var(--nav-border);
-    font-size: 0.75rem;
+    font-size: var(--font-xm);
     line-height: 1.6;
     color: var(--text-main);
     /* Inherits Georgia */
@@ -609,12 +616,12 @@ img.profile-pic {
 .institution-name {
     font-weight: bold;
     color: var(--header-title);
-    font-size: 1rem;
+    font-size: var(--font-base);
     /* Inherits Georgia */
 }
 
 .teaching-year {
-    font-size: 0.75rem;
+    font-size: var(--font-xm);
     color: var(--text-muted);
     font-style: italic;
     /* Inherits Georgia */
@@ -623,7 +630,7 @@ img.profile-pic {
 .teaching-type {
     margin-top: 20px;
     margin-bottom: 8px;
-    font-size: 0.85rem;
+    font-size: var(--font-sm);
     border-bottom: 1px dashed var(--nav-border);
     color: var(--header-title);
     padding-bottom: 4px;
@@ -637,7 +644,7 @@ img.profile-pic {
 }
 
 .teaching-list li {
-    font-size: 0.75rem;
+    font-size: var(--font-xm);
     line-height: 1.5;
     color: var(--text-main);
     margin-bottom: 6px;
@@ -653,14 +660,14 @@ img.profile-pic {
     border: 1px solid var(--nav-border);
     padding: 18px;
     border-radius: 10px;
-    font-size: 0.9rem;
+    font-size: var(--font-sm);
     margin-bottom: 30px;
     /* Inherits Georgia */
 }
 
 .cv-download-link {
     display: inline-block;
-    font-size: 0.9rem;
+    font-size: var(--font-sm);
     font-weight: bold;
     color: var(--link-color);
     margin-top: 5px;
@@ -691,7 +698,7 @@ footer {
     padding: 30px 0;
     border-top: 1px solid var(--nav-border);
     text-align: center;
-    font-size: 0.8rem;
+    font-size: var(--font-xs);
     color: var(--text-muted);
     /* Inherits Georgia */
 }

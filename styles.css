@@ -410,7 +410,6 @@ img.profile-pic {
 /* Job Title Styling */
 .role-title {
     font-size: 1rem;
-    font-weight: bold;
     color: var(--text-muted); /* UofG Blue/Gold */
     margin: 0 0 5px 0;
     font-family: "Georgia", serif;
@@ -421,7 +420,7 @@ img.profile-pic {
 .institution-sub {
     font-size: 0.9rem;
     color: var(--text-muted);
-    margin: 0 0 20px 0;
+    margin: 0 0 5px 0;
     font-family: "Georgia", serif;
     font-style: italic;
     line-height: 1.4;
@@ -629,7 +628,8 @@ img.profile-pic {
 }
 
 .teaching-list {
-    margin-left: 10px;
+    margin-left: 5px;
+    padding-left: 5px;
     list-style: disc;
 }
 

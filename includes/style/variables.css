@@ -1,0 +1,72 @@
+/* =========================================
+   1. CSS VARIABLES (THEME ENGINE)
+   ========================================= */
+:root {
+    /* LIGHT MODE (UofG Themed) */
+    --bg-body: #ffffff;
+    --text-main: #222222;        
+    --text-muted: #555555;      
+    
+    /* THEME COLORS */
+    --uofg-blue: #003865;        
+    --link-color: #0056b3;      
+    --header-title: var(--uofg-blue);
+    
+    --nav-border: #e0e6ed;      
+    --card-bg: #ffffff;
+
+    /* Typography scale */
+    --font-xs: 0.75rem; /* metadata, minor notes, abstracts */
+    --font-sm: 0.85rem; /* sidebar, dates, small lists */
+    --font-base: 0.9rem; /* body text, research titles */
+    --font-md: 1.0rem; /* section subtitles (h3 level) */
+    --font-lg: 1.15rem; /* section titles (h2 level) */
+    --font-xl: 1.5rem; /* page titles */
+    --font-xxl: 2.0rem; /* site header main title */
+}
+
+/* DARK MODE OVERRIDES */
+body.dark-mode {
+    --bg-body: #121212;
+    --text-main: #e0e0e0;
+    --text-muted: #aaaaaa;
+
+    --uofg-blue: #ffb84d;        
+    --link-color: #ffb84d;      
+    --header-title: var(--uofg-blue);
+    
+    --nav-border: #333333;
+    --card-bg: #1e1e1e;
+}
+
+/* =========================================
+   2. GLOBAL RESET & TYPOGRAPHY
+   ========================================= */
+body {
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    /* PRIMARY FONT: Used everywhere by default */
+    font-family: "Georgia", "Times New Roman", serif; 
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Global Heading Styles */
+h1, h2, h3 {
+    color: var(--header-title);
+    font-family: "Georgia", serif; /* Enforce Serif on headers */
+    font-weight: normal;
+}

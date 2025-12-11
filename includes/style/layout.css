@@ -92,7 +92,7 @@
 }
 
 .site-nav a.active-link {
-    font-weight: 200;
+    font-weight: 400;
     color: var(--header-title);
 }
 

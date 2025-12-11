@@ -92,8 +92,8 @@
 }
 
 .site-nav a.active-link {
-    font-weight: bold;
-    color: var(--link-color);
+    font-weight: 200;
+    color: var(--header-title);
 }
 
 .site-nav a:hover {

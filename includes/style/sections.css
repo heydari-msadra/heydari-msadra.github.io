@@ -214,13 +214,14 @@ img.profile-pic {
     margin-top: 20px;
     margin-bottom: 8px;
     font-size: var(--font-sm);
+    font-weight: normal;
     border-bottom: 1px dashed var(--nav-border);
     color: var(--header-title);
     padding-bottom: 4px;
 }
 
 .teaching-list { margin-left: 5px; padding-left: 5px; list-style: disc; }
-.teaching-list li { font-size: var(--font-xs); line-height: 1.5; color: var(--text-main); margin-bottom: 6px; }
+.teaching-list li { font-size: var(--font-sm); line-height: 1.5; color: var(--text-main); margin-bottom: 6px; }
 
 /* =========================================
    PAGE: CV
@@ -237,7 +238,7 @@ img.profile-pic {
 .cv-download-link {
     display: inline-block;
     font-size: var(--font-sm);
-    font-weight: bold;
+    font-weight: normal;
     color: var(--link-color);
     margin-top: 5px;
 }

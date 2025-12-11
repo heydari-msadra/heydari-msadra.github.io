@@ -207,7 +207,7 @@ img.profile-pic {
 
 .teaching-institution { display: flex; align-items: center; gap: 10px; }
 .teaching-logo { width: 32px; height: 32px; border-radius: 4px; object-fit: contain; }
-.institution-name { font-weight: normal; color: var(--header-title); font-size: var(--font-base); }
+.institution-name { font-weight: normal; color: var(--header-title); font-size: var(--font-lg); }
 .teaching-year { font-size: var(--font-xs); color: var(--text-muted); font-style: italic; }
 
 .teaching-type {

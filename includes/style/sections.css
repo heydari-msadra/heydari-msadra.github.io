@@ -178,11 +178,10 @@ img.profile-pic {
 .research-title .research-meta {
     font-size: var(--font-xs);
     font-family: "Arial", sans-serif;
-    font-weight: bold;
     margin-left: 10px;
     opacity: 0.85;
 }
-.research-title .research-meta a { margin-right: 6px; color: var(--link-color); }
+.research-title .research-meta a { margin-right: 6px; color: var(--link-color); font-weight: bold;}
 
 .research-title .research-inline-author {
     font-size: var(--font-sm);

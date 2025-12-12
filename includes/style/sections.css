@@ -169,14 +169,30 @@ img.profile-pic {
     color: var(--text-main);
 }
 
-.research-title .research-meta {
+.research-inline-author {
     font-size: var(--font-sm);
+    font-family: "Georgia", sans-serif;
+    color: var(--text-muted);
+}
+
+.research-title .research-meta {
+    font-size: var(--font-xs);
     font-family: "Arial", sans-serif;
-    font-weight: normal;
+    font-weight: bold;
     margin-left: 10px;
     opacity: 0.85;
 }
 .research-title .research-meta a { margin-right: 6px; color: var(--link-color); }
+
+.research-title .research-inline-author {
+    font-size: var(--font-sm);
+    font-family: "Georgia", sans-serif;
+    font-weight: normal;
+    color: var(--text-muted);
+}
+
+.research-title .research-inline-author a {color: var(--link-color); }
+
 
 .abstract-content {
     margin-top: 10px;

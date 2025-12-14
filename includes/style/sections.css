@@ -131,8 +131,8 @@ img.profile-pic {
 .research-figure {
     position: relative;
     width: 100%;
-    border: 1px dashed var(--nav-border);
-    border-radius: 8px;
+    border: 5px dashed var(--nav-border);
+    border-radius: 10px;
     overflow: hidden;
     background: var(--bg-body);
     margin-top: 25px;

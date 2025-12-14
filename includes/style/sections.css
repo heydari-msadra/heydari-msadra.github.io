@@ -148,6 +148,22 @@ img.profile-pic {
     object-fit: cover;
 }
 
+/* inner clipping layer */
+.iframe-clip {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: inherit;
+}
+
+/* iframe itself */
+.iframe-clip iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
 .research-title {
     font-size: var(--font-base);
     font-family: "Georgia", serif;

@@ -132,7 +132,7 @@ img.profile-pic {
     position: relative;
     width: 100%;
     border: 1px dashed var(--nav-border);
-    border-radius: 10px;
+    border-radius: 1px;
     overflow: hidden;
     background: var(--bg-body);
     margin-top: 25px;

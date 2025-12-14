@@ -129,38 +129,40 @@ img.profile-pic {
 .research-item { margin-bottom: 35px; }
 
 .research-figure {
+    --r: 10px; /* corner radius */
     position: relative;
     width: 100%;
-    border: 1px dashed var(--nav-border);
-    border-radius: 10px;
-    overflow: hidden;
-    background: var(--bg-body);
     margin-top: 25px;
+    background: var(--bg-body);
+    border-radius: var(--r);
+    overflow: hidden;
 }
 
-.research-figure.ratio-40 { padding-top: 40%; }
+/* aspect ratio */
 .research-figure.ratio-30 { padding-top: 30%; }
+.research-figure.ratio-40 { padding-top: 40%; }
 
-.research-figure img, .research-figure iframe {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-}
-
-/* inner clipping layer */
-.iframe-clip {
+/* draw the border ABOVE the iframe */
+.research-figure::after {
+    content: "";
     position: absolute;
     inset: 0;
-    overflow: hidden;
+    border: 1px dashed var(--nav-border);
     border-radius: inherit;
+    pointer-events: none;
+    z-index: 2;
 }
 
 /* iframe itself */
-.iframe-clip iframe {
+.research-figure iframe {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     border: none;
+    display: block;
+    z-index: 1;
+    clip-path: inset(0 round var(--r));
 }
 
 

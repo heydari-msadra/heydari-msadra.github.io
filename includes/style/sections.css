@@ -259,10 +259,10 @@ img.profile-pic {
 }
 .cv-download-link i { margin-right: 6px; }
 
-.pdf-container { width: 100%; min-height: 100vh; margin-top: 20px; }
+.pdf-container { width: 100%; min-height: 80vh; margin-top: 20px; }
 .pdf-viewer {
     width: 100%;
-    min-height: 100vh;
+    min-height: 80vh;
     border: 1px solid var(--nav-border);
     border-radius: 8px;
     background: var(--bg-body);

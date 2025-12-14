@@ -134,7 +134,8 @@ img.profile-pic {
     border: 1px dashed var(--nav-border);
     border-radius: 10px;
     overflow: hidden;
-    background: var(--bg-body);
+    /* background: var(--bg-body); */
+    background: transparent; /* or same as iframe bg */
     margin-top: 25px;
 }
 

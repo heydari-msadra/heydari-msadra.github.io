@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Play, Pause, SkipForward, RotateCcw, RefreshCw, Info, Settings2, BookOpen, X } from 'lucide-react';
+import { Play, Pause, SkipForward, RotateCcw, RefreshCw, Info, Settings2, BookOpen, X, Lightbulb, ArrowRight, ArrowLeft } from 'lucide-react';
 
 /**
  * COMPONENT: Latex Renderer
@@ -103,7 +103,9 @@ const randn_bm = () => {
 // Gamma variate generator
 const gamma = (alpha) => {
   if (alpha < 1) {
-    return gamma(1 + alpha) * Math.pow(Math.random(), 1 / alpha);
+    let u = Math.random();
+    while (u === 0) u = Math.random(); // Prevent log(0)
+    return gamma(1 + alpha) * Math.pow(u, 1 / alpha);
   }
   const d = alpha - 1 / 3;
   const c = 1 / Math.sqrt(9 * d);
@@ -112,7 +114,9 @@ const gamma = (alpha) => {
     const v = 1 + c * z;
     if (v <= 0) continue;
     const v3 = v * v * v;
-    const u = Math.random();
+    let u = Math.random();
+    while (u === 0) u = Math.random(); // Prevent log(0)
+    
     if (u < 1 - 0.0331 * (z * z * z * z)) return d * v3;
     if (Math.log(u) < 0.5 * z * z + d * (1 - v3 + Math.log(v3))) return d * v3;
   }
@@ -131,41 +135,46 @@ const EntryDynamic = () => {
   const [alpha, setAlpha] = useState(2);
   const [betaParam, setBetaParam] = useState(5);
   const [sigma, setSigma] = useState(1);
+  const [publicKnowledge, setPublicKnowledge] = useState(0); // A^p
   const [showModelInfo, setShowModelInfo] = useState(false);
   
   // Simulation State
   const [history, setHistory] = useState([]); 
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [knowledgeAppliedStep, setKnowledgeAppliedStep] = useState(null); // Track when knowledge was applied
   const timerRef = useRef(null);
 
   // --- Logic ---
 
-  const generateData = () => {
-    // Generate firms with productivity A_i (value)
-    const newData = Array.from({ length: n }, (_, i) => ({
-      id: i,
-      value: beta(alpha, betaParam), // This is A_i
-      status: 'active',
-      jitterY: Math.random() * 0.8 + 0.1
-    }));
-    
-    const simSteps = [];
-    let currentSet = newData.map(d => ({...d}));
-    let stepCount = 0;
-    let stable = false;
+  const calculateThreshold = (activeItems) => {
+    const k = activeItems.length;
+    if (k <= sigma + 1) return 0;
+    const sumReciprocal = activeItems.reduce((acc, val) => acc + (1 / val.value), 0);
+    return (k - sigma - 1) / sumReciprocal;
+  };
 
-    // Initial State (Step 0)
-    simSteps.push({
-      step: 0,
+  const runSimulationSteps = (initialSet, startStepCount) => {
+    const steps = [];
+    let currentSet = initialSet.map(d => ({...d}));
+    let stepCount = startStepCount;
+    let stable = false;
+    let iterations = 0;
+
+    // First, record the state as it is handed to us
+    steps.push({
+      step: stepCount,
       data: JSON.parse(JSON.stringify(currentSet)),
       threshold: calculateThreshold(currentSet.filter(d => d.status === 'active')),
-      survivorCount: n,
-      eliminatedCount: 0
+      survivorCount: currentSet.filter(d => d.status === 'active').length,
+      eliminatedCount: 0,
+      isShockStep: true
     });
 
-    while (!stable && stepCount < 100) {
+    while (!stable && iterations < 50) {
       stepCount++;
+      iterations++;
+      
       const activeData = currentSet.filter(d => d.status === 'active');
       const k = activeData.length;
       let threshold = 0;
@@ -189,7 +198,7 @@ const EntryDynamic = () => {
         return item;
       });
 
-      simSteps.push({
+      steps.push({
         step: stepCount,
         data: JSON.parse(JSON.stringify(nextSet)),
         threshold: threshold,
@@ -204,17 +213,59 @@ const EntryDynamic = () => {
 
       if (eliminatedInThisRound === 0) stable = true;
     }
+    return steps;
+  };
 
-    setHistory(simSteps);
+  const generateData = () => {
+    // Generate firms with productivity A_i (value)
+    const newData = Array.from({ length: n }, (_, i) => ({
+      id: i,
+      value: beta(alpha, betaParam), // This is A_i
+      status: 'active',
+      jitterY: Math.random() * 0.8 + 0.1
+    }));
+    
+    // Reset Public Knowledge on Regenerate
+    setPublicKnowledge(0);
+    setKnowledgeAppliedStep(null);
+
+    // Run initial simulation
+    const steps = runSimulationSteps(newData, 0);
+    setHistory(steps);
     setCurrentStepIndex(0);
     setIsPlaying(false);
   };
 
-  const calculateThreshold = (activeItems) => {
-    const k = activeItems.length;
-    if (k <= sigma + 1) return 0;
-    const sumReciprocal = activeItems.reduce((acc, val) => acc + (1 / val.value), 0);
-    return (k - sigma - 1) / sumReciprocal;
+  const handleApplyKnowledge = () => {
+    // 1. Get current state's data
+    const currentStepData = history[currentStepIndex];
+    if (!currentStepData) return;
+
+    // 2. Modify currently active firms
+    const modifiedData = currentStepData.data.map(firm => {
+      if (firm.status === 'active' || firm.status === 'eliminated_now') {
+        if (firm.value < publicKnowledge) {
+            return { ...firm, value: publicKnowledge, status: 'active' }; // Revive/Boost
+        }
+        return { ...firm, status: 'active' }; // Ensure status is active (clear eliminated_now)
+      }
+      return firm;
+    });
+
+    // 3. Run simulation forward from here
+    const newSteps = runSimulationSteps(modifiedData, currentStepData.step + 1);
+
+    // 4. Update History: Keep history up to current point, then append new path
+    const previousHistory = history.slice(0, currentStepIndex + 1);
+    
+    // Mark the transition point for UI
+    setKnowledgeAppliedStep(previousHistory.length);
+    
+    setHistory([...previousHistory, ...newSteps]);
+    
+    // 5. Advance one step to show the immediate effect of the shock
+    setCurrentStepIndex(previousHistory.length);
+    setIsPlaying(false);
   };
 
   // --- Effects ---
@@ -253,22 +304,24 @@ const EntryDynamic = () => {
 
   const currentStepData = history[currentStepIndex] || { data: [], threshold: 0, survivorCount: 0 };
   const isFinished = currentStepIndex === history.length - 1;
-  const activeSet = currentStepData.data.filter(d => d.status === 'active' || d.status === 'eliminated_now');
+  const isKnowledgeActive = knowledgeAppliedStep !== null && currentStepIndex >= knowledgeAppliedStep;
 
   // Histogram Calculations
   const binCount = 40;
   const activeBins = new Array(binCount).fill(0);
   const totalBins = new Array(binCount).fill(0);
 
-  currentStepData.data.forEach(d => {
-    const binIdx = Math.min(Math.floor(d.value * binCount), binCount - 1);
-    totalBins[binIdx]++;
-    if (d.status === 'active' || d.status === 'eliminated_now') {
-      activeBins[binIdx]++;
-    }
-  });
+  if (currentStepData.data) {
+    currentStepData.data.forEach(d => {
+      const binIdx = Math.min(Math.floor(d.value * binCount), binCount - 1);
+      totalBins[binIdx]++;
+      if (d.status === 'active' || d.status === 'eliminated_now') {
+        activeBins[binIdx]++;
+      }
+    });
+  }
 
-  // Calculate PDF Curve
+  // Calculate PDF Curve (Fixed to initial parameters)
   const pdfPoints = [];
   const resolution = 100;
   let maxPdfVal = 0;
@@ -286,25 +339,36 @@ const EntryDynamic = () => {
 
   return (
     <div className="flex flex-col h-screen bg-slate-50 text-slate-800 font-sans">
-      {/* Header */}
-      <header className="bg-white border-b border-slate-200 px-6 py-4 flex items-center justify-between shadow-sm flex-shrink-0">
-        <div>
-          <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-            <Settings2 className="w-5 h-5 text-indigo-600" />
-            Cournot Competition Dynamics
-          </h1>
-          <div className="text-xs text-slate-500 mt-1 flex items-center gap-2">
-            <span>Firm Survival Condition:</span>
-            <span className="bg-slate-100 px-2 py-0.5 rounded">
-              <Latex>{`A_i \\ge \\frac{n - \\sigma - 1}{\\sum A_j^{-1}}`}</Latex>
-            </span>
+      {/* Custom Header matching User Request */}
+      <header className="bg-white border-b border-slate-200 px-8 py-5 flex items-center justify-between shadow-sm flex-shrink-0">
+        <div className="flex items-center gap-6">
+          <a 
+            href="https://heydari-msadra.github.io/pages/research" 
+            className="group flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 transition-all duration-200"
+            title="Back to Research"
+          >
+            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" />
+          </a>
+          
+          <div className="flex flex-col">
+            <div className="text-sm font-medium text-slate-500 uppercase tracking-wide">Sadra Heydari</div>
+            <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Endogeneous Entry</h1>
           </div>
         </div>
-        <div className="flex items-center gap-4">
+
+        <div className="flex items-center gap-6">
+           {/* Compact Status Display */}
+           <div className="flex flex-col items-end border-r border-slate-200 pr-6 mr-2">
+             <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">Step</span>
+             <span className="font-mono text-lg font-bold text-slate-700">
+               {currentStepIndex}<span className="text-slate-300 text-sm">/{history.length - 1}</span>
+             </span>
+           </div>
+           
            <div className="flex flex-col items-end">
-             <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">Market Status</span>
-             <span className={`text-sm font-medium ${isFinished ? 'text-green-600' : 'text-amber-600'}`}>
-               {isFinished ? 'Equilibrium Reached' : `Step ${currentStepIndex} of ${history.length - 1}`}
+             <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">Status</span>
+             <span className={`text-sm font-bold ${isFinished ? 'text-green-600' : 'text-amber-600'}`}>
+               {isFinished ? 'Equilibrium' : 'Converging...'}
              </span>
            </div>
         </div>
@@ -312,66 +376,80 @@ const EntryDynamic = () => {
 
       <div className="flex flex-1 overflow-hidden relative">
         
-        {/* Model Info Modal/Overlay */}
+        {/* Model Info Modal - Expanded Details */}
         {showModelInfo && (
-          <div className="absolute inset-0 bg-slate-900/50 z-50 flex items-center justify-center p-8 backdrop-blur-sm">
-            <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-full overflow-y-auto flex flex-col">
+          <div className="absolute inset-0 bg-slate-900/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+            <div className="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col">
               <div className="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50 rounded-t-xl">
-                <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-                  <BookOpen className="w-5 h-5 text-indigo-600" />
-                  Economic Model: Cournot Competition
+                <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2">
+                  <BookOpen className="w-6 h-6 text-indigo-600" />
+                  Theoretical Framework
                 </h2>
-                <button onClick={() => setShowModelInfo(false)} className="text-slate-400 hover:text-slate-600 transition-colors">
+                <button onClick={() => setShowModelInfo(false)} className="text-slate-400 hover:text-slate-600 transition-colors p-1 hover:bg-slate-200 rounded-full">
                   <X className="w-6 h-6" />
                 </button>
               </div>
               
-              <div className="p-8 space-y-6 text-slate-600 text-sm leading-relaxed overflow-y-auto">
+              <div className="p-8 space-y-8 text-slate-700 leading-relaxed overflow-y-auto">
                 <section>
-                  <h3 className="font-bold text-slate-900 mb-2">1. The Representative Household</h3>
-                  <p className="mb-2">
-                    A representative household maximizes discounted expected lifetime utility:
+                  <h3 className="text-lg font-bold text-slate-900 mb-4 border-b pb-2">1. Household Optimization</h3>
+                  <p className="mb-4">
+                    The representative household maximizes discounted expected lifetime utility:
                   </p>
-                  <div className="bg-slate-50 p-4 rounded border border-slate-200 flex justify-center mb-2">
+                  <div className="bg-slate-50 p-4 rounded border border-slate-200 flex justify-center mb-4">
                     <Latex>{`U\\big(\\{c_t\\}_{t=0}^{\\infty}\\big) = \\mathbb{E}_0 \\sum_{t=0}^{\\infty} \\beta^t \\, \\frac{c_t^{1-\\sigma} - 1}{1 - \\sigma}`}</Latex>
                   </div>
-                  <p>
-                    Solving the first-order optimization problem yields the inverse demand function for the final good, relating price <Latex>{'p_t'}</Latex> to consumption <Latex>{'c_t'}</Latex> and the shadow price of wealth <Latex>{'\\lambda_t'}</Latex>.
+                  <p className="mb-4">
+                    Subject to the budget constraint <Latex>{`p_t c_t + b_{t+1} = (1+r_t) b_t + E_t`}</Latex>. The Lagrangian for this problem is:
                   </p>
+                   <div className="bg-slate-50 p-4 rounded border border-slate-200 flex justify-center mb-4 overflow-x-auto">
+                    <Latex>{`\\mathcal{L} = \\mathbb{E}_0 \\sum_{t=0}^{\\infty} \\beta^t \\left[ \\frac{c_t^{1-\\sigma} - 1}{1 - \\sigma} - \\lambda_t\\Big( p_t c_t + b_{t+1} -(1+r_t) b_t - E_t\\Big)\\right]`}</Latex>
+                  </div>
+                  <p>
+                    The first-order condition with respect to consumption yields the inverse demand function:
+                  </p>
+                  <div className="flex justify-center my-2">
+                      <Latex>{`p_t = \\frac{c_t^{-\\sigma}}{\\lambda_t}`}</Latex>
+                  </div>
                 </section>
 
                 <section>
-                  <h3 className="font-bold text-slate-900 mb-2">2. Intermediate Firms</h3>
-                  <p className="mb-2">
-                    Firms engage in Cournot (quantity) competition. Each firm <Latex>{'i'}</Latex> has a specific productivity <Latex>{'A_i'}</Latex> and operates with linear technology:
+                  <h3 className="text-lg font-bold text-slate-900 mb-4 border-b pb-2">2. Firm Production & Competition</h3>
+                  <p className="mb-4">
+                    Intermediate firms engage in Cournot competition. Each firm <Latex>{'i'}</Latex> has productivity <Latex>{'A_i'}</Latex> and production function <Latex>{`y_t(i) = A_t(i) \\cdot l_t(i)`}</Latex>.
+                    Assuming perfect substitution, total supply is <Latex>{`Y_t = \\sum y_t(i)`}</Latex>.
                   </p>
-                  <div className="bg-slate-50 p-4 rounded border border-slate-200 flex justify-center mb-2">
-                    <Latex>{`y_t(i) = A_t(i) \\cdot l_t(i)`}</Latex>
+                  <p className="mb-2">Firm <Latex>i</Latex> maximizes profit:</p>
+                  <div className="flex justify-center my-2 mb-4">
+                      <Latex>{`\\max_{l_t(i)} \\Big\\{ p_t(Y_t) \\cdot y_t(i) - \\omega_t \\cdot l_t(i) \\Big\\}`}</Latex>
                   </div>
                   <p>
-                    Firms set production quantities strategically, taking into account the aggregate demand but acting as price-takers in the labor market.
+                      Solving for equilibrium price yields:
                   </p>
+                  <div className="bg-slate-50 p-4 rounded border border-slate-200 flex justify-center mb-4">
+                    <Latex>{`p_t^* = \\frac{\\sum_{i=1}^n \\tilde{\\omega}_t(i)}{n-\\sigma}`}</Latex>
+                  </div>
                 </section>
 
                 <section>
-                  <h3 className="font-bold text-slate-900 mb-2">3. Market Equilibrium & Survival</h3>
-                  <p className="mb-2">
-                    Assuming goods are perfect substitutes, the equilibrium price is determined by the sum of marginal costs relative to the number of firms. For a firm to produce a non-negative quantity (<Latex>{`y^*_t(i) > 0`}</Latex>), its productivity must be sufficiently high relative to the competition.
+                  <h3 className="text-lg font-bold text-slate-900 mb-4 border-b pb-2">3. Endogenous Entry Condition</h3>
+                  <p className="mb-4">
+                    For a firm to operate (<Latex>{`y^*_t(i) > 0`}</Latex>), the equilibrium price must exceed its marginal cost. This implies a productivity threshold derived from the structural parameters:
                   </p>
-                  <p className="mb-2">The survival condition derived is:</p>
-                  <div className="bg-slate-50 p-4 rounded border-l-4 border-indigo-500 flex justify-center">
-                    <Latex>{`A_t(i) > \\frac{n - \\sigma - 1}{\\sum_{j\\ne i} 1/A_t(j)}`}</Latex>
+                  <div className="bg-indigo-50 p-6 rounded-lg border-l-4 border-indigo-600 flex flex-col items-center gap-2 shadow-sm">
+                    <span className="text-sm font-semibold text-indigo-900 uppercase tracking-wide">Survival Condition</span>
+                    <Latex displayMode={true}>{`A_t(i) > \\frac{n - \\sigma - 1}{\\sum_{j\\ne i} 1/A_t(j)}`}</Latex>
                   </div>
-                  <p className="mt-2 text-xs italic text-slate-500">
-                    Simulation Note: In this visualization, firms that fail this condition are eliminated in waves until a stable set of surviving firms remains.
+                  <p className="mt-4 text-sm text-slate-500 italic">
+                    Note: In this simulation, <Latex>n</Latex> represents the number of surviving firms at any given iteration.
                   </p>
                 </section>
               </div>
               
-              <div className="p-4 border-t border-slate-100 bg-slate-50 rounded-b-xl flex justify-end">
+              <div className="p-6 border-t border-slate-100 bg-slate-50 rounded-b-xl flex justify-end">
                  <button 
                   onClick={() => setShowModelInfo(false)}
-                  className="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition-colors text-sm font-medium"
+                  className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white text-lg font-semibold rounded-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5"
                  >
                    Return to Simulation
                  </button>
@@ -381,23 +459,66 @@ const EntryDynamic = () => {
         )}
 
         {/* Sidebar Controls */}
-        <aside className="w-80 bg-white border-r border-slate-200 p-6 flex flex-col gap-8 overflow-y-auto flex-shrink-0 z-10">
+        <aside className="w-80 bg-white border-r border-slate-200 p-6 flex flex-col gap-6 overflow-y-auto flex-shrink-0 z-10">
           
-          <div className="space-y-6">
-            <div className="flex items-center justify-between">
-              <h2 className="text-sm font-bold text-slate-900 uppercase tracking-widest">Parameters</h2>
-              <button 
-                onClick={() => setShowModelInfo(true)}
-                className="text-xs flex items-center gap-1 text-indigo-600 hover:text-indigo-800 font-medium transition-colors"
-              >
-                <BookOpen className="w-3 h-3" />
-                Model Info
-              </button>
-            </div>
+          <div className="flex items-center justify-between">
+            <h2 className="text-sm font-bold text-slate-900 uppercase tracking-widest">Parameters</h2>
+            <button 
+              onClick={() => setShowModelInfo(true)}
+              className="text-xs flex items-center gap-1 text-indigo-600 hover:text-indigo-800 font-medium transition-colors bg-indigo-50 px-2 py-1 rounded"
+            >
+              <BookOpen className="w-3 h-3" />
+              Full Model Info
+            </button>
+          </div>
+
+          <div className="space-y-3 p-3 bg-slate-50 rounded border border-slate-200">
+             <div className="text-xs text-slate-500 flex items-center gap-2">
+                <span>Survival Rule:</span>
+             </div>
+             <div className="flex justify-center bg-white p-2 rounded border border-slate-100 shadow-sm">
+                <Latex>{`A_i \\ge \\frac{n - \\sigma - 1}{\\sum A_j^{-1}}`}</Latex>
+             </div>
+          </div>
+
+          {/* Public Knowledge Section */}
+          <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-4">
+            <h3 className="text-xs font-bold text-slate-500 uppercase flex items-center gap-2">
+              <Lightbulb className="w-4 h-4 text-slate-400" />
+              Public Knowledge
+            </h3>
             
             <div className="space-y-2">
               <div className="flex justify-between">
-                <label className="text-sm font-medium text-slate-700">Initial Firms (<Latex>{'n'}</Latex>)</label>
+                <label className="text-sm font-medium text-slate-700">Level (<Latex>{'A^p'}</Latex>)</label>
+                <span className="text-sm font-mono text-slate-500">{publicKnowledge.toFixed(2)}</span>
+              </div>
+              <input 
+                type="range" min="0" max="1" step="0.01" 
+                value={publicKnowledge} 
+                onChange={(e) => setPublicKnowledge(parseFloat(e.target.value))}
+                className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-black"
+              />
+            </div>
+            
+            <button
+              onClick={handleApplyKnowledge}
+              className="w-full py-2 bg-slate-900 hover:bg-black text-white rounded text-sm font-medium transition-colors flex items-center justify-center gap-2"
+              title="Boost productivity of low-performing firms"
+            >
+              Apply Knowledge
+              <ArrowRight className="w-3 h-3" />
+            </button>
+            <p className="text-[10px] text-slate-400 leading-tight">
+              Sets <Latex>{'A_i = \\max(A_i, A^p)'}</Latex> for all active firms.
+            </p>
+          </div>
+            
+          {/* General Params */}
+          <div className="space-y-4 border-t border-slate-100 pt-4">
+            <div className="space-y-2">
+              <div className="flex justify-between">
+                <label className="text-sm font-medium text-slate-700">Firms (<Latex>{'n'}</Latex>)</label>
                 <span className="text-sm font-mono text-slate-500">{n}</span>
               </div>
               <input 
@@ -410,7 +531,7 @@ const EntryDynamic = () => {
 
             <div className="space-y-2">
               <div className="flex justify-between">
-                <label className="text-sm font-medium text-slate-700">Elasticity Param (<Latex>{'\\sigma'}</Latex>)</label>
+                <label className="text-sm font-medium text-slate-700">Elasticity (<Latex>{'\\sigma'}</Latex>)</label>
                 <span className="text-sm font-mono text-slate-500">{sigma}</span>
               </div>
               <input 
@@ -419,7 +540,6 @@ const EntryDynamic = () => {
                 onChange={(e) => setSigma(parseFloat(e.target.value))}
                 className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
               />
-              <p className="text-xs text-slate-400">Inverse IES</p>
             </div>
 
             <div className="space-y-2">
@@ -433,7 +553,6 @@ const EntryDynamic = () => {
                 onChange={(e) => setAlpha(parseFloat(e.target.value))}
                 className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
               />
-              <p className="text-xs text-slate-400">Low <Latex>{'\\alpha'}</Latex> = More low-productivity firms</p>
             </div>
 
             <div className="space-y-2">
@@ -448,17 +567,17 @@ const EntryDynamic = () => {
                 className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
               />
             </div>
-
-            <button 
-              onClick={handleReset}
-              className="w-full py-2 px-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md font-medium transition-colors flex items-center justify-center gap-2"
-            >
-              <RefreshCw className="w-4 h-4" />
-              Regenerate Market
-            </button>
           </div>
 
-          <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 space-y-3">
+          <button 
+            onClick={handleReset}
+            className="w-full py-2 px-4 bg-indigo-50 text-indigo-700 hover:bg-indigo-100 rounded-md font-medium transition-colors flex items-center justify-center gap-2 mt-2"
+          >
+            <RefreshCw className="w-4 h-4" />
+            Regenerate Market
+          </button>
+
+          <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 space-y-3 mt-4">
              <h2 className="text-xs font-bold text-slate-500 uppercase">Step {currentStepIndex} Analysis</h2>
              <div className="flex justify-between items-center">
                <span className="text-sm text-slate-600">Active Firms (<Latex>{'n'}</Latex>)</span>
@@ -469,12 +588,6 @@ const EntryDynamic = () => {
                <span className="font-mono font-bold text-red-500">
                  {currentStepData.threshold.toFixed(4)}
                </span>
-             </div>
-             <div className="pt-2 border-t border-slate-200 text-xs text-slate-500 space-y-1">
-                <div className="flex justify-between items-center">
-                  <span>Num (<Latex>{`n - \\sigma - 1`}</Latex>):</span>
-                  <span>{Math.max(0, currentStepData.survivorCount - sigma - 1).toFixed(2)}</span>
-                </div>
              </div>
           </div>
         </aside>
@@ -573,8 +686,14 @@ const EntryDynamic = () => {
                   
                   {/* Threshold Line Extension (Top) */}
                    <div 
-                    className="absolute top-0 bottom-0 border-l-2 border-red-500/30 z-20 transition-all duration-500 ease-in-out"
+                    className={`absolute top-0 bottom-0 border-l-2 ${isKnowledgeActive ? 'border-dashed' : ''} border-red-500/30 z-20 transition-all duration-500 ease-in-out`}
                     style={{ left: `${currentStepData.threshold * 100}%`, opacity: currentStepData.threshold > 1 || currentStepData.threshold < 0 ? 0 : 1 }}
+                  />
+
+                  {/* Public Knowledge Line (Top) */}
+                   <div 
+                    className="absolute top-0 bottom-0 border-l-2 border-dashed border-black z-20 transition-all duration-500 ease-in-out"
+                    style={{ left: `${publicKnowledge * 100}%` }}
                   />
                </div>
             </div>
@@ -602,11 +721,21 @@ const EntryDynamic = () => {
 
                 {/* Threshold Line (Bottom) */}
                 <div 
-                  className="absolute top-0 bottom-0 border-l-2 border-red-500 z-20 transition-all duration-500 ease-in-out flex flex-col justify-end pb-2"
+                  className={`absolute top-0 bottom-0 border-l-2 ${isKnowledgeActive ? 'border-dashed' : ''} border-red-500 z-20 transition-all duration-500 ease-in-out flex flex-col justify-end pb-2`}
                   style={{ left: `${currentStepData.threshold * 100}%`, opacity: currentStepData.threshold > 1 || currentStepData.threshold < 0 ? 0 : 1 }}
                 >
                   <span className="text-xs font-bold text-red-500 bg-white/80 px-1 ml-1 whitespace-nowrap flex items-center">
                     <Latex>{`A^* = `}</Latex> {currentStepData.threshold.toFixed(3)}
+                  </span>
+                </div>
+
+                {/* Public Knowledge Line (Bottom) */}
+                <div 
+                  className="absolute top-0 bottom-0 border-l-2 border-dashed border-black z-20 transition-all duration-500 ease-in-out flex flex-col justify-end pb-8"
+                  style={{ left: `${publicKnowledge * 100}%` }}
+                >
+                  <span className="text-xs font-bold text-black bg-white/80 px-1 ml-1 whitespace-nowrap flex items-center">
+                    <Latex>{`A^p`}</Latex>
                   </span>
                 </div>
 
@@ -653,5 +782,4 @@ const EntryDynamic = () => {
     </div>
   );
 };
-
 export default EntryDynamic;

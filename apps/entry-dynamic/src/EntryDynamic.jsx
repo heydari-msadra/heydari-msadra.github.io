@@ -307,7 +307,7 @@ const EntryDynamic = () => {
   const isKnowledgeActive = knowledgeAppliedStep !== null && currentStepIndex >= knowledgeAppliedStep;
 
   // Histogram Calculations
-  const binCount = 40;
+  const binCount = 50;
   const activeBins = new Array(binCount).fill(0);
   const totalBins = new Array(binCount).fill(0);
 
@@ -352,7 +352,7 @@ const EntryDynamic = () => {
           
           <div className="flex flex-col">
             <div className="text-sm font-medium text-slate-500 uppercase tracking-wide">Sadra Heydari</div>
-            <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Endogeneous Entry</h1>
+            <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Endogeneous Entry Simulation</h1>
           </div>
         </div>
 
@@ -382,7 +382,7 @@ const EntryDynamic = () => {
             <div className="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col">
               <div className="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50 rounded-t-xl">
                 <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2">
-                  <BookOpen className="w-6 h-6 text-indigo-600" />
+                  <BookOpen className="w-6 h-8 text-indigo-600" />
                   Theoretical Framework
                 </h2>
                 <button onClick={() => setShowModelInfo(false)} className="text-slate-400 hover:text-slate-600 transition-colors p-1 hover:bg-slate-200 rounded-full">
@@ -409,36 +409,39 @@ const EntryDynamic = () => {
                     The first-order condition with respect to consumption yields the inverse demand function:
                   </p>
                   <div className="flex justify-center my-2">
-                      <Latex>{`p_t = \\frac{c_t^{-\\sigma}}{\\lambda_t}`}</Latex>
+                      <Latex>{`p_t = \\frac{c_t^{-\\sigma}}{\\lambda_t},`}</Latex>
                   </div>
+                  <p>
+                    where <Latex>{`\\lambda_t`}</Latex> is the marginal utility of wealth, and <Latex>{`\\sigma > 0`}</Latex> is the elasticity of intertemporal substitution.
+                  </p>
                 </section>
 
                 <section>
                   <h3 className="text-lg font-bold text-slate-900 mb-4 border-b pb-2">2. Firm Production & Competition</h3>
                   <p className="mb-4">
-                    Intermediate firms engage in Cournot competition. Each firm <Latex>{'i'}</Latex> has productivity <Latex>{'A_i'}</Latex> and production function <Latex>{`y_t(i) = A_t(i) \\cdot l_t(i)`}</Latex>.
-                    Assuming perfect substitution, total supply is <Latex>{`Y_t = \\sum y_t(i)`}</Latex>.
+                    Firms engage in Cournot competition. Each firm <Latex>{'i'}</Latex> has productivity <Latex>{'A_i'}</Latex> and production function <Latex>{`y_i = A_i \\cdot l_i`}</Latex>, where <Latex>{'l_i'}</Latex> is labour input, with given wage <Latex>{`\\omega_t`}</Latex>. 
+                    Assuming perfect substitution, total supply is <Latex>{`Y_t = \\sum y_i`}</Latex>.
                   </p>
                   <p className="mb-2">Firm <Latex>i</Latex> maximizes profit:</p>
                   <div className="flex justify-center my-2 mb-4">
-                      <Latex>{`\\max_{l_t(i)} \\Big\\{ p_t(Y_t) \\cdot y_t(i) - \\omega_t \\cdot l_t(i) \\Big\\}`}</Latex>
+                      <Latex>{`\\max_{l_i} \\Big\\{ p_t(Y_t) \\cdot y_i - \\omega_t \\cdot l_i \\Big\\}`}</Latex>
                   </div>
                   <p>
                       Solving for equilibrium price yields:
                   </p>
                   <div className="bg-slate-50 p-4 rounded border border-slate-200 flex justify-center mb-4">
-                    <Latex>{`p_t^* = \\frac{\\sum_{i=1}^n \\tilde{\\omega}_t(i)}{n-\\sigma}`}</Latex>
+                    <Latex>{`p_t^* = \\omega_t \\frac{\\sum_{i=1}^n A_i^{-1}}{n-\\sigma}`}</Latex>
                   </div>
                 </section>
 
                 <section>
                   <h3 className="text-lg font-bold text-slate-900 mb-4 border-b pb-2">3. Endogenous Entry Condition</h3>
                   <p className="mb-4">
-                    For a firm to operate (<Latex>{`y^*_t(i) > 0`}</Latex>), the equilibrium price must exceed its marginal cost. This implies a productivity threshold derived from the structural parameters:
+                    For a firm to operate (<Latex>{`y^*_i > 0`}</Latex>), the equilibrium price must exceed its marginal cost. This implies a productivity threshold derived from the structural parameters:
                   </p>
                   <div className="bg-indigo-50 p-6 rounded-lg border-l-4 border-indigo-600 flex flex-col items-center gap-2 shadow-sm">
                     <span className="text-sm font-semibold text-indigo-900 uppercase tracking-wide">Survival Condition</span>
-                    <Latex displayMode={true}>{`A_t(i) > \\frac{n - \\sigma - 1}{\\sum_{j\\ne i} 1/A_t(j)}`}</Latex>
+                    <Latex displayMode={true}>{`A_i > \\frac{n - \\sigma - 1}{\\sum_{j=1}^{n} 1/A_j}`}</Latex>
                   </div>
                   <p className="mt-4 text-sm text-slate-500 italic">
                     Note: In this simulation, <Latex>n</Latex> represents the number of surviving firms at any given iteration.
@@ -446,14 +449,14 @@ const EntryDynamic = () => {
                 </section>
               </div>
               
-              <div className="p-6 border-t border-slate-100 bg-slate-50 rounded-b-xl flex justify-end">
+              {/* <div className="p-6 border-t border-slate-100 bg-slate-50 rounded-b-xl flex justify-end">
                  <button 
                   onClick={() => setShowModelInfo(false)}
                   className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white text-lg font-semibold rounded-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5"
                  >
                    Return to Simulation
                  </button>
-              </div>
+              </div> */}
             </div>
           </div>
         )}
@@ -494,7 +497,7 @@ const EntryDynamic = () => {
                 <span className="text-sm font-mono text-slate-500">{publicKnowledge.toFixed(2)}</span>
               </div>
               <input 
-                type="range" min="0" max="1" step="0.01" 
+                type="range" min="0" max="1" step="0.005" 
                 value={publicKnowledge} 
                 onChange={(e) => setPublicKnowledge(parseFloat(e.target.value))}
                 className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-black"
@@ -522,7 +525,7 @@ const EntryDynamic = () => {
                 <span className="text-sm font-mono text-slate-500">{n}</span>
               </div>
               <input 
-                type="range" min="50" max="1000" step="10" 
+                type="range" min="50" max="5000" step="50" 
                 value={n} 
                 onChange={(e) => setN(parseInt(e.target.value))}
                 className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
@@ -531,7 +534,7 @@ const EntryDynamic = () => {
 
             <div className="space-y-2">
               <div className="flex justify-between">
-                <label className="text-sm font-medium text-slate-700">Elasticity (<Latex>{'\\sigma'}</Latex>)</label>
+                <label className="text-sm font-medium text-slate-700">Intertemporal Elasticity (<Latex>{'\\sigma'}</Latex>)</label>
                 <span className="text-sm font-mono text-slate-500">{sigma}</span>
               </div>
               <input 
@@ -544,6 +547,12 @@ const EntryDynamic = () => {
 
             <div className="space-y-2">
               <div className="flex justify-between">
+                <label className="text-sm font-medium text-slate-700">Distribution <Latex>{'\\Beta(\\alpha, \\beta)'}</Latex></label>
+              </div>
+            </div>
+
+            <div className="space-y-1">
+              <div className="flex justify-between">
                 <label className="text-sm font-medium text-slate-700">Shape <Latex>{'\\alpha'}</Latex></label>
                 <span className="text-sm font-mono text-slate-500">{alpha}</span>
               </div>
@@ -555,7 +564,7 @@ const EntryDynamic = () => {
               />
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-1">
               <div className="flex justify-between">
                 <label className="text-sm font-medium text-slate-700">Shape <Latex>{'\\beta'}</Latex></label>
                 <span className="text-sm font-mono text-slate-500">{betaParam}</span>
@@ -747,7 +756,7 @@ const EntryDynamic = () => {
                   
                   if (point.status === 'eliminated_now') {
                     colorClass = "bg-red-500";
-                    scale = 1.3;
+                    scale = 1.2;
                   } else if (point.status === 'eliminated') {
                     colorClass = "bg-slate-300";
                     opacity = 0.2;

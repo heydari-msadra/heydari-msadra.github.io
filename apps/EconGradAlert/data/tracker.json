@@ -35,7 +35,10 @@
       "notes": "Seed entry Aug 2026; deadline year-labeling on official page is internally inconsistent (Dec/Feb/May dates vs. an Oct 2026 Studielink-opening note) — verify manually before relying on exact cohort year",
       "urgency": "soon",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 4,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "EUR-02",
@@ -64,7 +67,10 @@
       "notes": "Seed entry Aug 2026; PhD entry is exclusively via the M2 ETE doctoral track, not a standalone PhD application",
       "urgency": "later",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 5,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "EUR-03",
@@ -93,7 +99,10 @@
       "notes": "Seed entry Aug 2026; watch for 2027-28 deadline announcement",
       "urgency": "later",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 7,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "EUR-04",
@@ -122,7 +131,10 @@
       "notes": "Seed entry Aug 2026",
       "urgency": "later",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 8,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "EUR-05",
@@ -151,7 +163,10 @@
       "notes": "Seed entry Aug 2026; verify current-cycle dates directly",
       "urgency": "later",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 9,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "EUR-06",
@@ -180,7 +195,10 @@
       "notes": "Seed entry Aug 2026",
       "urgency": "later",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 10,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "EUR-07",
@@ -209,7 +227,10 @@
       "notes": "Seed entry Aug 2026; unusual application model, needs manual follow-up",
       "urgency": "tba",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 11,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "EUR-08",
@@ -238,7 +259,10 @@
       "notes": "Seed entry Aug 2026",
       "urgency": "later",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 12,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "EUR-09",
@@ -267,7 +291,10 @@
       "notes": "Seed entry Aug 2026; watch for 2027-28 cycle opening",
       "urgency": "later",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 13,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "EUR-10",
@@ -296,7 +323,10 @@
       "notes": "Seed entry Aug 2026; application/tuition fees still unconfirmed",
       "urgency": "later",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 14,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "EUR-11",
@@ -325,7 +355,10 @@
       "notes": "Seed entry Aug 2026; watch for 43rd-cycle (2027-28) announcement in autumn/winter 2026",
       "urgency": "closed",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 15,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "EUR-12",
@@ -354,7 +387,10 @@
       "notes": "Seed entry Aug 2026",
       "urgency": "later",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 16,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "EUR-13",
@@ -383,7 +419,10 @@
       "notes": "One of the top-ranked UK econ PhDs; verify current-cycle deadline/fee figures directly on LSE site before applying, as dates shift annually.",
       "urgency": "soon",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 17,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "EUR-14",
@@ -412,7 +451,10 @@
       "notes": "Competitive, limited places on the Doctoral College scholarship track; confirm stipend amount directly with admissions.",
       "urgency": "later",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 18,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "EUR-15",
@@ -441,7 +483,10 @@
       "notes": "Highly selective — ~400 applications/year for only ~12-15 admits; confirm current-year scholarship amount directly with the department.",
       "urgency": "later",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 19,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "EUR-16",
@@ -470,7 +515,10 @@
       "notes": "Danish PhDs are structured as paid jobs rather than stipends, so funding is unusually generous and reliable versus many EU peers; no published IELTS/TOEFL threshold found — confirm with department.",
       "urgency": "later",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 20,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "ASA-01",
@@ -499,7 +547,10 @@
       "notes": "Seed entry Aug 2026; contact econ-phd@nus.edu.sg for specifics",
       "urgency": "soon",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 21,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "ASA-02",
@@ -528,7 +579,10 @@
       "notes": "Seed entry Aug 2026",
       "urgency": "soon",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 22,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "ASA-03",
@@ -557,7 +611,10 @@
       "notes": "Seed entry Aug 2026; this is a cross-institution scheme, not a single program — apply through chosen university's Economics dept",
       "urgency": "soon",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 23,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "ASA-04",
@@ -586,7 +643,10 @@
       "notes": "Seed entry Aug 2026; deadline needs manual confirmation",
       "urgency": "tba",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 24,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "ASA-05",
@@ -615,7 +675,10 @@
       "notes": "INCOMPLETE — prioritise for next refresh. Unconfirmed search snippets suggest UTIPE's PhD admission policy changed circa 2023 to require completing UTIPE's own Master's program first (may no longer accept direct external PhD applicants) — not verified against the primary source, needs a manual check.",
       "urgency": "tba",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 25,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "ASA-06",
@@ -644,7 +707,10 @@
       "notes": "Partially complete — exact per-cycle deadline dates and funding figures still needed; prioritise for next refresh",
       "urgency": "tba",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 26,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "ASA-07",
@@ -673,7 +739,10 @@
       "notes": "Department-level Economics PhD funding not yet confirmed — university-wide scholarships only; prioritise for next refresh",
       "urgency": "later",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 27,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "ASA-08",
@@ -702,7 +771,10 @@
       "notes": "Distinct from the cross-institution HKPFS scheme already tracked (ASA-03) — nearly all admitted PhD students get baseline PGS funding here even without winning HKPFS, a broader guarantee than HKPFS alone.",
       "urgency": "soon",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 28,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "AUS-01",
@@ -731,7 +803,10 @@
       "notes": "Seed entry Aug 2026 — international scholarship deadline is imminent (8 days away as of this update)",
       "urgency": "urgent",
       "notified_30day": true,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 29,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "AUS-02",
@@ -760,7 +835,10 @@
       "notes": "Seed entry Aug 2026; unimelb.edu.au pages returned HTTP 403 to automated fetches this pass — recommend a manual browser check before relying on the reported 30 Nov 2026 deadline",
       "urgency": "soon",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 30,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "AUS-03",
@@ -789,7 +867,10 @@
       "notes": "Seed entry Aug 2026; monash.edu blocked all automated fetches this pass (scholarships-and-fees, apply, and program pages all 403'd) — every figure in this update is lower-confidence (search snippets/third-party aggregator only) and needs a manual browser check, especially the reported 31 Aug 2026 integrated-pathway deadline",
       "urgency": "urgent",
       "notified_30day": true,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 31,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "AUS-04",
@@ -818,7 +899,10 @@
       "notes": "Seed entry Aug 2026; needs a general (non-topic-restricted) funding page check; no dedicated Economics-specific PhD admissions page exists at Sydney",
       "urgency": "urgent",
       "notified_30day": true,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 32,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "AUS-05",
@@ -847,7 +931,10 @@
       "notes": "Seed entry Aug 2026 — EOI window closed 15 Aug 2026, still no next window announced as of this update",
       "urgency": "closed",
       "notified_30day": false,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 33,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "AUS-06",
@@ -876,7 +963,10 @@
       "notes": "Scholarship is university-wide (RTP/UQGRSS), not economics-specific, but School of Economics PhD candidates are eligible; confirm current-cycle scholarship closing dates on the UQ Scholarships portal since they shift each year. The 31 Aug 2026 round is imminent.",
       "urgency": "urgent",
       "notified_30day": true,
-      "notified_7day": false
+      "notified_7day": false,
+      "telegram_message_id": 34,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     }
   ],
   "change_log": [
@@ -885,308 +975,352 @@
       "program_id": "EUR-01",
       "program_name": "Research Master in Economics — Tinbergen Institute (UvA / VU / Erasmus)",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "EUR-02",
       "program_name": "Doctoral Program — Toulouse School of Economics (TSE)",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "EUR-03",
       "program_name": "Doctoral Programme in Economics — European University Institute (EUI)",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "EUR-04",
       "program_name": "Combined M.Sc. Economic Research / Doctoral Program — Bonn Graduate School of Economics (BGSE)",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "EUR-05",
       "program_name": "PhD in Economics — CEMFI",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "EUR-06",
       "program_name": "Master's in Economics — Barcelona School of Economics (BSE)",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "EUR-07",
       "program_name": "PhD Program — Paris School of Economics (PSE)",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "EUR-08",
       "program_name": "PhD Programme in Economics — Stockholm University / IIES",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "EUR-09",
       "program_name": "MPhil + DPhil in Economics — University of Oxford",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "EUR-10",
       "program_name": "CDSE Doctoral Program in Economics — University of Mannheim (CDSE)",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "EUR-11",
       "program_name": "PhD in Economics and Finance — Bocconi University",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "EUR-12",
       "program_name": "Economics MRes + MPhil/PhD — University College London (UCL)",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "ASA-01",
       "program_name": "PhD in Economics — National University of Singapore (NUS)",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "ASA-02",
       "program_name": "MPhil/PhD in Economics — Hong Kong University of Science and Technology (HKUST)",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "ASA-03",
       "program_name": "Hong Kong PhD Fellowship Scheme (HKPFS) — Hong Kong universities incl. CUHK / HKUST / HKU / CityU (Economics eligible)",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "ASA-04",
       "program_name": "PhD in Economics — Nanyang Technological University (NTU Singapore)",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "ASA-05",
       "program_name": "International Program in Economics (PhD) — University of Tokyo",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "ASA-06",
       "program_name": "Graduate School of Economics (PhD) — Hitotsubashi University",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "ASA-07",
       "program_name": "Department of Economics (PhD) — Seoul National University (SNU)",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "AUS-01",
       "program_name": "PhD in Economics — Australian National University (ANU)",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "AUS-02",
       "program_name": "Doctoral Program in Economics — University of Melbourne",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "AUS-03",
       "program_name": "PhD (Economics) — Monash Business School",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "AUS-04",
       "program_name": "PhD in Economics — University of Sydney",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-22",
       "program_id": "AUS-05",
       "program_name": "PhD in Economics — UNSW Sydney",
       "change_type": "Added (seed)",
-      "details": "Initial research pass — program added to tracker."
+      "details": "Initial research pass — program added to tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-23",
       "program_id": "EUR-01",
       "program_name": "Research Master in Economics — Tinbergen Institute (UvA / VU / Erasmus)",
       "change_type": "Updated",
-      "details": "Filled in IELTS/TOEFL/GRE, references, tuition and scholarship amounts; flagged a cohort-year labeling ambiguity in the official deadline text."
+      "details": "Filled in IELTS/TOEFL/GRE, references, tuition and scholarship amounts; flagged a cohort-year labeling ambiguity in the official deadline text.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-23",
       "program_id": "EUR-02",
       "program_name": "Doctoral Program — Toulouse School of Economics (TSE)",
       "change_type": "Updated",
-      "details": "Found the M2 ETE application window (10-20 Apr, recurring) and language/GRE/fee requirements — PhD entry is via M2 ETE only, not a standalone application."
+      "details": "Found the M2 ETE application window (10-20 Apr, recurring) and language/GRE/fee requirements — PhD entry is via M2 ETE only, not a standalone application.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-23",
       "program_id": "EUR-10",
       "program_name": "CDSE Doctoral Program in Economics — University of Mannheim (CDSE)",
       "change_type": "Updated",
-      "details": "Filled in deadline (31 Mar annually), GRE/reference requirements, and ZEW Cooperation Track funding — previously the least-detailed entry in the tracker."
+      "details": "Filled in deadline (31 Mar annually), GRE/reference requirements, and ZEW Cooperation Track funding — previously the least-detailed entry in the tracker.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-23",
       "program_id": "EUR-11",
       "program_name": "PhD in Economics and Finance — Bocconi University",
       "change_type": "Updated",
-      "details": "Confirmed the 2026-27 cycle (ordinary + FIS call) is fully closed and the 2027-28 cycle is not yet announced; added test-requirement and fee detail."
+      "details": "Confirmed the 2026-27 cycle (ordinary + FIS call) is fully closed and the 2027-28 cycle is not yet announced; added test-requirement and fee detail.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-23",
       "program_id": "ASA-01",
       "program_name": "PhD in Economics — National University of Singapore (NUS)",
       "change_type": "Updated",
-      "details": "Confirmed deadlines unchanged; added admission requirement detail."
+      "details": "Confirmed deadlines unchanged; added admission requirement detail.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-23",
       "program_id": "ASA-02",
       "program_name": "MPhil/PhD in Economics — Hong Kong University of Science and Technology (HKUST)",
       "change_type": "Updated",
-      "details": "Found explicit departmental Postgraduate Studentship funding (HK$229,620/yr) and fees; upgraded funding_status from Likely to Yes."
+      "details": "Found explicit departmental Postgraduate Studentship funding (HK$229,620/yr) and fees; upgraded funding_status from Likely to Yes.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-23",
       "program_id": "ASA-05",
       "program_name": "International Program in Economics (PhD) — University of Tokyo",
       "change_type": "Updated",
-      "details": "Site unreachable again this pass (DNS failure, confirmed via two methods); flagged an unconfirmed lead on a possible 2023 admission-policy change limiting PhD entry to internal Master's completers."
+      "details": "Site unreachable again this pass (DNS failure, confirmed via two methods); flagged an unconfirmed lead on a possible 2023 admission-policy change limiting PhD entry to internal Master's completers.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-23",
       "program_id": "ASA-06",
       "program_name": "Graduate School of Economics (PhD) — Hitotsubashi University",
       "change_type": "Updated",
-      "details": "Located the correct department admissions page; found intake-cycle pattern, AO exam routes, and precise RePEc rank (#390)."
+      "details": "Located the correct department admissions page; found intake-cycle pattern, AO exam routes, and precise RePEc rank (#390).",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-23",
       "program_id": "ASA-07",
       "program_name": "Department of Economics (PhD) — Seoul National University (SNU)",
       "change_type": "Updated",
-      "details": "Found university-wide test-score/fee requirements and admission-cycle pattern; department-specific PhD funding still unconfirmed."
+      "details": "Found university-wide test-score/fee requirements and admission-cycle pattern; department-specific PhD funding still unconfirmed.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-23",
       "program_id": "AUS-01",
       "program_name": "PhD in Economics — Australian National University (ANU)",
       "change_type": "Updated",
-      "details": "Confirmed the imminent 31 Aug 2026 international scholarship deadline is still live; added RTP stipend figures; set 30-day reminder flag."
+      "details": "Confirmed the imminent 31 Aug 2026 international scholarship deadline is still live; added RTP stipend figures; set 30-day reminder flag.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-23",
       "program_id": "AUS-02",
       "program_name": "Doctoral Program in Economics — University of Melbourne",
       "change_type": "Updated",
-      "details": "Found a reported Nov 2026 deadline and RTP stipend figures via search — official pages blocked automated fetches (HTTP 403), so flagged as lower confidence pending manual check."
+      "details": "Found a reported Nov 2026 deadline and RTP stipend figures via search — official pages blocked automated fetches (HTTP 403), so flagged as lower confidence pending manual check.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-23",
       "program_id": "AUS-03",
       "program_name": "PhD (Economics) — Monash Business School",
       "change_type": "Updated",
-      "details": "Found an application-window pattern suggesting an imminent (~31 Aug 2026) integrated-pathway deadline; monash.edu blocked all direct fetches (HTTP 403), so figures are lower-confidence; set 30-day reminder flag."
+      "details": "Found an application-window pattern suggesting an imminent (~31 Aug 2026) integrated-pathway deadline; monash.edu blocked all direct fetches (HTTP 403), so figures are lower-confidence; set 30-day reminder flag.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-23",
       "program_id": "AUS-04",
       "program_name": "PhD in Economics — University of Sydney",
       "change_type": "Updated",
-      "details": "Found general RTP scholarship deadlines (11 Sep / 18 Dec 2026); confirmed Sydney has no dedicated 'PhD in Economics' page — entry is via the general PhD degree; set 30-day reminder flag."
+      "details": "Found general RTP scholarship deadlines (11 Sep / 18 Dec 2026); confirmed Sydney has no dedicated 'PhD in Economics' page — entry is via the general PhD degree; set 30-day reminder flag.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-23",
       "program_id": "AUS-05",
       "program_name": "PhD in Economics — UNSW Sydney",
       "change_type": "Updated",
-      "details": "Confirmed the EOI window remains closed with no new window announced; added program-structure and English-test detail."
+      "details": "Confirmed the EOI window remains closed with no new window announced; added program-structure and English-test detail.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-23",
       "program_id": "EUR-13",
       "program_name": "MRes/PhD in Economics — London School of Economics (LSE)",
       "change_type": "Added (new find)",
-      "details": "New find: RePEc #16, funded via LSE PhD Studentships and ESRC studentships."
+      "details": "New find: RePEc #16, funded via LSE PhD Studentships and ESRC studentships.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-23",
       "program_id": "EUR-14",
       "program_name": "MRes/PhD in Finance & Economics — University of Warwick (Warwick Business School)",
       "change_type": "Added (new find)",
-      "details": "New find: RePEc #37, fully funded (fee waiver + stipend) for all successful applicants."
+      "details": "New find: RePEc #37, fully funded (fee waiver + stipend) for all successful applicants.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-23",
       "program_id": "EUR-15",
       "program_name": "PhD in Economics (Zurich Graduate School of Economics) — University of Zurich",
       "change_type": "Added (new find)",
-      "details": "New find: RePEc #32, departmental scholarships from year 1 plus a competitive UBS Center Scholarship."
+      "details": "New find: RePEc #32, departmental scholarships from year 1 plus a competitive UBS Center Scholarship.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-23",
       "program_id": "EUR-16",
       "program_name": "PhD Programme in Economics — University of Copenhagen (Department of Economics)",
       "change_type": "Added (new find)",
-      "details": "New find: RePEc #54, salaried PhD position under the Danish state academic-union pay scale (~EUR 4,150/month)."
+      "details": "New find: RePEc #54, salaried PhD position under the Danish state academic-union pay scale (~EUR 4,150/month).",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-23",
       "program_id": "ASA-08",
       "program_name": "PhD in Business (Economics track) — University of Hong Kong (Faculty of Business and Economics)",
       "change_type": "Added (new find)",
-      "details": "New find: RePEc #106, guaranteed Postgraduate Scholarship funding (HK$19,135+/month) independent of the HKPFS scheme already tracked."
+      "details": "New find: RePEc #106, guaranteed Postgraduate Scholarship funding (HK$19,135+/month) independent of the HKPFS scheme already tracked.",
+      "notified_telegram": true
     },
     {
       "date": "2026-08-23",
       "program_id": "AUS-06",
       "program_name": "Doctor of Philosophy (Economics) — University of Queensland (School of Economics)",
       "change_type": "Added (new find)",
-      "details": "New find: RePEc #71, RTP/UQGRSS stipend AUD $37,500/yr; flagged an imminent 31 Aug 2026 scholarship round."
+      "details": "New find: RePEc #71, RTP/UQGRSS stipend AUD $37,500/yr; flagged an imminent 31 Aug 2026 scholarship round.",
+      "notified_telegram": true
     }
   ]
 }

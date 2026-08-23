@@ -15,7 +15,8 @@
       "Bash(git diff*)",
       "Bash(git log*)",
       "Bash(gh pr create*)",
-      "Bash(python apps/EconGradAlert/scripts/build_excel.py)"
+      "Bash(python apps/EconGradAlert/scripts/build_excel.py)",
+      "Bash(python apps/EconGradAlert/scripts/telegram_sync.py*)"
     ]
   }
 }

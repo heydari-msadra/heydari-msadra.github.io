@@ -100,6 +100,13 @@
     color: var(--link-color);
 }
 
+/* Tracker link: distinct monospace font sets it apart as a separate app, not a site page */
+.site-nav a.nav-tracker-link,
+.mobile-menu a.nav-tracker-link {
+    font-family: "Courier New", ui-monospace, "SFMono-Regular", Consolas, monospace;
+    letter-spacing: 0;
+}
+
 /* Desktop dark mode toggle */
 .desktop-toggle {
     position: absolute;

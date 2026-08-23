@@ -18,7 +18,11 @@ file outside that folder (the rest of the site — `index.html`, `pages/`,
 `apps/EconGradAlert/githide/` is git-ignored and holds working notes plus
 `config.json` (the Telegram bot token + chat ID). `scripts/telegram_sync.py`
 reads that file to send messages — that's its job — but you (the agent)
-should never open, print, or otherwise surface its contents yourself.
+should never open, print, or otherwise surface its contents yourself. If
+you need to write any scratch/working file of your own (e.g. a before/after
+snapshot for diffing), put it under `githide/` — it's git-ignored, so it
+won't show up in `git status` and doesn't need cleaning up afterward. Don't
+leave loose files elsewhere in `apps/EconGradAlert/`.
 
 ---
 

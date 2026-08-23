@@ -1,0 +1,4 @@
+{
+  "instructions": "Request a program be added to the tracker by adding an entry to \"queue\" below: { \"link\": \"https://...\", \"note\": \"optional context\", \"submitted_by\": \"optional name/handle\", \"submitted_date\": \"YYYY-MM-DD\" }. Open a pull request with your addition. The periodic update agent researches each pending entry and either adds it to data/tracker.json (as a funded Economics Master's or PhD program) and removes it from this queue, or — if it doesn't qualify (not funded, not Economics, page unreachable, already tracked, etc.) — leaves the entry here with \"status\": \"needs-review\" and an \"agent_note\" explaining why, for a human to resolve.",
+  "queue": []
+}

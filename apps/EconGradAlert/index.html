@@ -149,7 +149,7 @@
     letter-spacing: 0.06em;
   }
 
-  .download-row { margin-bottom: 2.2rem; }
+  .download-row { margin-bottom: 2.2rem; display: flex; flex-wrap: wrap; gap: 0.6rem; }
   .download-link {
     display: inline-flex;
     align-items: center;
@@ -441,6 +441,9 @@
       <a class="download-link" id="downloadXlsx" href="./data/tracker.xlsx" download>
         ⬇ Download Excel (.xlsx) <span class="dl-note" id="downloadNote"></span>
       </a>
+      <a class="download-link" href="https://t.me/EconGradAlerts" target="_blank" rel="noopener">
+        🔔 Get deadline alerts on Telegram
+      </a>
     </div>
   </header>
 
@@ -468,6 +471,10 @@
       <div>
         <h3>About the rankings</h3>
         <p>Overall economics-department rank from RePEc IDEAS (<a href="https://ideas.repec.org/top/top.econdept.html" target="_blank" rel="noopener">ideas.repec.org</a>), snapshot <span id="repecSnapshot">—</span>. Joint institutes without a standalone listing show their affiliated universities' ranks instead.</p>
+      </div>
+      <div>
+        <h3>Get alerts on Telegram</h3>
+        <p><a href="https://t.me/EconGradAlerts" target="_blank" rel="noopener">@EconGradAlerts</a> posts one thread per program — new additions, deadline changes, and 30-/7-day reminders arrive as replies in that program's thread, so you only need to follow the ones you care about.</p>
       </div>
     </div>
     <details class="changelog">

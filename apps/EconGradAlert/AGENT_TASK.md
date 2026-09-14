@@ -256,11 +256,29 @@ checking today's actual date — several judgment calls below depend on it.
 Remember the hard boundary from the top of this file: nothing outside
 `apps/EconGradAlert/` gets touched.
 
-**Step 1 — Read current state**
-Read `apps/EconGradAlert/data/tracker.json` and `data/alertqueue.json`.
-Parse `tracker.json` against the schema in §2.1. If anything about the file
-doesn't match that schema, treat §2.1 as authoritative and fix the file to
-match as part of this run.
+**Step 1 — Create the branch, then read current state**
+**Do this before any Edit call this run makes, not at the end:**
+- `git fetch origin` then `git checkout main` then `git reset --hard origin/main`
+  — get onto a clean, up-to-date `main`. Safe here specifically *because*
+  it's the very first thing you do, before touching any files.
+- `git checkout -b econgrad-update-<YYYY-MM-DD>` (if that name is already
+  taken by a previous run today, append `-b`, `-c`, etc.)
+
+Only once you're on that branch: read `apps/EconGradAlert/data/tracker.json`
+and `data/alertqueue.json`. Parse `tracker.json` against the schema in
+§2.1. If anything about the file doesn't match that schema, treat §2.1 as
+authoritative and fix the file to match as part of this run.
+
+**Why this order matters:** a prior run hit `git reset --hard origin/main`
+*after* already editing `tracker.json` on `main` directly (because it
+followed an earlier draft of this doc that put branch creation at Step 8),
+which silently discarded those edits — including state that
+`telegram_sync.py` had already used to post real messages to the live
+channel. It recovered by reading `https://t.me/s/EconGradAlerts` (the
+public channel preview, no bot token needed) to reconstruct which messages
+had actually sent, then confirmed via `telegram_sync.py --dry-run` before
+recommitting. Branching first makes that whole recovery unnecessary — do
+that instead of relying on being able to repeat it.
 
 **Step 2 — Process the alert queue**
 For each entry in `alertqueue.json` with `status: "pending"` (or no
@@ -344,16 +362,8 @@ Confirm it exits cleanly. If it errors partway (e.g. a network blip), it's
 safe to just re-run — already-sent messages are never re-sent.
 
 **Step 8 — Commit and publish**
-- `git fetch origin` then `git checkout main` then `git reset --hard origin/main`
-  — **always branch from up-to-date `main`, never from whatever branch
-  happened to be checked out when this run started.** A prior run's branch
-  can still be sitting there unmerged (check `git branch -a` if unsure) —
-  branching from it instead of `main` silently stacks this run's PR on top
-  of an unrelated, possibly-stale one. (`reset --hard` here is safe: it
-  only discards *tracked* changes on `main`, and you haven't touched
-  `main`'s working tree yet at this point in the run.)
-- `git checkout -b econgrad-update-<YYYY-MM-DD>` (if that name is already
-  taken by a previous run today, append `-b`, `-c`, etc.)
+You should already be on the `econgrad-update-<YYYY-MM-DD>` branch created
+in Step 1 — this step just saves and publishes what you did there.
 - `git add apps/EconGradAlert/data/tracker.json apps/EconGradAlert/data/tracker.xlsx apps/EconGradAlert/data/alertqueue.json`
   (stage nothing else — double-check `git status` shows only these three
   files before committing; omit `tracker.xlsx` if Step 6 failed per the

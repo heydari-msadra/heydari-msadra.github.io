@@ -8,15 +8,21 @@
       "WebFetch",
       "Edit(apps/EconGradAlert/**)",
       "Bash(git status*)",
+      "Bash(git fetch origin)",
+      "Bash(git checkout main)",
+      "Bash(git reset --hard origin/main)",
       "Bash(git checkout -b *)",
+      "Bash(git branch -a)",
+      "Bash(git branch --show-current)",
       "Bash(git add apps/EconGradAlert/*)",
       "Bash(git commit *)",
       "Bash(git push *)",
       "Bash(git diff*)",
       "Bash(git log*)",
       "Bash(gh pr create*)",
-      "Bash(python apps/EconGradAlert/scripts/build_excel.py)",
-      "Bash(python apps/EconGradAlert/scripts/telegram_sync.py*)"
+      "Bash(python apps/EconGradAlert/scripts/*)",
+      "Bash(python -c *)",
+      "Bash(python -m pip show openpyxl)"
     ]
   }
 }

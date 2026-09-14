@@ -24,6 +24,35 @@ snapshot for diffing), put it under `githide/` — it's git-ignored, so it
 won't show up in `git status` and doesn't need cleaning up afterward. Don't
 leave loose files elsewhere in `apps/EconGradAlert/`.
 
+**This runs headless — nobody is there to click "approve."** You're invoked
+non-interactively via `claude -p ... --settings agent-settings.json`. That
+settings file's `permissions.allow` list is the *entire* set of Bash
+commands you can run without a prompt; anything else silently surfaces as
+"needs approval" and just sits there — since there's no one to approve it,
+that's a dead end, not a pause. Concretely:
+- **Prefer the Edit tool over ad-hoc Bash/python for editing `tracker.json`
+  and `alertqueue.json`** — Edit is broadly permitted
+  (`Edit(apps/EconGradAlert/**)`); a one-off `python -c "..."` snippet is
+  usually *not* on the allow-list even though it looks harmless, and one
+  blocked command derails the whole run if you let it.
+- **If you do hit a blocked/unapproved action, don't just stop and ask —
+  there's no one to answer.** Fall back to an already-permitted tool
+  (Edit is almost always sufficient), or skip that specific sub-task, note
+  it plainly in your Step 9 summary, and carry on with everything else.
+  A run that finishes Steps 1–9 with one noted gap is far more useful than
+  one that quietly does nothing and exits 0 having written down nothing —
+  that has happened before (2026-09-12) and wasted the whole cycle.
+- **Always reach Step 8 (commit) with whatever you've got**, even if some
+  earlier step was only partially completed. Partial real progress
+  committed beats complete progress described in a final-turn message that
+  never gets saved anywhere.
+- If `python apps/EconGradAlert/scripts/build_excel.py` fails with
+  `ModuleNotFoundError` (this machine's default `python` has drifted before
+  — a new Python install shadowed the one with `openpyxl` on PATH), that's
+  an environment issue, not a task-logic bug: say so plainly in Step 9,
+  skip `tracker.xlsx` for this run, and still commit/push
+  `tracker.json`/`alertqueue.json` rather than aborting everything.
+
 ---
 
 ## 0. How this fits together
@@ -315,16 +344,28 @@ Confirm it exits cleanly. If it errors partway (e.g. a network blip), it's
 safe to just re-run — already-sent messages are never re-sent.
 
 **Step 8 — Commit and publish**
-- `git checkout -b econgrad-update-<YYYY-MM-DD>`
+- `git fetch origin` then `git checkout main` then `git reset --hard origin/main`
+  — **always branch from up-to-date `main`, never from whatever branch
+  happened to be checked out when this run started.** A prior run's branch
+  can still be sitting there unmerged (check `git branch -a` if unsure) —
+  branching from it instead of `main` silently stacks this run's PR on top
+  of an unrelated, possibly-stale one. (`reset --hard` here is safe: it
+  only discards *tracked* changes on `main`, and you haven't touched
+  `main`'s working tree yet at this point in the run.)
+- `git checkout -b econgrad-update-<YYYY-MM-DD>` (if that name is already
+  taken by a previous run today, append `-b`, `-c`, etc.)
 - `git add apps/EconGradAlert/data/tracker.json apps/EconGradAlert/data/tracker.xlsx apps/EconGradAlert/data/alertqueue.json`
   (stage nothing else — double-check `git status` shows only these three
-  files before committing)
+  files before committing; omit `tracker.xlsx` if Step 6 failed per the
+  note above)
 - `git commit -m "Econ ledger update <YYYY-MM-DD>: N added, M updated, K reminder flags"`
 - `git push -u origin econgrad-update-<YYYY-MM-DD>`
 - Open a pull request against `main` (e.g. `gh pr create --fill` if the
   `gh` CLI is available; otherwise leave the branch pushed and note the
   branch name in your final summary so the user can open the PR
   themselves).
+- Finish by running `git checkout main` again, so the working directory is
+  back on `main` for whatever runs next (interactive or scheduled).
 
 Do **not** push straight to `main` and do **not** merge the PR yourself —
 leave that for the user to review, at least for the first several runs (see

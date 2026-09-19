@@ -1,11 +1,11 @@
 {
   "meta": {
     "title": "Funded Economics Master's & PhD Programs Tracker",
-    "last_full_update": "2026-09-14",
+    "last_full_update": "2026-09-19",
     "coverage_note": "Master's and PhD programs in Economics across Europe, Asia, and Australia that offer some form of funding (scholarship, stipend, tuition waiver, or assistantship). Started as a curated seed list, not an exhaustive census; grows and refreshes over periodic automated passes.",
     "repec_source": "https://ideas.repec.org/top/top.econdept.html",
     "repec_snapshot": "July 2026",
-    "program_count": 37
+    "program_count": 38
   },
   "programs": [
     {
@@ -713,6 +713,38 @@
       "telegram_notified_7day": false
     },
     {
+      "id": "EUR-23",
+      "degree": "PhD",
+      "name": "PhD in Economics (Quantitative Economics track)",
+      "uni": "Goethe University Frankfurt — Graduate School of Economics, Finance, and Management (GSEFM)",
+      "repec_rank": "#81",
+      "region": "Europe",
+      "country": "Germany",
+      "city": "Frankfurt am Main",
+      "link": "https://www.gsefm.eu/degree-programs/economics.html",
+      "ielts": "7.0 overall",
+      "toefl": "93 iBT (or secondary/university education conducted entirely in English)",
+      "gre": "Not mandatory; GRE Quant \"strongly encouraged\" — upper 20-25th percentile cited as demonstrating strong quantitative skills",
+      "other": "Joint PhD/MSQ program — MSQ (Master's) students can transition into the PhD track after a successful first year; core training in economic theory, econometrics, and computational methods",
+      "start": "Winter semester (typically October)",
+      "deadline": "Three-stage rolling review: Stage 1 31 January, Stage 2 31 March, Stage 3 31 May (recurring annual, for the following Winter semester intake) — early application recommended for visa processing and financial-aid consideration",
+      "refs": "2 (at least one from a university professor)",
+      "appfee": "Not specified",
+      "progfee": "None — no tuition fees; administrative/semester fee ~EUR 377/semester (~EUR 754/year), includes public transit and museum access",
+      "funding_status": "Yes — limited, competitive",
+      "funding_detail": "Up to three first-year stipends awarded via the IMFS Stipend program (amount not published; targeted at applicants in quantitative macroeconomics, model comparison, or monetary economics); TA/RA positions available after qualifying exams. The school's separate Finance track (SAFE-funded) offers EUR 1,300/month in year 1 plus RA contracts, for reference — not the Economics-track figure.",
+      "date_added": "2026-09-19",
+      "last_updated": "2026-09-19",
+      "last_change": "Added (new find)",
+      "notes": "New find Sep 2026; stipend funding is limited/competitive (only 'up to three' first-year awards) rather than guaranteed to all admits — verify funding availability directly before relying on it.",
+      "urgency": "later",
+      "notified_30day": false,
+      "notified_7day": false,
+      "telegram_message_id": 74,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
+    },
+    {
       "id": "ASA-01",
       "degree": "PhD",
       "name": "PhD in Economics",
@@ -894,14 +926,14 @@
       "funding_status": "Likely (MEXT scholarship-eligible)",
       "funding_detail": "MEXT scholarship route confirmed to exist, administered via a separate central international-office page (requires embassy/consulate preliminary candidacy). No department-specific stipend/assistantship figures found.",
       "date_added": "2026-08-22",
-      "last_updated": "2026-08-29",
-      "last_change": "Found the Spring-intake AO-exam submission window (~14-17 Oct, recurring annually) and fee figures via search corroboration (official PDF/page blocked direct fetch by an SSL certificate error); urgency upgraded from tba to soon",
-      "notes": "Partially complete — fee figures are university-wide, not Economics-PhD-confirmed; exact Autumn-intake window still needed",
-      "urgency": "soon",
-      "notified_30day": false,
+      "last_updated": "2026-09-19",
+      "last_change": "Spring-intake submission window (expected ~14-17 Oct 2026) is now within 30 days — urgency upgraded from soon to urgent, 30-day reminder flag set",
+      "notes": "Partially complete — fee figures are university-wide, not Economics-PhD-confirmed; the 14-17 Oct 2026 window is an estimate based on the recurring annual pattern (confirmed dates were for the Spring 2026 cohort), not yet directly reconfirmed for this cycle — recommend a manual spot-check closer to the date",
+      "urgency": "urgent",
+      "notified_30day": true,
       "notified_7day": false,
       "telegram_message_id": 26,
-      "telegram_notified_30day": false,
+      "telegram_notified_30day": true,
       "telegram_notified_7day": false
     },
     {
@@ -1182,11 +1214,11 @@
       "funding_status": "Yes",
       "funding_detail": "RTP/UQGRSS provides a tax-free living stipend of AUD $39,220/year (2026 rate, indexed annually — updated from a previously-recorded AUD $37,500 figure) plus, for eligible international candidates, a tuition fee offset; no separate application needed beyond the program EOI.",
       "date_added": "2026-08-23",
-      "last_updated": "2026-09-05",
-      "last_change": "Confirmed the domestic round (31 Aug 2026) has closed; now tracking the international round deadline (19 Oct 2026) — reset reminder flags for the new date",
+      "last_updated": "2026-09-19",
+      "last_change": "International round deadline (19 Oct 2026) is now within 30 days — 30-day reminder flag set",
       "notes": "Scholarship is university-wide (RTP/UQGRSS), not economics-specific, but School of Economics PhD candidates are eligible.",
       "urgency": "soon",
-      "notified_30day": false,
+      "notified_30day": true,
       "notified_7day": false,
       "telegram_message_id": 34,
       "telegram_notified_30day": true,
@@ -1760,6 +1792,30 @@
       "program_name": "PhD in Economics — University of Cambridge",
       "change_type": "Added (new find)",
       "details": "New find: RePEc #50, ~66% of Cambridge doctoral students fully funded via Cambridge Trust/Gates Cambridge/College/ESRC funding; funding-competition deadline 8 Dec 2026.",
+      "notified_telegram": true
+    },
+    {
+      "date": "2026-09-19",
+      "program_id": "EUR-23",
+      "program_name": "PhD in Economics (Quantitative Economics track) — Goethe University Frankfurt (GSEFM)",
+      "change_type": "Added (new find)",
+      "details": "New find: RePEc #81, up to three competitive first-year IMFS stipends plus post-qualifying-exam TA/RA positions; no tuition fees.",
+      "notified_telegram": true
+    },
+    {
+      "date": "2026-09-19",
+      "program_id": "ASA-06",
+      "program_name": "Graduate School of Economics (PhD) — Hitotsubashi University",
+      "change_type": "Deadline reminder",
+      "details": "30-day reminder: the Spring-intake submission window (expected ~14-17 Oct 2026) is now within 30 days — urgency upgraded from soon to urgent.",
+      "notified_telegram": true
+    },
+    {
+      "date": "2026-09-19",
+      "program_id": "AUS-06",
+      "program_name": "Doctor of Philosophy (Economics) — University of Queensland (School of Economics)",
+      "change_type": "Deadline reminder",
+      "details": "30-day reminder: the international round deadline (19 Oct 2026) is now within 30 days.",
       "notified_telegram": true
     }
   ]

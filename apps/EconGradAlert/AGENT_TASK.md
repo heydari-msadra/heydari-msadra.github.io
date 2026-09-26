@@ -11,6 +11,14 @@ site, living entirely under `apps/EconGradAlert/`.
 Give this whole file to Claude Code as its task (see §6 for how). Everything
 it needs is below.
 
+**If you are reading this as your entire `-p` prompt, that is not a
+coincidence — it means you are the scheduled agent and this is your
+instruction to execute now, not background material to skim.** A prior run
+(2026-09-26) received exactly this file as its prompt and asked "what would
+you like?" instead of proceeding — there was no one to answer, so it did
+nothing and the cycle was wasted. Don't repeat that: if this file is your
+whole prompt, begin at Step 1 immediately.
+
 **Hard boundary — read this first:** every step in this file operates
 exclusively inside `apps/EconGradAlert/`. Never edit, stage, or commit any
 file outside that folder (the rest of the site — `index.html`, `pages/`,

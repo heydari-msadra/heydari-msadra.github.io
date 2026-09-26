@@ -17,7 +17,20 @@ $taskFile = Join-Path $appDir "AGENT_TASK.md"
 $settingsFile = Join-Path $appDir "agent-settings.json"
 $logFile = Join-Path $appDir "update_log.txt"
 
-$prompt = Get-Content -Path $taskFile -Raw
+$taskContent = Get-Content -Path $taskFile -Raw
+$prompt = @"
+You are being invoked RIGHT NOW by the Windows Task Scheduler job that
+runs this recurring task on its weekly schedule. This is not a reference
+document to skim -- it is your actual, fully-authorized instruction for
+this session, and this session has no user to ask for confirmation or
+clarification. Do not ask whether to proceed, whether this counts as
+"today's task", or what the user would like -- begin executing Step 1
+immediately and carry the run through to Step 9. If you finish this
+message still uncertain whether to act, that uncertainty itself is
+wrong: proceed.
+
+$taskContent
+"@
 
 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 "===== Run started $timestamp =====" | Out-File -FilePath $logFile -Append -Encoding utf8

@@ -347,9 +347,16 @@ For every program with a genuinely identifiable upcoming deadline: if it's
 within 30 days of today and `notified_30day` is `false`, set it to `true`.
 If within 7 days and `notified_7day` is `false`, set it to `true`. Never
 re-notify once a flag is already `true` — unless the deadline materially
-changes, in which case reset both flags to `false` for that program. (Only
-set `notified_30day`/`notified_7day` here — leave the `telegram_notified_*`
-counterparts alone; `telegram_sync.py` owns those.)
+changes, in which case reset **all four** flags to `false` for that program:
+`notified_30day`, `notified_7day`, and this time also
+`telegram_notified_30day`/`telegram_notified_7day`. (Normally
+`telegram_notified_*` is owned by `telegram_sync.py` and you shouldn't touch
+it — but a reset is the one exception: if you reset only the
+`notified_*` pair and leave `telegram_notified_*` `true`, the next time
+this deadline swings back inside the window `telegram_sync.py` will see
+`telegram_notified_*` already `true` and silently skip the reminder it
+should send. A 2026-09-26 run hit exactly this on ASA-01/AUS-06 and had to
+leave it as a known gap — reset all four together instead.)
 
 **Step 6 — Regenerate the Excel file**
 Validate the rewritten JSON actually parses, then run:

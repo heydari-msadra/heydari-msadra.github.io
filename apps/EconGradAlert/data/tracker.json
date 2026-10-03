@@ -1157,7 +1157,7 @@
       "notified_30day": true,
       "notified_7day": false,
       "telegram_message_id": 29,
-      "telegram_notified_30day": false,
+      "telegram_notified_30day": true,
       "telegram_notified_7day": false
     },
     {
@@ -1221,7 +1221,7 @@
       "notified_30day": true,
       "notified_7day": false,
       "telegram_message_id": 31,
-      "telegram_notified_30day": false,
+      "telegram_notified_30day": true,
       "telegram_notified_7day": false
     },
     {

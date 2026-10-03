@@ -1157,8 +1157,8 @@
       "notified_30day": true,
       "notified_7day": false,
       "telegram_message_id": 29,
-      "telegram_notified_30day": true,
-      "telegram_notified_7day": true
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "AUS-02",
@@ -1221,8 +1221,8 @@
       "notified_30day": true,
       "notified_7day": false,
       "telegram_message_id": 31,
-      "telegram_notified_30day": true,
-      "telegram_notified_7day": true
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "AUS-04",
@@ -1253,8 +1253,8 @@
       "notified_30day": false,
       "notified_7day": false,
       "telegram_message_id": 32,
-      "telegram_notified_30day": true,
-      "telegram_notified_7day": true
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
     },
     {
       "id": "AUS-05",

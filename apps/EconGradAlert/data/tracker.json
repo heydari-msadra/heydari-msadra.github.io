@@ -1,11 +1,11 @@
 {
   "meta": {
     "title": "Funded Economics Master's & PhD Programs Tracker",
-    "last_full_update": "2026-10-03",
+    "last_full_update": "2026-10-17",
     "coverage_note": "Master's and PhD programs in Economics across Europe, Asia, and Australia that offer some form of funding (scholarship, stipend, tuition waiver, or assistantship). Started as a curated seed list, not an exhaustive census; grows and refreshes over periodic automated passes.",
     "repec_source": "https://ideas.repec.org/top/top.econdept.html",
     "repec_snapshot": "August 2026",
-    "program_count": 41
+    "program_count": 42
   },
   "programs": [
     {
@@ -809,6 +809,38 @@
       "telegram_notified_7day": false
     },
     {
+      "id": "EUR-28",
+      "degree": "PhD",
+      "name": "CEREB PhD Scholarship (Center for Empirical Research in Economics and Behavioral Sciences)",
+      "uni": "University of Erfurt",
+      "repec_rank": "Not in top 466 (RePEc IDEAS economics-department table, August 2026 snapshot) — not ranked standalone",
+      "region": "Europe",
+      "country": "Germany",
+      "city": "Erfurt",
+      "link": "https://www.uni-erfurt.de/staatswissenschaftliche-fakultaet/forschung/wissenschaftliche-karriere/nachwuchskollegs/cereb",
+      "ielts": "Not specified on the official call page",
+      "toefl": "Not specified on the official call page",
+      "gre": "Not mentioned",
+      "other": "Interdisciplinary doctoral research training group spanning behavioral economics, social/health psychology, organizational psychology, management, business ethics, corporate governance, and group decision-making — not a standalone departmental Economics PhD. Application via Docata, the university's doctoral-candidate web portal. Candidates direct questions to the program director.",
+      "start": "Funding starts 1 April 2027, latest possible start 1 July 2027",
+      "deadline": "24 November 2026, 11:59pm CET (confirmed via direct fetch of the official CEREB call page)",
+      "refs": "Not specified on the official call page",
+      "appfee": "Not specified",
+      "progfee": "Not specified (German public university — typically a modest semester fee rather than tuition, unconfirmed for this program)",
+      "funding_status": "Yes",
+      "funding_detail": "EUR 1,400/month stipend plus a family allowance (EUR 300 for a first child, EUR 150 per additional child); awarded for 3 years with a possible 4th-year extension.",
+      "urgency": "soon",
+      "notified_30day": false,
+      "notified_7day": false,
+      "date_added": "2026-10-17",
+      "last_updated": "2026-10-17",
+      "last_change": "Added (new find)",
+      "notes": "New find Oct 2026; Economics (specifically behavioral economics) is one of several explicitly eligible fields in this cross-disciplinary research training group, alongside psychology, management, and ethics — flagged because it's not a traditional single-department Economics PhD, so may not fit every reader's definition of an 'Economics program.' English-test requirements, reference count, and fees are not stated on the official call page and are unconfirmed.",
+      "telegram_message_id": 100,
+      "telegram_notified_30day": false,
+      "telegram_notified_7day": false
+    },
+    {
       "id": "ASA-01",
       "degree": "PhD",
       "name": "PhD in Economics",
@@ -983,21 +1015,21 @@
       "gre": "Not mentioned",
       "other": "Two intakes/year (Spring and Autumn); international applicants without a Hitotsubashi Master's apply via an AO exam route — either general AO (2+ years work experience post-master's) or AO for international applicants with a Master's from outside Japan; admission mainly via submitted documents, interview may follow (online option for overseas applicants)",
       "start": "Spring or Autumn intake (two cycles/year)",
-      "deadline": "Spring intake: document submission window ~14-17 Oct annually (confirmed for the Spring 2026 cohort: 14-17 Oct 2025, results ~11 Nov 2025), so the next window is expected ~mid-Oct 2026 for Spring 2027 entry. Autumn intake: opens ~April, exact window not confirmed this pass.",
-      "refs": "At least 1 recommendation letter required (AO exam route requires an English-language Letter of Recommendation); exact number for other routes not specified",
-      "appfee": "~JPY 30,000 reported (university-wide general graduate-school figure, not confirmed Economics-specific)",
-      "progfee": "~JPY 535,800/year reported (university-wide figure, not confirmed Economics-PhD-specific)",
+      "deadline": "Spring 2027 entry CONFIRMED via a direct primary-source fetch (document \"2027econspring_E.pdf\" on www1.econ.hit-u.ac.jp, reached through a proxy that bypassed the TLS certificate error that had blocked six consecutive direct-fetch attempts): application period 24 November 2026 – 4 December 2026 (mail submissions must arrive by 17:00 JST on the final day); first-stage results ~13:00 on 18 January 2027; oral examination 4 February 2027 (via Zoom); final results ~13:00 on 12 February 2027; enrollment-fee payment window 22-26 February 2027. This replaces the long-standing unsourced '~14-17 Oct annually' estimate, which turns out to have been materially wrong. Autumn intake: opens ~April, exact window still not confirmed this pass.",
+      "refs": "At least 1 recommendation letter required (AO exam route requires an English-language Letter of Recommendation, due by the same 4 Dec 2026 deadline, sent directly from the recommender's institutional email); exact number for other routes not specified",
+      "appfee": "~JPY 30,000 reported (from last year's equivalent document; university-wide general graduate-school figure, not confirmed Economics-PhD-specific for the 2027 cycle)",
+      "progfee": "~JPY 535,800/year reported (same caveat as application fee)",
       "funding_status": "Likely (MEXT scholarship-eligible)",
       "funding_detail": "MEXT scholarship route confirmed to exist, administered via a separate central international-office page (requires embassy/consulate preliminary candidacy). No department-specific stipend/assistantship figures found.",
       "date_added": "2026-08-22",
-      "last_updated": "2026-10-03",
-      "last_change": "Reconfirmation attempted again — official site unreachable (TLS certificate verification error, distinct from the earlier 403-blocked sites); search also could not pin down the exact 2026 window. Deadline estimate unchanged.",
-      "notes": "Partially complete — fee figures are university-wide, not Economics-PhD-confirmed; the 14-17 Oct 2026 window remains an estimate based on the recurring annual pattern (confirmed dates were for the Spring 2026 cohort). Direct fetch of econ.hit-u.ac.jp failed again on 2026-10-03 with a TLS cert error. This deadline is now very close (est. 11-14 days out) and notified_7day has not yet fired — if the next run still cannot reconfirm the exact date before that flag would trip, flag it for a manual check rather than letting an unverified date drive the 7-day Telegram alert.",
-      "urgency": "urgent",
-      "notified_30day": true,
+      "last_updated": "2026-10-17",
+      "last_change": "MATERIAL CORRECTION: the real Spring 2027 deadline (confirmed via primary source) is 24 Nov-4 Dec 2026, not the previously estimated mid-October window — urgency corrected urgent to soon, all four notification flags reset per the material-change rule since the earlier 30-day flag/Telegram post was based on the wrong month entirely",
+      "notes": "Partially complete — fee figures are carried over from last year's equivalent document, not yet confirmed for the 2027 cycle specifically. The fetched PDF's own internal numbering (admission number prefix 'EM02' seen in search indexing) suggests it may be a combined Graduate-School-of-Economics Spring schedule covering multiple degree tracks rather than a doctoral-only notice; its recommendation-letter requirement matches the AO-exam PhD route described elsewhere on the department's English admissions page, so it's treated here as applicable to the PhD track, but a one-time manual check that this is specifically the doctoral (not master's-only) schedule would be worthwhile. This is the first time this entry's deadline has been confirmed via a direct primary-source fetch rather than an extrapolated annual pattern.",
+      "urgency": "soon",
+      "notified_30day": false,
       "notified_7day": false,
       "telegram_message_id": 26,
-      "telegram_notified_30day": true,
+      "telegram_notified_30day": false,
       "telegram_notified_7day": false
     },
     {
@@ -1175,16 +1207,16 @@
       "gre": "Not mentioned in entry requirements",
       "other": "PTE Academic 72+ (written 75+); CAE 185+ also accepted; 5-year program (2 coursework + 3 research)",
       "start": "March intake",
-      "deadline": "March 2027 intake deadline reported as 30 November 2026 — found via search summary only; the official how-to-apply/key-dates pages returned HTTP 403 on every direct fetch attempt this pass, so this date is unconfirmed by primary source and should be manually verified",
+      "deadline": "March 2027 intake deadline reported as 30 November 2026 via one search summary; a second independent search this pass instead reported 31 August 2026 for the same intake (which, if accurate, would already be closed) — the official how-to-apply/key-dates pages continue to return HTTP 403 on every direct fetch attempt (including via a proxy), so neither date is confirmed by primary source. One plausible reading is that 31 Aug is an earlier scholarship-priority round and 30 Nov a later general-application round (a split seen at other Australian universities in this tracker), but that's a guess, not a finding — still needs a manual browser check.",
       "refs": "Not specified",
       "appfee": "Not mentioned",
       "progfee": "Not detailed — full tuition fee waiver reported (see funding)",
       "funding_status": "Yes",
       "funding_detail": "Australian Government Research Training Program (RTP) funded places available: RTP stipend reported at AUD $39,500/year (2026 rate) plus full tuition fee waiver and AUD $15,000 research/conference travel funding for confirmed PhD candidates (unconfirmed by primary source — see deadline note). Program structure: 2-year Master of Commerce coursework + 3-year PhD.",
       "date_added": "2026-08-22",
-      "last_updated": "2026-08-23",
-      "last_change": "Found a reported deadline and funding figures via search, but could not confirm via direct page fetch (403 blocked) — flagged as lower confidence",
-      "notes": "Seed entry Aug 2026; unimelb.edu.au pages returned HTTP 403 to automated fetches this pass — recommend a manual browser check before relying on the reported 30 Nov 2026 deadline",
+      "last_updated": "2026-10-17",
+      "last_change": "Re-attempted reconfirmation (including via a proxy) — official page still blocked; found a second, conflicting search-reported deadline (31 Aug 2026) alongside the existing 30 Nov 2026 figure. Noted the conflict; deadline/urgency left unchanged pending manual verification.",
+      "notes": "Seed entry Aug 2026; unimelb.edu.au pages returned HTTP 403 to automated fetches on every pass so far, including through a proxy this time — recommend a manual browser check before relying on either the 30 Nov 2026 or 31 Aug 2026 deadline figures now in circulation",
       "urgency": "soon",
       "notified_30day": false,
       "notified_7day": false,
@@ -1310,15 +1342,15 @@
       "funding_status": "Yes",
       "funding_detail": "RTP/UQGRSS provides a tax-free living stipend of AUD $39,220/year (2026 rate, indexed annually — updated from a previously-recorded AUD $37,500 figure) plus, for eligible international candidates, a tuition fee offset; no separate application needed beyond the program EOI.",
       "date_added": "2026-08-23",
-      "last_updated": "2026-09-26",
-      "last_change": "International round deadline (19 Oct 2026) is now 23 days out, inside the ~4-week threshold — urgency upgraded from soon to urgent",
-      "notes": "Scholarship is university-wide (RTP/UQGRSS), not economics-specific, but School of Economics PhD candidates are eligible. The 30-day reminder flag was already set on the 2026-09-19 pass, so no new reminder is due — only the urgency classification changed.",
+      "last_updated": "2026-10-17",
+      "last_change": "International round deadline (19 Oct 2026) reconfirmed via two independent sources — now only 2 days out, inside the 7-day threshold; 7-day reminder flag tripped",
+      "notes": "Scholarship is university-wide (RTP/UQGRSS), not economics-specific, but School of Economics PhD candidates are eligible. The 30-day reminder flag was already set on the 2026-09-19 pass; this pass trips the 7-day flag as the deadline closes in.",
       "urgency": "urgent",
       "notified_30day": true,
-      "notified_7day": false,
+      "notified_7day": true,
       "telegram_message_id": 34,
       "telegram_notified_30day": true,
-      "telegram_notified_7day": false
+      "telegram_notified_7day": true
     }
   ],
   "change_log": [
@@ -2024,6 +2056,38 @@
       "program_name": "PhD (Economics) — Monash Business School",
       "change_type": "Deadline reminder",
       "details": "Domestic Graduate Research Scholarship Round 4 deadline (31 Oct 2026) now 28 days out, inside the ~4-week threshold — urgency upgraded from soon to urgent, 30-day reminder flag set.",
+      "notified_telegram": true
+    },
+    {
+      "date": "2026-10-17",
+      "program_id": "EUR-28",
+      "program_name": "CEREB PhD Scholarship — University of Erfurt",
+      "change_type": "Added (new find)",
+      "details": "New find — interdisciplinary doctoral scholarship (behavioral economics among its covered fields), EUR 1,400/month for 3-4 years, deadline 24 Nov 2026.",
+      "notified_telegram": true
+    },
+    {
+      "date": "2026-10-17",
+      "program_id": "ASA-06",
+      "program_name": "Graduate School of Economics (PhD) — Hitotsubashi University",
+      "change_type": "Updated",
+      "details": "MATERIAL CORRECTION: confirmed via primary-source PDF (reached through a proxy after six passes blocked by a TLS error) that the Spring 2027 deadline is 24 Nov-4 Dec 2026, not the previously estimated mid-October window — urgency stepped back from urgent to soon, all four notification flags reset.",
+      "notified_telegram": true
+    },
+    {
+      "date": "2026-10-17",
+      "program_id": "AUS-06",
+      "program_name": "Doctor of Philosophy (Economics) — University of Queensland (School of Economics)",
+      "change_type": "Deadline reminder",
+      "details": "International round deadline (19 Oct 2026) reconfirmed via two independent sources, now 2 days out — 7-day reminder flag tripped.",
+      "notified_telegram": true
+    },
+    {
+      "date": "2026-10-17",
+      "program_id": "AUS-02",
+      "program_name": "Doctoral Program in Economics — University of Melbourne",
+      "change_type": "Updated",
+      "details": "Official page remains blocked to automated fetches (403, including via a proxy); found a second search-reported deadline (31 Aug 2026) that conflicts with the previously recorded 30 Nov 2026 figure — flagged for manual verification rather than guessed at.",
       "notified_telegram": true
     }
   ]

@@ -35,8 +35,23 @@ $taskContent
 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 "===== Run started $timestamp =====" | Out-File -FilePath $logFile -Append -Encoding utf8
 
-& $claudeExe -p $prompt --settings $settingsFile *>> $logFile
+# try/finally so a "finished" line (and a real exit code) always lands, even
+# if claude.exe itself crashes or this script hits a terminating error --
+# both the 2026-11-07 run (killed mid-way, no "finished" line at all, cause
+# unknown) and the 2026-11-14 run (claude.exe exited 1 on an expired OAuth
+# session, but this script always exited 0 regardless, so Task Scheduler's
+# LastTaskResult never showed the failure) went undetected for a week+
+# because of exactly this gap.
+$exitCode = -1
+try {
+    & $claudeExe -p $prompt --settings $settingsFile *>> $logFile
+    $exitCode = $LASTEXITCODE
+} catch {
+    "ERROR: $_" | Out-File -FilePath $logFile -Append -Encoding utf8
+    $exitCode = 1
+} finally {
+    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    "===== Run finished $timestamp (exit code $exitCode) =====" | Out-File -FilePath $logFile -Append -Encoding utf8
+}
 
-$exitCode = $LASTEXITCODE
-$timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-"===== Run finished $timestamp (exit code $exitCode) =====" | Out-File -FilePath $logFile -Append -Encoding utf8
+exit $exitCode
